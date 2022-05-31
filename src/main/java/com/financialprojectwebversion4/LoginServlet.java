@@ -26,8 +26,6 @@ public class LoginServlet extends HttpServlet {
 		// get the username from the login form
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
-		System.out.println("username: " + username);
-		System.out.println("password: " + password);
 
 		// call DAO for validation logic
 		ApplicationDao dao = new ApplicationDao();
@@ -42,13 +40,17 @@ public class LoginServlet extends HttpServlet {
 		// set username as an attribute
 	//	session.getAttribute("username", username);
 		
-		// forward to home jsp
+		// forward to loged in jsp page
 		req.getRequestDispatcher("/jsps/logedInPage.jsp").forward(req, resp);
 		}
 		else {
 			String errorMessage = "Invalid credentials, please login again!";
-			req.setAttribute("error", errorMessage);
-			req.getRequestDispatcher("/login.jsp" + errorMessage).forward(req, resp);
+			req.getRequestDispatcher("/jsps/login.jsp").forward(req, resp);
+
+
+		//	String errorMessage = "Invalid credentials, please login again!";
+		//	req.setAttribute("error", errorMessage);
+		//	req.getRequestDispatcher("/login.jsp" + errorMessage).forward(req, resp);
 		}
 	}
 }
