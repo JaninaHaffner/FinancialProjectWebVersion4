@@ -28,15 +28,15 @@ public class UserRegistrationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         // Get all the form data
-        String fullname = request.getParameter("fullname");
         String username = request.getParameter("username");
-        String email = request.getParameter("email");
         String password = request.getParameter("password");
-        String updates = request.getParameter("updates");
+        String email = request.getParameter("email");
+        String fullname = request.getParameter("fullname");
         String preferences = request.getParameter("preferences");
+        String updates = request.getParameter("updates");
 
         // put it in a user bean - creating a new instance of the user object
-        User user = new User(fullname, username, email, password, updates, preferences);
+        User user = new User(username, password, email, fullname, preferences, updates);
 
         // call the application DAO to save the user object to the database.
         ApplicationDao dao = new ApplicationDao();
@@ -55,10 +55,12 @@ public class UserRegistrationServlet extends HttpServlet {
             dispatcher.include(request, response);
             infoMessage = "Success, you are registered!";
         }
-        response.sendRedirect(infoMessage);
+
+        request.getRequestDispatcher("/jsps/login.jsp" + infoMessage).forward(request, response);
+       // response.sendRedirect("/jsps/logedInPage.jsp");
         // write the message back to the client browser page
-        //String page = getHTMLString(request.getServletContext().getRealPath("/html/registration.html"), infoMessage);
-        //response.getWriter().write(page);
+       // String page = getHTMLString(request.getServletContext().getRealPath("/jsps/logedInPage.jsp"), infoMessage);
+      //  response.getWriter().write(page);
     }
 
     public String getHTMLString(String filePath, String message) throws IOException {
@@ -76,5 +78,4 @@ public class UserRegistrationServlet extends HttpServlet {
 
         return page;
     }
-
 }

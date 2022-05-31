@@ -16,15 +16,15 @@
 <div class="container">
     <a href="../index.jsp"><i class="fa fa-home"></i></a>
     <div class="title">Login</div>
-    <form action="servlet/Login">
+    <form action="${pageContext.request.contextPath}/LoginServlet" method="post">
         <div class="user-details">
             <div class="input-box">
                 <span class="details">Username</span>
-                <input aria-label="username" type="text" placeholder="Enter your username" required>
+                <input name="username" type="text" placeholder="Enter your username" required>
             </div>
             <div class="input-box">
                 <span class="details">Password</span>
-                <input aria-label="password" type="password" placeholder="Enter your password" required>
+                <input name="password" type="password" placeholder="Enter your password" required>
             </div>
         </div>
         <div class="button">

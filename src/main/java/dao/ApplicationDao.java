@@ -52,7 +52,7 @@ public class ApplicationDao {
 		
 		try {
 			Connection connection = DBConnection.getConnectionToDatabase();
-				
+			System.out.println("connected adao");
 			String sql = "select * from user where username=? and password=?";
 			
 			PreparedStatement statement = connection.prepareStatement(sql);
@@ -60,6 +60,7 @@ public class ApplicationDao {
 			statement.setString(2, password);
 
 			ResultSet set = statement.executeQuery();
+			System.out.println(set);
 				while(set.next()) {
 					isValidUser = true;
 				}

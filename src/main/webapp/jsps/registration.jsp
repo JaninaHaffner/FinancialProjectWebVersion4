@@ -28,20 +28,19 @@
   <a href="../index.jsp"><i class="fa fa-home"></i></a>
 
     <div class="title">Registration</div>
-    <em>{0}</em>
     <form action="<%= request.getContextPath() %>/UserRegistrationServlet" method="post">
 
         <div class="user-details">
             <div class="input-box">
-                <span class="details">Full name</span>
-                <label>
-                    <input type="text" name="fullname" placeholder="Enter your name" required>
-                </label>
-            </div>
-            <div class="input-box">
                 <span class="details">Username</span>
                 <label>
                     <input type="text" name="username" placeholder="Enter your username" required>
+                </label>
+            </div>
+            <div class="input-box">
+                <span class="details">Password</span>
+                <label>
+                    <input type="password" name="password" placeholder="Enter your password" required>
                 </label>
             </div>
             <div class="input-box">
@@ -51,16 +50,31 @@
                 </label>
             </div>
             <div class="input-box">
-                <span class="details">Password</span>
+                <span class="details">Full name</span>
                 <label>
-                    <input type="password" name="password" placeholder="Enter your password" required>
+                    <input type="text" name="fullname" placeholder="Enter your name" required>
                 </label>
             </div>
         </div>
         <div class="radio-details">
-            <input type="radio" name="updates" id="dot-1">
-            <input type="radio" name="updates" id="dot-2">
-            <input type="radio" name="updates" id="dot-3">
+            <input type="radio" name="preferences" id="dot-4" value="Browser">
+            <input type="radio" name="preferences" id="dot-5" value="Email">
+            <span class="radio-title">Preferences</span>
+            <div class="category">
+                <label for="dot-4">
+                    <span class="dot four"></span>
+                    <span class="radio">Browser</span>
+                </label>
+                <label for="dot-5">
+                    <span class="dot five"></span>
+                    <span class="radio">Email</span>
+                </label>
+            </div>
+        </div>
+        <div class="radio-details">
+            <input type="radio" name="updates" id="dot-1" value="Daily">
+            <input type="radio" name="updates" id="dot-2" value="Weekly">
+            <input type="radio" name="updates" id="dot-3" value="Monthly">
             <span class="radio-title">Update Frequency</span>
             <div class="category">
                 <label for="dot-1">
@@ -77,21 +91,6 @@
                 </label>
             </div>
         </div>
-        <div class="radio-details">
-            <input type="radio" name="preferences" id="dot-4">
-            <input type="radio" name="preferences" id="dot-5">
-            <span class="radio-title">Preferences</span>
-            <div class="category">
-                <label for="dot-4">
-                    <span class="dot four"></span>
-                    <span class="radio">Browser</span>
-                </label>
-                <label for="dot-5">
-                    <span class="dot five"></span>
-                    <span class="radio">Email</span>
-                </label>
-            </div>
-        </div>
         <div class="button">
             <input type="submit" value="Register">
 
@@ -100,5 +99,6 @@
     </form>
 </div>
 
+<a href="${pageContext.request.contextPath}/jsps/logedInPage.jsp"></a>
 </body>
 </html>

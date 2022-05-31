@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// send request to login.jsp resource
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/html/login.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/jsps/login.jsp");
 		dispatcher.forward(req, resp);
 	}
 	
@@ -26,7 +26,9 @@ public class LoginServlet extends HttpServlet {
 		// get the username from the login form
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
-		
+		System.out.println("username: " + username);
+		System.out.println("password: " + password);
+
 		// call DAO for validation logic
 		ApplicationDao dao = new ApplicationDao();
 		boolean isValidUser = dao.validateUser(username, password);
@@ -41,12 +43,12 @@ public class LoginServlet extends HttpServlet {
 	//	session.getAttribute("username", username);
 		
 		// forward to home jsp
-		req.getRequestDispatcher("/html/home.jsp").forward(req, resp);
+		req.getRequestDispatcher("/jsps/logedInPage.jsp").forward(req, resp);
 		}
 		else {
 			String errorMessage = "Invalid credentials, please login again!";
 			req.setAttribute("error", errorMessage);
-			req.getRequestDispatcher("/html/login.jsp").forward(req, resp);
+			req.getRequestDispatcher("/login.jsp" + errorMessage).forward(req, resp);
 		}
 	}
 }
