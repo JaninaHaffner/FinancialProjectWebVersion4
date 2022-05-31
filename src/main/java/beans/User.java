@@ -2,29 +2,23 @@ package beans;
 
 // Beans.User bean that has variables, constructor, getters and setters to make a user object.
 public class User {
-	
-	private String fullname;
+
 	private String username;
 	private String password;
 	private String email;
-	private String updates;
+	private String fullname;
 	private String preferences;
-	
-	public User(String fullname, String username, String password, String email, String updates, String preferences) {
-		this.fullname=fullname;
+	private String updates;
+
+	public User(String username, String password, String email, String fullname, String preferences, String updates) {
 		this.username=username;
 		this.password=password;
 		this.email=email;
-		this.updates=updates;
-		this.preferences=preferences;
-	}
-	
-	public String getFullname() {
-		return fullname;
-	}
-	public void setFullname(String fullname) {
 		this.fullname=fullname;
+		this.preferences=preferences;
+		this.updates=updates;
 	}
+
 	public String getUsername() {
 		return username;
 	}
@@ -43,17 +37,23 @@ public class User {
 	public void setEmail(String email) {
 		this.email=email;
 	}
-	public String getUpdates() {
-		return updates;
+	public String getFullname() {
+		return fullname;
 	}
-	public void setUpdates(String updates) {
-		this.updates=updates;
+	public void setFullname(String fullname) {
+		this.fullname=fullname;
 	}
 	public String getPreferences() {
 		return preferences;
 	}
 	public void setPreferences(String preferences) {
 		this.preferences=preferences;
+	}
+	public String getUpdates() {
+		return updates;
+	}
+	public void setUpdates(String updates) {
+		this.updates=updates;
 	}
 
 }

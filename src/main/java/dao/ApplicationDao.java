@@ -16,16 +16,16 @@ public class ApplicationDao {
 		try {
 			Connection connection = DBConnection.getConnectionToDatabase();
 
-			String insertQuery = "insert into user(fullname, username, password, email, updates, preference) " +
+			String insertQuery = "insert into user(username, password, email, fullname, preference, updates) " +
 					"values(?,?,?,?,?,?)";
 
 			PreparedStatement statement = connection.prepareStatement(insertQuery);
-			statement.setString(1, user.getFullname());
-			statement.setString(2, user.getUsername());
-			statement.setString(3, user.getPassword());
-			statement.setString(4, user.getEmail());
-			statement.setString(5, user.getUpdates());
-			statement.setString(6, user.getPreferences());
+			statement.setString(1, user.getUsername());
+			statement.setString(2, user.getPassword());
+			statement.setString(3, user.getEmail());
+			statement.setString(4, user.getFullname());
+			statement.setString(5, user.getPreferences());
+			statement.setString(6, user.getUpdates());
 
 			rowsAffected = statement.executeUpdate();
 

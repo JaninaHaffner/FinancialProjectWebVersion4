@@ -55,8 +55,8 @@ public class UserRegistrationServlet extends HttpServlet {
             dispatcher.include(request, response);
             infoMessage = "Success, you are registered!";
         }
+        request.getRequestDispatcher("login.jsp" + infoMessage).forward(request, response);
 
-        request.getRequestDispatcher("/jsps/login.jsp" + infoMessage).forward(request, response);
        // response.sendRedirect("/jsps/logedInPage.jsp");
         // write the message back to the client browser page
        // String page = getHTMLString(request.getServletContext().getRealPath("/jsps/logedInPage.jsp"), infoMessage);
