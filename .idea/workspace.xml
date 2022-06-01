@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;login working, failed login returns to login page">
+    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;new item on landing page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
@@ -126,7 +126,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653827184865</updated>
-      <workItem from="1653827186592" duration="24465000" />
+      <workItem from="1653827186592" duration="24958000" />
     </task>
     <task id="LOCAL-00001" summary="version 4&#10;working - need to go to logged in page">
       <created>1653833946685</created>
@@ -156,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654016445976</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="version 4&#10;new item on landing page">
+      <created>1654082184570</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654082184570</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +196,7 @@
     <MESSAGE value="version 4&#10;working - need to go to logged in page" />
     <MESSAGE value="version 4&#10;login working, need to reroute to log in again after registration was done successfully" />
     <MESSAGE value="version 4&#10;login working, failed login returns to login page" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;login working, failed login returns to login page" />
+    <MESSAGE value="version 4&#10;new item on landing page" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;new item on landing page" />
   </component>
 </project>
