@@ -49,7 +49,25 @@
             src='https://api.stockdio.com/visualization/financial/charts/v1/MarketOverview?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=JSE&showCurrency=true&palette=Financial-Light&onload=st_d595a84bc4534e2fb156c3a2f5429e25'>
 
     </iframe>
+<%--<div align="right">
+    <script>
+    if (typeof(stockdio_events) == "undefined") {
+        stockdio_events = true;
+        var stockdio_eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+        var stockdio_eventer = window[stockdio_eventMethod];
+        var stockdio_messageEvent = stockdio_eventMethod == "attachEvent" ? "onmessage" : "message";
+        stockdio_eventer(stockdio_messageEvent, function (e) {
+            if (typeof(e.data) != "undefined" && typeof(e.data.method) != "undefined") {
+                eval(e.data.method);
+            }
+        },false);
+    }
+</script>
+    <iframe id='st_e1b36eefdcfe4d75b3d699123f3e1220' frameBorder='0' scrolling='no' width='100%' height='100%'
+            src='https://api.stockdio.com/visualization/financial/charts/v1/EconomicNews?app-key=7F5CA262046A4B63B327718307695CF1&language=English&includeDescription=false&imageWidth=40&imageHeight=40&palette=Financial-Light&width=35%25&onload=st_e1b36eefdcfe4d75b3d699123f3e1220'>
 
+    </iframe>
+</div>--%>
 </header>
 
 </body>

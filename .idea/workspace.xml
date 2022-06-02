@@ -9,8 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;new item on landing page top">
+    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;added notes to the logedInPage.jsp for alterations">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailSendingServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/email/EmailUtility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/jsps/userSpesificInformationDisplay.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ae8f333b-ff84-43ee-9019-75c9b30a378f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ae8f333b-ff84-43ee-9019-75c9b30a378f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/logedInPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/logedInPage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,7 +64,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/janin/IdeaProjects/FinancialProjectWebVersion4/src/main/webapp"
+    "last_opened_file_path": "C:/Users/janin/IdeaProjects/FinancialProjectWebVersion4/src/main/webapp",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -126,7 +136,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653827184865</updated>
-      <workItem from="1653827186592" duration="28459000" />
+      <workItem from="1653827186592" duration="28550000" />
+      <workItem from="1654110180980" duration="3771000" />
+      <workItem from="1654163851778" duration="6544000" />
     </task>
     <task id="LOCAL-00001" summary="version 4&#10;working - need to go to logged in page">
       <created>1653833946685</created>
@@ -170,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654102738578</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="version 4&#10;added notes to the logedInPage.jsp for alterations">
+      <created>1654108151484</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1654108151484</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +224,7 @@
     <MESSAGE value="version 4&#10;login working, failed login returns to login page" />
     <MESSAGE value="version 4&#10;new item on landing page" />
     <MESSAGE value="version 4&#10;new item on landing page top" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;new item on landing page top" />
+    <MESSAGE value="version 4&#10;added notes to the logedInPage.jsp for alterations" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;added notes to the logedInPage.jsp for alterations" />
   </component>
 </project>

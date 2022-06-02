@@ -54,6 +54,11 @@
           <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec:1.0.1" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.29" />
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.19.4" />
+          <element id="library" level="project" name="Maven: org.simplejavamail:simple-java-mail:7.1.1" />
+          <element id="library" level="project" name="Maven: org.simplejavamail:core-module:7.1.1" />
+          <element id="library" level="project" name="Maven: com.sun.mail:jakarta.mail:2.0.1" />
+          <element id="library" level="project" name="Maven: com.sanctionco.jmail:jmail:1.2.1" />
+          <element id="library" level="project" name="Maven: com.github.bbottema:jetbrains-runtime-annotations:1.0.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">
