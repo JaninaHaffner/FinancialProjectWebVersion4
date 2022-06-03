@@ -19,7 +19,7 @@ public class UserRegistrationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String page = getHTMLString(request.getServletContext().getRealPath("/html/registration.jsp"), "");
+        String page = getHTMLString(request.getServletContext().getRealPath("/jsps/registration.jsp"), "");
         response.getWriter().write(page);
 
     }
@@ -34,9 +34,11 @@ public class UserRegistrationServlet extends HttpServlet {
         String fullname = request.getParameter("fullname");
         String preferences = request.getParameter("preferences");
         String updates = request.getParameter("updates");
+        String stockExchange = request.getParameter("stockExchange");
+        String symbols = request.getParameter("symbols");
 
         // put it in a user bean - creating a new instance of the user object
-        User user = new User(username, password, email, fullname, preferences, updates);
+        User user = new User(username, password, email, fullname, preferences, updates, stockExchange, symbols);
 
         // call the application DAO to save the user object to the database.
         ApplicationDao dao = new ApplicationDao();

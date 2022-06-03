@@ -16,8 +16,8 @@ public class ApplicationDao {
 		try {
 			Connection connection = DBConnection.getConnectionToDatabase();
 
-			String insertQuery = "insert into user(username, password, email, fullname, preference, updates) " +
-					"values(?,?,?,?,?,?)";
+			String insertQuery = "insert into user(username, password, email, fullname, preference, updates, stockExchange, symbols) " +
+					"values(?,?,?,?,?,?,?,?)";
 
 			PreparedStatement statement = connection.prepareStatement(insertQuery);
 			statement.setString(1, user.getUsername());
@@ -26,6 +26,8 @@ public class ApplicationDao {
 			statement.setString(4, user.getFullname());
 			statement.setString(5, user.getPreferences());
 			statement.setString(6, user.getUpdates());
+			statement.setString(7, user.getStockExchange());
+			statement.setString(8, user.getSymbols());
 
 			rowsAffected = statement.executeUpdate();
 

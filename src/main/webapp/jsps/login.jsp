@@ -1,3 +1,4 @@
+
 <%--
   Created by IntelliJ IDEA.
   User: janin
@@ -10,6 +11,10 @@
 <head>
     <link rel="stylesheet" href="../css/logStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <br>${errorMessage}
+    <br><br>
+
     <title>Login</title>
 </head>
 <body>
@@ -20,13 +25,19 @@
         <div class="user-details">
             <div class="input-box">
                 <span class="details">Username</span>
-                <input name="username" type="text" placeholder="Enter your username" required>
+                <label>
+                    <input name="username" type="text" placeholder="Enter your username" required>
+                </label>
             </div>
             <div class="input-box">
                 <span class="details">Password</span>
-                <input name="password" type="password" placeholder="Enter your password" required>
+                <label>
+                    <input name="password" type="password" placeholder="Enter your password" required>
+                </label>
             </div>
         </div>
+        <br>${errorMessage}
+        <br><br>
         <div class="button">
             <input type="submit" value="Login">
         </div>
@@ -35,7 +46,6 @@
         </div>
     </form>
 </div>
-
-
 </body>
+
 </html>

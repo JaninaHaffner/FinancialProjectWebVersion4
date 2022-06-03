@@ -9,14 +9,19 @@ public class User {
 	private String fullname;
 	private String preferences;
 	private String updates;
+	private String stockExchange;
+	private String symbols;
 
-	public User(String username, String password, String email, String fullname, String preferences, String updates) {
+	public User(String username, String password, String email, String fullname, String preferences,
+				String updates, String stockExchange, String symbols) {
 		this.username=username;
 		this.password=password;
 		this.email=email;
 		this.fullname=fullname;
 		this.preferences=preferences;
 		this.updates=updates;
+		this.stockExchange=stockExchange;
+		this.symbols=symbols;
 	}
 
 	public String getUsername() {
@@ -56,4 +61,19 @@ public class User {
 		this.updates=updates;
 	}
 
+	public String getStockExchange() {
+		return stockExchange;
+	}
+
+	public void setStockExchange(String stockExchange) {
+		this.stockExchange = stockExchange;
+	}
+
+	public String getSymbols() {
+		return symbols;
+	}
+
+	public void setSymbols(String symbols) {
+		this.symbols = symbols;
+	}
 }
