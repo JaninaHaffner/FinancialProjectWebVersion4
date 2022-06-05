@@ -14,8 +14,8 @@
 <div class="navbar">
     <a href="homepage.jsp">Home</a>
     <a href="newsPage.jsp">News</a>
-    <a href="#">Markets</a>
-    <a href="#">Exchanges</a>
+    <a href="markets.jsp">Markets</a>
+    <a href="exchange.jsp">Exchanges</a>
     <a href="${pageContext.request.contextPath}/Logout" class="right">Logout</a>
 </div>
 <div class="row">
