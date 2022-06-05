@@ -16,6 +16,7 @@
         <a href="#">News</a>
         <a href="#">Markets</a>
         <a href="#">Exchanges</a>
+        <a href="LogOutServlet" class="right">Logout</a>
     </div>
     <div class="row">
         <div class="side"></div>
