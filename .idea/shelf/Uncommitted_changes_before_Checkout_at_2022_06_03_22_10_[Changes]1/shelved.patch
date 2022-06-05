@@ -1,0 +1,365 @@
+Index: src/main/java/dao/ApplicationDao.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package dao;\r\n\r\nimport beans.User;\r\nimport dbConnection.DBConnection;\r\n\r\nimport java.sql.Connection;\r\nimport java.sql.PreparedStatement;\r\nimport java.sql.ResultSet;\r\nimport java.sql.SQLException;\r\n\r\npublic class ApplicationDao {\r\n\r\n\tpublic int registerUser(User user) {\r\n\t\tint rowsAffected;\r\n\r\n\t\ttry {\r\n\t\t\tConnection connection = DBConnection.getConnectionToDatabase();\r\n\r\n\t\t\tString insertQuery = \"insert into user(username, password, email, fullname, preference, updates, stockExchange, symbols) \" +\r\n\t\t\t\t\t\"values(?,?,?,?,?,?,?,?)\";\r\n\r\n\t\t\tPreparedStatement statement = connection.prepareStatement(insertQuery);\r\n\t\t\tstatement.setString(1, user.getUsername());\r\n\t\t\tstatement.setString(2, user.getPassword());\r\n\t\t\tstatement.setString(3, user.getEmail());\r\n\t\t\tstatement.setString(4, user.getFullname());\r\n\t\t\tstatement.setString(5, user.getPreferences());\r\n\t\t\tstatement.setString(6, user.getUpdates());\r\n\t\t\tstatement.setString(7, user.getStockExchange());\r\n\t\t\tstatement.setString(8, user.getSymbols());\r\n\r\n\t\t\trowsAffected = statement.executeUpdate();\r\n\r\n\t\t} catch (SQLException e) {\r\n\t\t\tthrow new RuntimeException(e);\r\n\t\t}\r\n\t\tif (rowsAffected != 0){\r\n\t\t\tSystem.out.println(\"User is registered\");\r\n\t\t}\r\n\t\telse {\r\n\t\t\tSystem.out.println(\"Error!!!\");\r\n\t\t}\r\n\t\treturn rowsAffected;\r\n\t}\r\n\t/* user validation method\r\n\t * get connection to database\r\n\t * write the select query\r\n\t * set parameters with prepared statement\r\n\t * execute the statement and check if user exists\r\n\t * use try catch block to catch exceptions\r\n\t * return boolean for valid user  */\r\n\tpublic boolean validateUser(String username, String password) {\r\n\t\tboolean isValidUser = false;\r\n\t\t\r\n\t\ttry {\r\n\t\t\tConnection connection = DBConnection.getConnectionToDatabase();\r\n\t\t\tString sql = \"select * from user where username=? and password=?\";\r\n\t\t\t\r\n\t\t\tPreparedStatement statement = connection.prepareStatement(sql);\r\n\t\t\tstatement.setString(1, username);\r\n\t\t\tstatement.setString(2, password);\r\n\r\n\t\t\tResultSet set = statement.executeQuery();\r\n\t\t\twhile(set.next()) {\r\n\t\t\t\tisValidUser = true;\r\n\t\t\t}\r\n\t\t}\r\n\t\tcatch (SQLException exception) {\r\n\t\t\texception.printStackTrace();\r\n\t\t}\r\n\t\treturn isValidUser;\r\n\t\r\n\t}\r\n}\r\n\r\n\r\n/*\tpublic List<Stocks> searchStocks(String searchStock){\r\n\t\ttry {\r\n\r\n\t\t\tConnection connection = (Connection) DBConnection.getConnectionToDatabase();\r\n\t\t\tString sql = \"select\";\r\n\t\t\tStatement statement = connection.createStatement();\r\n\t\t\tResultSet set = statement.executeQuery(sql);\r\n\r\n\t\t\twhile(set.next()) {\r\n\r\n\t\t\t}\r\n\t\t\t} catch (SQLException exception) {\r\n\t\t\t\texception.printStackTrace();\r\n\t\t\t}\r\n\t\t\treturn\r\n\t}*/\r\n/* register user method\r\n * get connection to database\r\n * insert query\r\n * set parameters with prepared statement\r\n * execute the statement\r\n * exception handling with try catch block\r\n * return rows affected  */\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/dao/ApplicationDao.java b/src/main/java/dao/ApplicationDao.java
+--- a/src/main/java/dao/ApplicationDao.java	
++++ b/src/main/java/dao/ApplicationDao.java	
+@@ -11,7 +11,7 @@
+ public class ApplicationDao {
+ 
+ 	public int registerUser(User user) {
+-		int rowsAffected;
++		int rowsAffected = 0;
+ 
+ 		try {
+ 			Connection connection = DBConnection.getConnectionToDatabase();
+@@ -32,13 +32,7 @@
+ 			rowsAffected = statement.executeUpdate();
+ 
+ 		} catch (SQLException e) {
+-			throw new RuntimeException(e);
+-		}
+-		if (rowsAffected != 0){
+-			System.out.println("User is registered");
+-		}
+-		else {
+-			System.out.println("Error!!!");
++			return rowsAffected;
+ 		}
+ 		return rowsAffected;
+ 	}
+@@ -66,10 +60,31 @@
+ 			}
+ 		}
+ 		catch (SQLException exception) {
+-			exception.printStackTrace();
++			return isValidUser;
+ 		}
+ 		return isValidUser;
+ 	
++	}
++	public boolean existingUser(String username) {
++		boolean existingValidUser = false;
++
++		try {
++			Connection connection = DBConnection.getConnectionToDatabase();
++			String sql = "select * from user where username=?";
++
++			PreparedStatement statement = connection.prepareStatement(sql);
++			statement.setString(1, username);
++
++			ResultSet set = statement.executeQuery();
++			while(set.next()) {
++				existingValidUser = true;
++			}
++		}
++		catch (SQLException exception) {
++			return existingValidUser;
++		}
++		return existingValidUser;
++
+ 	}
+ }
+ 
+Index: src/main/webapp/jsps/login.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n<%--\r\n  Created by IntelliJ IDEA.\r\n  User: janin\r\n  Date: 2022/05/28\r\n  Time: 17:04\r\n  To change this template use File | Settings | File Templates.\r\n--%>\r\n<%@ page contentType=\"text/html;charset=UTF-8\" %>\r\n<html>\r\n<head>\r\n    <link rel=\"stylesheet\" href=\"../css/logStyle.css\">\r\n    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n\r\n    <br>${errorMessage}\r\n    <br><br>\r\n\r\n    <title>Login</title>\r\n</head>\r\n<body>\r\n<div class=\"container\">\r\n    <a href=\"../index.jsp\"><i class=\"fa fa-home\"></i></a>\r\n    <div class=\"title\">Login</div>\r\n    <form action=\"${pageContext.request.contextPath}/LoginServlet\" method=\"post\">\r\n        <div class=\"user-details\">\r\n            <div class=\"input-box\">\r\n                <span class=\"details\">Username</span>\r\n                <label>\r\n                    <input name=\"username\" type=\"text\" placeholder=\"Enter your username\" required>\r\n                </label>\r\n            </div>\r\n            <div class=\"input-box\">\r\n                <span class=\"details\">Password</span>\r\n                <label>\r\n                    <input name=\"password\" type=\"password\" placeholder=\"Enter your password\" required>\r\n                </label>\r\n            </div>\r\n        </div>\r\n        <br>${errorMessage}\r\n        <br><br>\r\n        <div class=\"button\">\r\n            <input type=\"submit\" value=\"Login\">\r\n        </div>\r\n        <div class=\"link\">\r\n            <p>Don't have an account <a href=\"registration.jsp\">Register now</a></p>\r\n        </div>\r\n    </form>\r\n</div>\r\n</body>\r\n\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/jsps/login.jsp b/src/main/webapp/jsps/login.jsp
+--- a/src/main/webapp/jsps/login.jsp	
++++ b/src/main/webapp/jsps/login.jsp	
+@@ -12,8 +12,10 @@
+     <link rel="stylesheet" href="../css/logStyle.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
++<%--
+     <br>${errorMessage}
+     <br><br>
++--%>
+ 
+     <title>Login</title>
+ </head>
+@@ -22,6 +24,10 @@
+     <a href="../index.jsp"><i class="fa fa-home"></i></a>
+     <div class="title">Login</div>
+     <form action="${pageContext.request.contextPath}/LoginServlet" method="post">
++        <input type="hidden" name="origin" value="${origin}">
++        <c:if test="${not empty errorMessage}">
++            * error: ${errorMessage}
++        </c:if>
+         <div class="user-details">
+             <div class="input-box">
+                 <span class="details">Username</span>
+@@ -36,8 +42,6 @@
+                 </label>
+             </div>
+         </div>
+-        <br>${errorMessage}
+-        <br><br>
+         <div class="button">
+             <input type="submit" value="Login">
+         </div>
+Index: src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.financialprojectwebversion4;\r\n\r\nimport beans.User;\r\nimport dao.ApplicationDao;\r\nimport jakarta.servlet.RequestDispatcher;\r\nimport jakarta.servlet.ServletException;\r\nimport jakarta.servlet.annotation.WebServlet;\r\nimport jakarta.servlet.http.HttpServlet;\r\nimport jakarta.servlet.http.HttpServletRequest;\r\nimport jakarta.servlet.http.HttpServletResponse;\r\n\r\nimport java.io.BufferedReader;\r\nimport java.io.FileReader;\r\nimport java.io.IOException;\r\nimport java.text.MessageFormat;\r\n\r\n@WebServlet(name = \"UserRegistrationServlet\", value = \"/UserRegistrationServlet\")\r\npublic class UserRegistrationServlet extends HttpServlet {\r\n\r\n    @Override\r\n    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {\r\n        String page = getHTMLString(request.getServletContext().getRealPath(\"/jsps/registration.jsp\"), \"\");\r\n        response.getWriter().write(page);\r\n\r\n    }\r\n\r\n    @Override\r\n    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\r\n\r\n        // Get all the form data\r\n        String username = request.getParameter(\"username\");\r\n        String password = request.getParameter(\"password\");\r\n        String email = request.getParameter(\"email\");\r\n        String fullname = request.getParameter(\"fullname\");\r\n        String preferences = request.getParameter(\"preferences\");\r\n        String updates = request.getParameter(\"updates\");\r\n        String stockExchange = request.getParameter(\"stockExchange\");\r\n        String symbols = request.getParameter(\"symbols\");\r\n\r\n        // put it in a user bean - creating a new instance of the user object\r\n        User user = new User(username, password, email, fullname, preferences, updates, stockExchange, symbols);\r\n\r\n        // call the application DAO to save the user object to the database.\r\n        ApplicationDao dao = new ApplicationDao();\r\n        int rows;\r\n        rows = dao.registerUser(user);\r\n\r\n        // information message for user about success or failure of operation\r\n        String infoMessage;\r\n        if(rows==0) {\r\n            RequestDispatcher dispatcher = request.getRequestDispatcher(\"registration.jsp\");\r\n            dispatcher.include(request, response);\r\n            infoMessage = \"Sorry, an error has occurred! Please retry to register.\";\r\n        }\r\n        else {\r\n            RequestDispatcher dispatcher = request.getRequestDispatcher(\"index.jsp\");\r\n            dispatcher.include(request, response);\r\n            infoMessage = \"Success, you are registered!\";\r\n        }\r\n        request.getRequestDispatcher(\"login.jsp\" + infoMessage).forward(request, response);\r\n\r\n       // response.sendRedirect(\"/jsps/logedInPage.jsp\");\r\n        // write the message back to the client browser page\r\n       // String page = getHTMLString(request.getServletContext().getRealPath(\"/jsps/logedInPage.jsp\"), infoMessage);\r\n      //  response.getWriter().write(page);\r\n    }\r\n\r\n    public String getHTMLString(String filePath, String message) throws IOException {\r\n        BufferedReader reader = new BufferedReader(new FileReader(filePath));\r\n        String line;\r\n        StringBuilder buffer = new StringBuilder();\r\n        while((line=reader.readLine()) != null) {\r\n            buffer.append(line);\r\n        }\r\n        reader.close();\r\n        String page = buffer.toString();\r\n\r\n        // append stocks back to page, fill in stock details - replace data in place holders\r\n        page = MessageFormat.format(page, message);\r\n\r\n        return page;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java b/src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java
+--- a/src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java	
++++ b/src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java	
+@@ -8,6 +8,7 @@
+ import jakarta.servlet.http.HttpServlet;
+ import jakarta.servlet.http.HttpServletRequest;
+ import jakarta.servlet.http.HttpServletResponse;
++import jakarta.servlet.http.HttpSession;
+ 
+ import java.io.BufferedReader;
+ import java.io.FileReader;
+@@ -23,11 +24,19 @@
+         response.getWriter().write(page);
+ 
+     }
+-
++    /* Get all the form data for new user
++     * put it in a user bean - creating a new instance of the user object
++     * create instance of the application DAO
++     * check if user all ready exists
++     * save the user object to the database.
++     * information message for user about success or failure of operation
++     * */
+     @Override
+     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+ 
+-        // Get all the form data
++        HttpSession session = request.getSession();
++        String destpage = "/jsps/login.jsp";
++
+         String username = request.getParameter("username");
+         String password = request.getParameter("password");
+         String email = request.getParameter("email");
+@@ -37,32 +46,40 @@
+         String stockExchange = request.getParameter("stockExchange");
+         String symbols = request.getParameter("symbols");
+ 
+-        // put it in a user bean - creating a new instance of the user object
+         User user = new User(username, password, email, fullname, preferences, updates, stockExchange, symbols);
+ 
+-        // call the application DAO to save the user object to the database.
+         ApplicationDao dao = new ApplicationDao();
++
++        boolean valid;
+         int rows;
+-        rows = dao.registerUser(user);
+-
+-        // information message for user about success or failure of operation
+-        String infoMessage;
+-        if(rows==0) {
+-            RequestDispatcher dispatcher = request.getRequestDispatcher("registration.jsp");
+-            dispatcher.include(request, response);
+-            infoMessage = "Sorry, an error has occurred! Please retry to register.";
+-        }
+-        else {
+-            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+-            dispatcher.include(request, response);
+-            infoMessage = "Success, you are registered!";
+-        }
+-        request.getRequestDispatcher("login.jsp" + infoMessage).forward(request, response);
++        String errorMessage;
++
++        valid = dao.existingUser(username);
++        System.out.println(valid);
++        if (valid) {
++            errorMessage = "This user all ready exist, please log in.";
++            session.setAttribute("errorMessage", errorMessage);
++            RequestDispatcher dispatcher = request.getRequestDispatcher(destpage);
++            dispatcher.include(request, response);
++            //  request.getRequestDispatcher("/login,jsp" + errorMessage).forward(request, response);
++        } else {
++            rows = dao.registerUser(user);
++            if (rows == 0) {
++                destpage = "/jsps/registration.jsp";
++                errorMessage = "Sorry, an error has occurred! Please retry to register.";
++                session.setAttribute("errorMessage", errorMessage);
++            } else {
++                errorMessage = "Success, you are registered!";
++                session.setAttribute("errorMessage", errorMessage);
++            }
++            RequestDispatcher dispatcher = request.getRequestDispatcher(destpage);
++            dispatcher.forward(request, response);
+ 
+-       // response.sendRedirect("/jsps/logedInPage.jsp");
+-        // write the message back to the client browser page
+-       // String page = getHTMLString(request.getServletContext().getRealPath("/jsps/logedInPage.jsp"), infoMessage);
+-      //  response.getWriter().write(page);
++            // response.sendRedirect("/jsps/logedInPage.jsp");
++            // write the message back to the client browser page
++            // String page = getHTMLString(request.getServletContext().getRealPath("/jsps/logedInPage.jsp"), errorMessage);
++            //  response.getWriter().write(page);
++        }
+     }
+ 
+     public String getHTMLString(String filePath, String message) throws IOException {
+Index: src/main/java/com/financialprojectwebversion4/LoginServlet.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.financialprojectwebversion4;\r\n\r\nimport dao.ApplicationDao;\r\nimport jakarta.servlet.RequestDispatcher;\r\nimport jakarta.servlet.ServletException;\r\nimport jakarta.servlet.annotation.WebServlet;\r\nimport jakarta.servlet.http.HttpServlet;\r\nimport jakarta.servlet.http.HttpServletRequest;\r\nimport jakarta.servlet.http.HttpServletResponse;\r\nimport jakarta.servlet.http.HttpSession;\r\n\r\nimport java.io.IOException;\r\n\r\n@WebServlet(name = \"LoginServlet\", value = \"/LoginServlet\")\r\npublic class LoginServlet extends HttpServlet {\r\n\r\n\t@Override\r\n\tprotected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {\r\n\t\t// send request to login.jsp resource\r\n\t\tRequestDispatcher dispatcher = req.getRequestDispatcher(\"/jsps/login.jsp\");\r\n\t\tdispatcher.forward(req, resp);\r\n\t}\r\n\t/* get the username from the login form\r\n\t * call DAO for validation logic\r\n\t * check if user is invalid\r\n\t * set up the HTTP session\r\n\t * set the destination page for the response\r\n\t * dispatch request with user or message */\r\n\t@Override\r\n\tprotected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {\r\n\r\n\t\tString username = req.getParameter(\"username\");\r\n\t\tString password = req.getParameter(\"password\");\r\n\r\n\t\tApplicationDao dao = new ApplicationDao();\r\n\t\tboolean isValidUser = dao.validateUser(username, password);\r\n\t\tString destPage = \"/jsps/login.jsp\";\r\n\r\n\t\tif(isValidUser) {\r\n\t\t\tHttpSession session = req.getSession();\r\n\t\t\tsession.setAttribute(\"username\", username);\r\n\t\t\tdestPage = \"/jsps/homepage.jsp\";\r\n\t\t} else {\r\n\t\t\tString errorMessage = \"Invalid credentials, please login again!\";\r\n\t\t\treq.setAttribute(\"errorMessage\", errorMessage);\r\n\t\t}\r\n\t\tRequestDispatcher dispatcher = req.getRequestDispatcher(destPage);\r\n\t\tdispatcher.forward(req, resp);\r\n\t}\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/financialprojectwebversion4/LoginServlet.java b/src/main/java/com/financialprojectwebversion4/LoginServlet.java
+--- a/src/main/java/com/financialprojectwebversion4/LoginServlet.java	
++++ b/src/main/java/com/financialprojectwebversion4/LoginServlet.java	
+@@ -17,6 +17,9 @@
+ 	@Override
+ 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+ 		// send request to login.jsp resource
++		String reference = (String) req.getAttribute("origin");
++		req.setAttribute("origin", reference);
++
+ 		RequestDispatcher dispatcher = req.getRequestDispatcher("/jsps/login.jsp");
+ 		dispatcher.forward(req, resp);
+ 	}
+@@ -28,6 +31,7 @@
+ 	 * dispatch request with user or message */
+ 	@Override
+ 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
++		HttpSession session = req.getSession();
+ 
+ 		String username = req.getParameter("username");
+ 		String password = req.getParameter("password");
+@@ -37,15 +41,14 @@
+ 		String destPage = "/jsps/login.jsp";
+ 
+ 		if(isValidUser) {
+-			HttpSession session = req.getSession();
+ 			session.setAttribute("username", username);
+ 			destPage = "/jsps/homepage.jsp";
+ 		} else {
+ 			String errorMessage = "Invalid credentials, please login again!";
+-			req.setAttribute("errorMessage", errorMessage);
++			session.setAttribute("errorMessage", errorMessage);
+ 		}
+ 		RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
+-		dispatcher.forward(req, resp);
++		dispatcher.include(req, resp);
+ 	}
+ }
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ArtifactsWorkspaceSettings\">\r\n    <artifacts-to-build>\r\n      <artifact name=\"FinancialProjectWebVersion4:war exploded\" />\r\n    </artifacts-to-build>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"a42901e7-0c65-44b5-84ef-79e9b8217fbd\" name=\"Changes\" comment=\"version 4&#10;added EmailSendingServlet.java and EmailUtility.java\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LogOutServlet.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources/ae8f333b-ff84-43ee-9019-75c9b30a378f.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources/ae8f333b-ff84-43ee-9019-75c9b30a378f.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/beans/User.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/beans/User.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/index.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/index.jsp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/jsps/login.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/jsps/login.jsp\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Jsp File\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"LogFilters\">\r\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\r\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\r\n    <option name=\"FILTER_INFO\" value=\"true\" />\r\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\r\n    <option name=\"CUSTOM_FILTER\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"29q4FwUlBMKr1x6s0BKhydw4BnT\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/janin/IdeaProjects/FinancialProjectWebVersion4/src/main/webapp&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;DatabaseDriversLRU&quot;: [\r\n      &quot;mysql&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\janin\\IdeaProjects\\FinancialProjectWebVersion4\\src\\main\\webapp\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\janin\\IdeaProjects\\FinancialProjectWebVersion4\\src\\main\\webapp\" />\r\n      <recent name=\"C:\\Users\\janin\\IdeaProjects\\FinancialProjectWebVersion4\\src\\main\\webapp\\jsps\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"com.financialprojectwebversion4\" />\r\n      <recent name=\"dbConnection\" />\r\n      <recent name=\"dao\" />\r\n      <recent name=\"beans\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Tomcat 10.0.10\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 10.0.10\" ALTERNATIVE_JRE_ENABLED=\"false\">\r\n      <deployment>\r\n        <artifact name=\"FinancialProjectWebVersion4:war exploded\">\r\n          <settings>\r\n            <option name=\"CONTEXT_PATH\" value=\"/FinancialProjectWebVersion4_war_exploded\" />\r\n          </settings>\r\n        </artifact>\r\n      </deployment>\r\n      <server-settings>\r\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"8d9e4f25-8a8b-43c4-9b87-63da3e2d0e87\" />\r\n      </server-settings>\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\r\n      <predefined_log_file id=\"Tomcat Manager\" />\r\n      <predefined_log_file id=\"Tomcat Host Manager\" />\r\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n        <option name=\"BuildArtifacts\" enabled=\"true\">\r\n          <artifact name=\"FinancialProjectWebVersion4:war exploded\" />\r\n        </option>\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"a42901e7-0c65-44b5-84ef-79e9b8217fbd\" name=\"Changes\" comment=\"\" />\r\n      <created>1653827184865</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1653827184865</updated>\r\n      <workItem from=\"1653827186592\" duration=\"28459000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"version 4&#10;working - need to go to logged in page\">\r\n      <created>1653833946685</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1653833946685</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"version 4&#10;working - need to go to logged in page\">\r\n      <created>1654011787796</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654011787796</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"version 4&#10;login working, need to reroute to log in again after registration was done successfully\">\r\n      <created>1654014441651</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654014441651</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"version 4&#10;login working, failed login returns to login page\">\r\n      <created>1654016445976</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654016445976</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"version 4&#10;new item on landing page\">\r\n      <created>1654082184570</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654082184570</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"version 4&#10;new item on landing page top\">\r\n      <created>1654102738578</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654102738578</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"7\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"B1\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"version 4&#10;working - need to go to logged in page\" />\r\n    <MESSAGE value=\"version 4&#10;login working, need to reroute to log in again after registration was done successfully\" />\r\n    <MESSAGE value=\"version 4&#10;login working, failed login returns to login page\" />\r\n    <MESSAGE value=\"version 4&#10;new item on landing page\" />\r\n    <MESSAGE value=\"version 4&#10;new item on landing page top\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"version 4&#10;new item on landing page top\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -9,15 +9,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;added EmailSendingServlet.java and EmailUtility.java">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LogOutServlet.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ae8f333b-ff84-43ee-9019-75c9b30a378f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ae8f333b-ff84-43ee-9019-75c9b30a378f.xml" afterDir="false" />
++    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;logout servlet added.">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/User.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LogOutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LogOutServlet.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/homepage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/homepage.jsp" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/login.jsp" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -178,7 +176,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1654102738578</updated>
+     </task>
+-    <option name="localTasksCounter" value="7" />
++    <task id="LOCAL-00007" summary="version 4&#10;logout servlet added.">
++      <created>1654275373150</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1654275373150</updated>
++    </task>
++    <option name="localTasksCounter" value="8" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -213,6 +218,7 @@
+     <MESSAGE value="version 4&#10;login working, failed login returns to login page" />
+     <MESSAGE value="version 4&#10;new item on landing page" />
+     <MESSAGE value="version 4&#10;new item on landing page top" />
+-    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;new item on landing page top" />
++    <MESSAGE value="version 4&#10;logout servlet added." />
++    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;logout servlet added." />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/dbConnection/DBConnection.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package dbConnection;\r\n\r\n//import com.sun.jdi.connect.spi.Connection;\r\n\r\nimport java.sql.Connection;\r\nimport java.sql.DriverManager;\r\nimport java.sql.SQLException;\r\n\r\npublic class DBConnection {\r\n\t\r\n\t/* method to get connection to database\r\n\t * try catch block to handle exceptions\r\n\t * load the driver class\r\n\t * get the connection using the DriverManager\r\n\t * if statement to check if connection was successful and else to display message if no connection failed.\r\n\t * return the connection  */\r\n\tpublic static Connection getConnectionToDatabase() {\r\n\t\tConnection connection = null;\r\n\t\tString loadDriver = \"com.mysql.jdbc.Driver\";\r\n\t\tString dbURL = \"jdbc:mysql://localhost:3306/financialdb\";\r\n\t\tString dbUserName = \"otheruser\";\r\n\t\tString dbPassword = \"swordfish\";\r\n\t\t\r\n\t\ttry {\r\n\t\t\tClass.forName(loadDriver);\r\n\t\t\tSystem.out.println(\"MySQL JDBC Driver Registered! db1\");\r\n\t\t\t\r\n\t\t\tconnection = DriverManager.getConnection(dbURL,dbUserName,dbPassword);\r\n\t\t}\r\n\t\tcatch (ClassNotFoundException e) {\r\n\t\t\tSystem.out.println(\"MySQL could not connect. db2\");\r\n\t\t\te.printStackTrace();\r\n\t\t}\r\n\t\tcatch (SQLException e) {\r\n\t\t\tSystem.out.println(\"Connection to database failed. db3\");\r\n\t\t\te.printStackTrace();\r\n\t\t}\r\n\t\tif (connection != null) {\r\n\t\t\tSystem.out.println(\"Connection to database established. db4\");\r\n\t\t}\r\n\t\telse {\r\n\t\t\tSystem.out.println(\"Could not connect to database. db5\");\r\n\t\t}\r\n\t\treturn connection;\r\n\t}\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/dbConnection/DBConnection.java b/src/main/java/dbConnection/DBConnection.java
+--- a/src/main/java/dbConnection/DBConnection.java	
++++ b/src/main/java/dbConnection/DBConnection.java	
+@@ -1,7 +1,5 @@
+ package dbConnection;
+ 
+-//import com.sun.jdi.connect.spi.Connection;
+-
+ import java.sql.Connection;
+ import java.sql.DriverManager;
+ import java.sql.SQLException;
+@@ -15,7 +13,7 @@
+ 	 * if statement to check if connection was successful and else to display message if no connection failed.
+ 	 * return the connection  */
+ 	public static Connection getConnectionToDatabase() {
+-		Connection connection = null;
++		Connection connection;
+ 		String loadDriver = "com.mysql.jdbc.Driver";
+ 		String dbURL = "jdbc:mysql://localhost:3306/financialdb";
+ 		String dbUserName = "otheruser";
+@@ -23,23 +21,11 @@
+ 		
+ 		try {
+ 			Class.forName(loadDriver);
+-			System.out.println("MySQL JDBC Driver Registered! db1");
+-			
++
+ 			connection = DriverManager.getConnection(dbURL,dbUserName,dbPassword);
+ 		}
+-		catch (ClassNotFoundException e) {
+-			System.out.println("MySQL could not connect. db2");
+-			e.printStackTrace();
+-		}
+-		catch (SQLException e) {
+-			System.out.println("Connection to database failed. db3");
+-			e.printStackTrace();
+-		}
+-		if (connection != null) {
+-			System.out.println("Connection to database established. db4");
+-		}
+-		else {
+-			System.out.println("Could not connect to database. db5");
++		catch (ClassNotFoundException | SQLException e) {
++			return null;
+ 		}
+ 		return connection;
+ 	}

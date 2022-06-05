@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class ApplicationDao {
 
 	public int registerUser(User user) {
-		int rowsAffected;
+		int rowsAffected = 0;
 
 		try {
 			Connection connection = DBConnection.getConnectionToDatabase();
@@ -30,13 +30,7 @@ public class ApplicationDao {
 			rowsAffected = statement.executeUpdate();
 
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
-		if (rowsAffected != 0){
-			System.out.println("User is registered");
-		}
-		else {
-			System.out.println("Error!!!");
+			return rowsAffected;
 		}
 		return rowsAffected;
 	}
@@ -64,10 +58,31 @@ public class ApplicationDao {
 			}
 		}
 		catch (SQLException exception) {
-			exception.printStackTrace();
+			return isValidUser;
 		}
 		return isValidUser;
 	
+	}
+	public boolean existingUser(String username) {
+		boolean existingValidUser = false;
+
+		try {
+			Connection connection = DBConnection.getConnectionToDatabase();
+			String sql = "select * from user where username=?";
+
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setString(1, username);
+
+			ResultSet set = statement.executeQuery();
+			while(set.next()) {
+				existingValidUser = true;
+			}
+		}
+		catch (SQLException exception) {
+			return existingValidUser;
+		}
+		return existingValidUser;
+
 	}
 }
 

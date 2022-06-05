@@ -1,0 +1,45 @@
+Index: src/main/webapp/jsps/homepage.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" href=\"css/style2.css\">\r\n    <title>Homepage</title>\r\n</head>\r\n<body>\r\n    <div class=\"header\">\r\n       <h1>The Financial Curation</h1>\r\n    </div>\r\n    <div class=\"navbar\">\r\n        <a href=\"#\">Home</a>\r\n        <a href=\"#\">News</a>\r\n        <a href=\"#\">Markets</a>\r\n        <a href=\"#\">Exchanges</a>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"side\"></div>\r\n        <div class=\"main\">\r\n            <script>\r\n                if (typeof(stockdio_events) == \"undefined\") {\r\n                    stockdio_events = true;\r\n                    var stockdio_eventMethod = window.addEventListener ? \"addEventListener\" : \"attachEvent\";\r\n                    var stockdio_eventer = window[stockdio_eventMethod];\r\n                    var stockdio_messageEvent = stockdio_eventMethod === \"attachEvent\" ? \"onmessage\" : \"message\";\r\n                    stockdio_eventer(stockdio_messageEvent, function (e) {\r\n                        if (typeof(e.data) != \"undefined\" && typeof(e.data.method) != \"undefined\") {\r\n                            eval(e.data.method);\r\n                        }\r\n                    },false);\r\n                }\r\n            </script>\r\n            <iframe id='st_726f2915c60a4930b73d054a3c013725' frameBorder='0' scrolling='no' width='100%' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/Ticker?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=JSE&symbols=NPN;HAR;BTI;SBK;GLN&palette=Financial-Light&layoutType=10&onload=st_726f2915c60a4930b73d054a3c013725'>\r\n        \r\n            </iframe>\r\n            <br>\r\n\r\n            <script>\r\n                if (typeof(stockdio_events) == \"undefined\") {\r\n                    stockdio_events = true;\r\n                    var stockdio_eventMethod = window.addEventListener ? \"addEventListener\" : \"attachEvent\";\r\n                    var stockdio_eventer = window[stockdio_eventMethod];\r\n                    var stockdio_messageEvent = stockdio_eventMethod === \"attachEvent\" ? \"onmessage\" : \"message\";\r\n                    stockdio_eventer(stockdio_messageEvent, function (e) {\r\n                        if (typeof(e.data) != \"undefined\" && typeof(e.data.method) != \"undefined\") {\r\n                            eval(e.data.method);\r\n                        }\r\n                    },false);\r\n                }\r\n            </script>\r\n            <iframe id='st_d595a84bc4534e2fb156c3a2f5429e25' frameBorder='0' scrolling='no' width='800' height='100%'\r\n                    src='https://api.stockdio.com/visualization/financial/charts/v1/MarketOverview?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=JSE&showCurrency=true&palette=Financial-Light&onload=st_d595a84bc4534e2fb156c3a2f5429e25'>\r\n        \r\n            </iframe>\r\n\r\n\r\n\r\n\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"footer\">\r\n        <p>Copyright 2022 The Finance Curation. All rights reserved</p>\r\n        <p>Terms of Service | Privacy Policy</p>\r\n    </div>\r\n    \r\n</body>\r\n</html>
+===================================================================
+diff --git a/src/main/webapp/jsps/homepage.jsp b/src/main/webapp/jsps/homepage.jsp
+--- a/src/main/webapp/jsps/homepage.jsp	
++++ b/src/main/webapp/jsps/homepage.jsp	
+@@ -33,7 +33,7 @@
+                     },false);
+                 }
+             </script>
+-            <iframe id='st_726f2915c60a4930b73d054a3c013725' frameBorder='0' scrolling='no' width='100%' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/Ticker?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=JSE&symbols=NPN;HAR;BTI;SBK;GLN&palette=Financial-Light&layoutType=10&onload=st_726f2915c60a4930b73d054a3c013725'>
++            <iframe id='st_726f2915c60a4930b73d054a3c013725' width='100%' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/Ticker?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=JSE&symbols=NPN;HAR;BTI;SBK;GLN&palette=Financial-Light&layoutType=10&onload=st_726f2915c60a4930b73d054a3c013725'>
+         
+             </iframe>
+             <br>
+@@ -51,8 +51,8 @@
+                     },false);
+                 }
+             </script>
+-            <iframe id='st_d595a84bc4534e2fb156c3a2f5429e25' frameBorder='0' scrolling='no' width='800' height='100%'
+-                    src='https://api.stockdio.com/visualization/financial/charts/v1/MarketOverview?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=JSE&showCurrency=true&palette=Financial-Light&onload=st_d595a84bc4534e2fb156c3a2f5429e25'>
++            <iframe id='st_d595a84bc4534e2fb156c3a2f5429e25' width='800' height='100%'
++                    src='https://api.stockdio.com/visualization/financial/charts/v1/MarketOverview?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=${stockExchange}&showCurrency=true&palette=Financial-Light&onload=st_d595a84bc4534e2fb156c3a2f5429e25'>
+         
+             </iframe>
+ 
+Index: src/main/java/com/financialprojectwebversion4/LogOutServlet.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.financialprojectwebversion4;\r\n\r\nimport jakarta.servlet.RequestDispatcher;\r\nimport jakarta.servlet.ServletException;\r\nimport jakarta.servlet.annotation.WebServlet;\r\nimport jakarta.servlet.http.HttpServlet;\r\nimport jakarta.servlet.http.HttpServletRequest;\r\nimport jakarta.servlet.http.HttpServletResponse;\r\nimport jakarta.servlet.http.HttpSession;\r\n\r\nimport java.io.IOException;\r\n\r\n/* Logout servlet removes user attribute and returns user to login page. */\r\n@WebServlet(\"/logout\")\r\npublic class LogOutServlet extends HttpServlet {\r\n\r\n    protected void doGet(HttpServletRequest request, HttpServletResponse response)\r\n            throws ServletException, IOException {\r\n        HttpSession session = request.getSession(false);\r\n        if (session != null) {\r\n            session.removeAttribute(\"user\");\r\n\r\n            RequestDispatcher dispatcher = request.getRequestDispatcher(\"login.jsp\");\r\n            dispatcher.forward(request, response);\r\n        }\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/com/financialprojectwebversion4/LogOutServlet.java b/src/main/java/com/financialprojectwebversion4/LogOutServlet.java
+--- a/src/main/java/com/financialprojectwebversion4/LogOutServlet.java	
++++ b/src/main/java/com/financialprojectwebversion4/LogOutServlet.java	
+@@ -11,7 +11,7 @@
+ import java.io.IOException;
+ 
+ /* Logout servlet removes user attribute and returns user to login page. */
+-@WebServlet("/logout")
++@WebServlet(name= "LogOutServlet", value = "/logout")
+ public class LogOutServlet extends HttpServlet {
+ 
+     protected void doGet(HttpServletRequest request, HttpServletResponse response)

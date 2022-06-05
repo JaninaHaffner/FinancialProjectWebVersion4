@@ -17,41 +17,38 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// send request to login.jsp resource
+		String reference = (String) req.getAttribute("origin");
+		req.setAttribute("origin", reference);
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/jsps/login.jsp");
 		dispatcher.forward(req, resp);
 	}
-	
+	/* get the username from the login form
+	 * call DAO for validation logic
+	 * check if user is invalid
+	 * set up the HTTP session
+	 * set the destination page for the response
+	 * dispatch request with user or message */
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// get the username from the login form
+		HttpSession session = req.getSession();
+
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 
-		// call DAO for validation logic
 		ApplicationDao dao = new ApplicationDao();
 		boolean isValidUser = dao.validateUser(username, password);
-		
-		// check if user is invalid
+		String destPage = "/jsps/login.jsp";
+
 		if(isValidUser) {
-	
-		// set up the HTTP session
-		HttpSession session = req.getSession();
-		
-		// set username as an attribute
-	//	session.getAttribute("username", username);
-		
-		// forward to loged in jsp page
-		req.getRequestDispatcher("/jsps/logedInPage.jsp").forward(req, resp);
-		}
-		else {
+			session.setAttribute("username", username);
+			destPage = "/jsps/homepage.jsp";
+		} else {
 			String errorMessage = "Invalid credentials, please login again!";
-			req.getRequestDispatcher("/jsps/login.jsp").forward(req, resp);
-
-
-		//	String errorMessage = "Invalid credentials, please login again!";
-		//	req.setAttribute("error", errorMessage);
-		//	req.getRequestDispatcher("/login.jsp" + errorMessage).forward(req, resp);
+			session.setAttribute("errorMessage", errorMessage);
 		}
+		RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
+		dispatcher.include(req, resp);
 	}
 }
 

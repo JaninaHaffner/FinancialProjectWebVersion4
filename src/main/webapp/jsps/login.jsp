@@ -20,11 +20,15 @@
         <div class="user-details">
             <div class="input-box">
                 <span class="details">Username</span>
-                <input name="username" type="text" placeholder="Enter your username" required>
+                <label>
+                    <input name="username" type="text" placeholder="Enter your username" required>
+                </label>
             </div>
             <div class="input-box">
                 <span class="details">Password</span>
-                <input name="password" type="password" placeholder="Enter your password" required>
+                <label>
+                    <input name="password" type="password" placeholder="Enter your password" required>
+                </label>
             </div>
         </div>
         <div class="button">
