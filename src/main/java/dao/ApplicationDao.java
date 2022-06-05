@@ -19,6 +19,7 @@ public class ApplicationDao {
 			String insertQuery = "insert into user(username, password, email, fullname, preference, updates, stockExchange, symbols) " +
 					"values(?,?,?,?,?,?,?,?)";
 
+			assert connection != null;
 			PreparedStatement statement = connection.prepareStatement(insertQuery);
 			statement.setString(1, user.getUsername());
 			statement.setString(2, user.getPassword());
@@ -50,7 +51,8 @@ public class ApplicationDao {
 		try {
 			Connection connection = DBConnection.getConnectionToDatabase();
 			String sql = "select * from user where username=? and password=?";
-			
+
+			assert connection != null;
 			PreparedStatement statement = connection.prepareStatement(sql);
 			statement.setString(1, username);
 			statement.setString(2, password);
@@ -66,7 +68,30 @@ public class ApplicationDao {
 		return isValidUser;
 	
 	}
+	public boolean existingUser(String username) {
+		boolean existingValidUser = false;
+
+		try {
+			Connection connection = DBConnection.getConnectionToDatabase();
+			String sql = "select * from user where username=?";
+
+			assert connection != null;
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setString(1, username);
+
+			ResultSet set = statement.executeQuery();
+			while(set.next()) {
+				existingValidUser = true;
+			}
+		}
+		catch (SQLException exception) {
+			return existingValidUser;
+		}
+		return existingValidUser;
+
+	}
 }
+
 
 
 

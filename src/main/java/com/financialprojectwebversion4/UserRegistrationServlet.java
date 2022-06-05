@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -24,12 +25,18 @@ public class UserRegistrationServlet extends HttpServlet {
 
     }
 
-    /* Get all the form data from the registration.jsp page
+    /* Get all the form data for new user
      * put it in a user bean - creating a new instance of the user object
-     * call the application DAO to save the user object to the database.
-     * information message for user about success or failure of operation */
+     * create instance of the application DAO
+     * check if user all ready exists
+     * save the user object to the database.
+     * information message for user about success or failure of operation
+     * */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        HttpSession session = request.getSession();
+        String destpage = "/jsps/login.jsp";
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -43,21 +50,32 @@ public class UserRegistrationServlet extends HttpServlet {
         User user = new User(username, password, email, fullname, preferences, updates, stockExchange, symbols);
 
         ApplicationDao dao = new ApplicationDao();
-        int rows;
-        rows = dao.registerUser(user);
 
-        String infoMessage;
-        if(rows==0) {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("registration.jsp");
+        boolean valid;
+        int rows;
+        String errorMessage;
+
+        valid = dao.existingUser(username);
+        System.out.println(valid);
+        if (valid) {
+            errorMessage = "This user all ready exist, please log in.";
+            session.setAttribute("errorMessage", errorMessage);
+            RequestDispatcher dispatcher = request.getRequestDispatcher(destpage);
             dispatcher.include(request, response);
-            infoMessage = "Sorry, an error has occurred! Please retry to register.";
+            //  request.getRequestDispatcher("/login,jsp" + errorMessage).forward(request, response);
+        } else {
+            rows = dao.registerUser(user);
+            if (rows == 0) {
+                destpage = "/jsps/registration.jsp";
+                errorMessage = "Sorry, an error has occurred! Please retry to register.";
+                session.setAttribute("errorMessage", errorMessage);
+            } else {
+                errorMessage = "Success, you are registered!";
+                session.setAttribute("errorMessage", errorMessage);
+            }
+            RequestDispatcher dispatcher = request.getRequestDispatcher(destpage);
+            dispatcher.forward(request, response);
         }
-        else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
-            dispatcher.include(request, response);
-            infoMessage = "Success, you are registered! Please login.";
-        }
-        request.getRequestDispatcher("login.jsp" + infoMessage).forward(request, response);
     }
 
     public String getHTMLString(String filePath, String message) throws IOException {
