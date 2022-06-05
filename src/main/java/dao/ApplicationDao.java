@@ -32,13 +32,8 @@ public class ApplicationDao {
 			rowsAffected = statement.executeUpdate();
 
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
-		if (rowsAffected != 0){
-			System.out.println("User is registered");
-		}
-		else {
-			System.out.println("Error!!!");
+			rowsAffected = 0;
+			return rowsAffected;
 		}
 		return rowsAffected;
 	}

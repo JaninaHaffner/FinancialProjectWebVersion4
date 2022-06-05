@@ -24,10 +24,13 @@ public class UserRegistrationServlet extends HttpServlet {
 
     }
 
+    /* Get all the form data from the registration.jsp page
+     * put it in a user bean - creating a new instance of the user object
+     * call the application DAO to save the user object to the database.
+     * information message for user about success or failure of operation */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        // Get all the form data
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
@@ -37,15 +40,12 @@ public class UserRegistrationServlet extends HttpServlet {
         String stockExchange = request.getParameter("stockExchange");
         String symbols = request.getParameter("symbols");
 
-        // put it in a user bean - creating a new instance of the user object
         User user = new User(username, password, email, fullname, preferences, updates, stockExchange, symbols);
 
-        // call the application DAO to save the user object to the database.
         ApplicationDao dao = new ApplicationDao();
         int rows;
         rows = dao.registerUser(user);
 
-        // information message for user about success or failure of operation
         String infoMessage;
         if(rows==0) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("registration.jsp");
@@ -53,9 +53,9 @@ public class UserRegistrationServlet extends HttpServlet {
             infoMessage = "Sorry, an error has occurred! Please retry to register.";
         }
         else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
             dispatcher.include(request, response);
-            infoMessage = "Success, you are registered!";
+            infoMessage = "Success, you are registered! Please login.";
         }
         request.getRequestDispatcher("login.jsp" + infoMessage).forward(request, response);
     }
