@@ -36,8 +36,7 @@
                 </label>
             </div>
         </div>
-        <br>${errorMessage}
-        <br><br>
+
         <div class="button">
             <input type="submit" value="Login">
         </div>

@@ -58,11 +58,6 @@ public class UserRegistrationServlet extends HttpServlet {
             infoMessage = "Success, you are registered!";
         }
         request.getRequestDispatcher("login.jsp" + infoMessage).forward(request, response);
-
-       // response.sendRedirect("/jsps/logedInPage.jsp");
-        // write the message back to the client browser page
-       // String page = getHTMLString(request.getServletContext().getRealPath("/jsps/logedInPage.jsp"), infoMessage);
-      //  response.getWriter().write(page);
     }
 
     public String getHTMLString(String filePath, String message) throws IOException {

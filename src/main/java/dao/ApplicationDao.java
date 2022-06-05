@@ -74,31 +74,6 @@ public class ApplicationDao {
 }
 
 
-/*	public List<Stocks> searchStocks(String searchStock){
-		try {
-
-			Connection connection = (Connection) DBConnection.getConnectionToDatabase();
-			String sql = "select";
-			Statement statement = connection.createStatement();
-			ResultSet set = statement.executeQuery(sql);
-
-			while(set.next()) {
-
-			}
-			} catch (SQLException exception) {
-				exception.printStackTrace();
-			}
-			return
-	}*/
-/* register user method
- * get connection to database
- * insert query
- * set parameters with prepared statement
- * execute the statement
- * exception handling with try catch block
- * return rows affected  */
-
-
 
 
 
