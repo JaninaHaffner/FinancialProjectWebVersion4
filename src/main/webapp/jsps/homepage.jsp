@@ -19,7 +19,22 @@
         <a href="LogOutServlet" class="right">Logout</a>
     </div>
     <div class="row">
-        <div class="side"></div>
+        <div class="side">
+            <script>
+   if (typeof(stockdio_events) == "undefined") {
+      stockdio_events = true;
+      var stockdio_eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+      var stockdio_eventer = window[stockdio_eventMethod];
+      var stockdio_messageEvent = stockdio_eventMethod == "attachEvent" ? "onmessage" : "message";
+      stockdio_eventer(stockdio_messageEvent, function (e) {
+         if (typeof(e.data) != "undefined" && typeof(e.data.method) != "undefined") {
+            eval(e.data.method);
+         }
+      },false);
+   }
+</script>
+<iframe id='st_d51489f83c2947cb847dc3186c5df69d' frameBorder='0' scrolling='no' width='100%' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/EconomicNews?app-key=3F3765F6FF284467B14A9241127AF282&includeDescription=false&imageWidth=40&imageHeight=40&palette=Financial-Light&onload=st_d51489f83c2947cb847dc3186c5df69d'></iframe>
+        </div>
         <div class="main">
             <script>
                 if (typeof(stockdio_events) == "undefined") {
