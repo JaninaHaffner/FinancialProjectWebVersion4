@@ -84,6 +84,16 @@
                 </label>
             </div>
         </div>
+      <div class="input-box">
+        <span class="details">Stock Exchange</span>
+        <select name="stockExchange" id="stockExchange">
+            <option value="currencies trading">Currencies Trading</option>
+            <option value="commodities trading">Commodities Trading</option>
+            <option value="crypto">Crypto</option>
+            <option value="futures">Futures</option>
+            <option value="Bonds">Bonds</option>
+         </select>
+      </div>
         <div class="button">
             <input type="submit" value="Register">
 
