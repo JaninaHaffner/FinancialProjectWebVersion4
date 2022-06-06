@@ -9,7 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;check that user does not all ready exist." />
+    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;check that user does not all ready exist.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/beans/UserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/financialprojectwebversion4/LogOutServletTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/financialprojectwebversion4/LoginServletTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/financialprojectwebversion4/UserRegistrationServletTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dbConnection/DBConnectionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style2.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +28,7 @@
       <list>
         <option value="Class" />
         <option value="Jsp File" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -47,20 +56,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/janin/IdeaProjects/FinancialProjectWebVersion4/src/main/webapp&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
+    "last_opened_file_path": "C:/Users/janin/IdeaProjects/FinancialProjectWebVersion4/src/main/webapp"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\janin\IdeaProjects\FinancialProjectWebVersion4\src\main\webapp" />
@@ -69,6 +81,14 @@
       <recent name="C:\Users\janin\IdeaProjects\FinancialProjectWebVersion4\src\main\webapp" />
       <recent name="C:\Users\janin\IdeaProjects\FinancialProjectWebVersion4\src\main\webapp\jsps" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="dbConnection" />
+      <recent name="com.financialprojectwebversion4" />
+      <recent name="beans" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.financialprojectwebversion4" />
       <recent name="dbConnection" />
@@ -76,7 +96,83 @@
       <recent name="beans" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.DBConnectionTest">
+    <configuration name="DBConnectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FinancialProjectWebVersion4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dbConnection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dbConnection" />
+      <option name="MAIN_CLASS_NAME" value="dbConnection.DBConnectionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LogOutServletTest.testLog" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FinancialProjectWebVersion4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.financialprojectwebversion4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.financialprojectwebversion4" />
+      <option name="MAIN_CLASS_NAME" value="com.financialprojectwebversion4.LogOutServletTest" />
+      <option name="METHOD_NAME" value="testLog" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginServletTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FinancialProjectWebVersion4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.financialprojectwebversion4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.financialprojectwebversion4" />
+      <option name="MAIN_CLASS_NAME" value="com.financialprojectwebversion4.LoginServletTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRegistrationServletTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FinancialProjectWebVersion4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.financialprojectwebversion4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.financialprojectwebversion4" />
+      <option name="MAIN_CLASS_NAME" value="com.financialprojectwebversion4.UserRegistrationServletTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FinancialProjectWebVersion4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="beans.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="beans" />
+      <option name="MAIN_CLASS_NAME" value="beans.UserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 10.0.10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.10" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="FinancialProjectWebVersion4:war exploded">
@@ -115,6 +211,15 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DBConnectionTest" />
+        <item itemvalue="JUnit.UserRegistrationServletTest" />
+        <item itemvalue="JUnit.LogOutServletTest.testLog" />
+        <item itemvalue="JUnit.LoginServletTest" />
+        <item itemvalue="JUnit.UserTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -196,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654441536343</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="version 4&#10;check that user does not all ready exist.">
+      <created>1654441893014</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1654441893014</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
