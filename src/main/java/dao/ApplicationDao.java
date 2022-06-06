@@ -3,10 +3,7 @@ package dao;
 import beans.User;
 import dbConnection.DBConnection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class ApplicationDao {
 
@@ -31,6 +28,9 @@ public class ApplicationDao {
 			statement.setString(8, user.getSymbols());
 
 			rowsAffected = statement.executeUpdate();
+
+			connection.close();
+			statement.close();
 
 		} catch (SQLException e) {
 			rowsAffected = 0;
@@ -61,6 +61,8 @@ public class ApplicationDao {
 			while(set.next()) {
 				isValidUser = true;
 			}
+			connection.close();
+			statement.close();
 		}
 		catch (SQLException exception) {
 			exception.printStackTrace();
@@ -68,6 +70,8 @@ public class ApplicationDao {
 		return isValidUser;
 	
 	}
+	/* Check if user all ready exists
+	 *  If so return to login with message else move to register user */
 	public boolean existingUser(String username) {
 		boolean existingValidUser = false;
 
@@ -83,12 +87,47 @@ public class ApplicationDao {
 			while(set.next()) {
 				existingValidUser = true;
 			}
+			connection.close();
+			statement.close();
 		}
 		catch (SQLException exception) {
 			return existingValidUser;
 		}
 		return existingValidUser;
 
+	}
+
+	/* connect to database retrieve current users details and return them
+	*  close all connections */
+	public String userPreferences(String usernameLogged) {
+		String preference = "";
+		String updates = "";
+		String stockExchange = "";
+		String symbols = "";
+
+		try {
+			Connection connection = DBConnection.getConnectionToDatabase();
+			String sql = "select preference, updates, stockExchange, symbols from user where username=?";
+
+			assert connection != null;
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setString(1, usernameLogged);
+
+			ResultSet set = statement.executeQuery();
+			while (set.next()) {
+				preference = set.getString(1);
+				updates = set.getString(2);
+				stockExchange = set.getString(3);
+				symbols = set.getString(4);
+				
+			}
+			connection.close();
+			statement.close();
+
+		} catch (SQLException exception) {
+			exception.printStackTrace();
+		}
+		return preference + updates + stockExchange + symbols;
 	}
 }
 

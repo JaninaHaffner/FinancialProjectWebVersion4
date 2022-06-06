@@ -31,17 +31,33 @@ public class LoginServlet extends HttpServlet {
 
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
+		String preference = "";
+		String updates = "";
+		String stockExchange = "";
+		String symbols = "";
+		String errorMessage;
 
 		ApplicationDao dao = new ApplicationDao();
+		ApplicationDao dao1 = new ApplicationDao();
 		boolean isValidUser = dao.validateUser(username, password);
+		String userinfo = dao1.userPreferences(username);
 		String destPage = "/jsps/login.jsp";
+
+		System.out.println(userinfo);
 
 		if(isValidUser) {
 			HttpSession session = req.getSession();
 			session.setAttribute("username", username);
+			session.setAttribute("preference", preference);
+			session.setAttribute("updates", updates);
+			session.setAttribute("stockExchange", stockExchange);
+			session.setAttribute("symbols", symbols);
+			System.out.println(stockExchange + " + " + symbols);
+			errorMessage = "Details could not be retrieved.";
+			req.setAttribute("errorMessage", errorMessage);
 			destPage = "/jsps/homepage.jsp";
 		} else {
-			String errorMessage = "Invalid credentials, please login again!";
+			errorMessage = "Invalid credentials, please login again!";
 			req.setAttribute("errorMessage", errorMessage);
 		}
 		RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);

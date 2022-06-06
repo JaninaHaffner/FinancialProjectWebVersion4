@@ -9,14 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;check that user does not all ready exist.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/beans/UserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/financialprojectwebversion4/LogOutServletTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/financialprojectwebversion4/LoginServletTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/financialprojectwebversion4/UserRegistrationServletTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dbConnection/DBConnectionTest.java" afterDir="false" />
+    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;added unit tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/homepage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/homepage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/registration.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/registration.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +68,9 @@
   "keyToStringList": {
     "DatabaseDriversLRU": [
       "mysql"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "MySQL"
     ]
   }
 }]]></component>
@@ -96,7 +97,7 @@
       <recent name="beans" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DBConnectionTest">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.10">
     <configuration name="DBConnectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FinancialProjectWebVersion4" />
       <extension name="coverage">
@@ -308,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654441893014</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="version 4&#10;added unit tests">
+      <created>1654508656179</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1654508656179</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,6 +355,7 @@
     <MESSAGE value="version 4&#10;added links on home page to exchange.jsp, newsPage.jsp and markets.jsp" />
     <MESSAGE value="version 4&#10;updated notes" />
     <MESSAGE value="version 4&#10;check that user does not all ready exist." />
-    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;check that user does not all ready exist." />
+    <MESSAGE value="version 4&#10;added unit tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;added unit tests" />
   </component>
 </project>

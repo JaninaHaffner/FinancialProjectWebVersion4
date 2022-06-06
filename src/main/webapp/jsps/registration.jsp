@@ -86,7 +86,7 @@
         </div>
       <div class="input-box">
         <span class="details">Stock Exchange</span>
-        <select name="stockExchange" id="stockExchange">
+          <label for="stockExchange"></label><select name="stockExchange" id="stockExchange">
             <option value="currencies trading">Currencies Trading</option>
             <option value="commodities trading">Commodities Trading</option>
             <option value="crypto">Crypto</option>
