@@ -94,6 +94,13 @@
             <option value="Bonds">Bonds</option>
          </select>
       </div>
+      <div class="input-box">
+          <span class="details">Symbols</span>
+            <select id="symbols" name="symbols">
+
+            </select>
+     </div>
+      
         <div class="button">
             <input type="submit" value="Register">
 
@@ -101,6 +108,43 @@
         <p>Already have an account <a href="../jsps/login.jsp">Login now</a></p>
     </form>
 </div>
+  <script>
+        let dropdown = document.getElementById('symbols');
+        dropdown.length = 0;
+
+        let defaultOption = document.createElement('option');
+        defaultOption.text = 'Choose symbols';
+
+        dropdown.add(defaultOption);
+        dropdown.selectedIndex = 0;
+
+        const url = 'https://financialmodelingprep.com/api/v3/financial-statement-symbol-lists?apikey=9b0d24686886ebb2d95340f1c567e26f';
+
+        const request = new XMLHttpRequest();
+        request.open('GET', url, true);
+
+        request.onload = function(){
+            if(request.status === 200){
+                const data = JSON.parse(request.responseText);
+                let option;
+                for(let i = 0; i < data.length; i++){
+                    option = document.createElement('option');
+                    option.text = data[i];
+                    option.value = data[i];
+                    dropdown.add(option);
+
+                }
+            } else {
+
+            }
+        }
+
+        request.onerror = function(){
+            console.log('An error occured fetching JSON from ' + url);
+        };
+
+        request.send();
+    </script>
 
 <a href="${pageContext.request.contextPath}/jsps/homepage.jsp"></a>
 </body>
