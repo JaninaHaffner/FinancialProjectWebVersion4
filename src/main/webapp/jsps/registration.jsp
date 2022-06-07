@@ -100,7 +100,9 @@
 
             </select>
      </div>
-      
+     <%
+        String syms[] = request.getParameterValues("symbols");
+      %>
         <div class="button">
             <input type="submit" value="Register">
 
