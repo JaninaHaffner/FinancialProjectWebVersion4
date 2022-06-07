@@ -96,7 +96,7 @@
       </div>
       <div class="input-box">
           <span class="details">Symbols</span>
-            <select id="symbols" name="symbols">
+            <select id="symbols" name="symbols" multiple>
 
             </select>
      </div>
