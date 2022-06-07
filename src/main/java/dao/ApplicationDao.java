@@ -100,6 +100,8 @@ public class ApplicationDao {
 	/* connect to database retrieve current users details and return them
 	*  close all connections */
 	public String userPreferences(String usernameLogged) {
+		String fullname = "";
+		String email = "";
 		String preference = "";
 		String updates = "";
 		String stockExchange = "";
@@ -107,7 +109,7 @@ public class ApplicationDao {
 
 		try {
 			Connection connection = DBConnection.getConnectionToDatabase();
-			String sql = "select preference, updates, stockExchange, symbols from user where username=?";
+			String sql = "select fullname, email, preference, updates, stockExchange, symbols from user where username=?";
 
 			assert connection != null;
 			PreparedStatement statement = connection.prepareStatement(sql);
@@ -115,10 +117,12 @@ public class ApplicationDao {
 
 			ResultSet set = statement.executeQuery();
 			while (set.next()) {
-				preference = set.getString(1);
-				updates = set.getString(2);
-				stockExchange = set.getString(3);
-				symbols = set.getString(4);
+				fullname = set.getString(1);
+				email = set.getString(2);
+				preference = set.getString(3);
+				updates = set.getString(4);
+				stockExchange = set.getString(5);
+				symbols = set.getString(6);
 				
 			}
 			connection.close();
@@ -127,7 +131,7 @@ public class ApplicationDao {
 		} catch (SQLException exception) {
 			exception.printStackTrace();
 		}
-		return preference + updates + stockExchange + symbols;
+		return fullname + "," + email + "," + preference + "," +  updates + "," +  stockExchange + "," +  symbols;
 	}
 }
 

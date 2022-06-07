@@ -10,7 +10,7 @@
 <body>
 <div class="header">
     <h1>The Financial Curation</h1>
-    <br> ${username}
+
 </div>
 <div class="navbar">
     <a href="homepage.jsp">Home</a>
@@ -72,7 +72,7 @@
                 },false);
             }
         </script>
-        <iframe id='st_89d5f55da3d0437b824fe93458dc161a' width='800' height='100%'
+        <iframe id='st_89d5f55da3d0437b824fe93458dc161a' width='100%' height='100%'
                 src='https://api.stockdio.com/visualization/financial/charts/v1/QuoteBoard?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=${stockExchange}&symbols=${symbols};&includeVolume=true&palette=Financial-Light&title=Watch%20List&onload=st_89d5f55da3d0437b824fe93458dc161a'>
 
         </iframe>
