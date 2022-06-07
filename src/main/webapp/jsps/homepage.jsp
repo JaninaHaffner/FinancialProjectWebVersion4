@@ -16,7 +16,7 @@
     <a href="homepage.jsp">Home</a>
     <a href="newsPage.jsp">News</a>
     <a href="markets.jsp">Markets</a>
-    <a href="exchange.jsp">Exchanges</a>
+    <a href="profile.jsp">Profile</a>
     <a href="${pageContext.request.contextPath}/Logout" class="right">Logout</a>
 </div>
 <div class="row">
