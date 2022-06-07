@@ -96,12 +96,12 @@
       </div>
       <div class="input-box">
           <span class="details">Symbols</span>
-            <select id="symbols" name="symbols" multiple>
+          <label for="symbols"></label><select id="symbols" name="symbols" multiple>
 
             </select>
      </div>
      <%
-        String syms[] = request.getParameterValues("symbols");
+        String[] syms = request.getParameterValues("symbols");
       %>
         <div class="button">
             <input type="submit" value="Register">
@@ -142,7 +142,7 @@
         }
 
         request.onerror = function(){
-            console.log('An error occured fetching JSON from ' + url);
+            console.log('An error occurred fetching JSON from ' + url);
         };
 
         request.send();
