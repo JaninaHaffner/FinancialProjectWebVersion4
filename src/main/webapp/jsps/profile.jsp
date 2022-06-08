@@ -60,7 +60,7 @@
                           <label for="emailAddress">Email Address</label>
                         </div>
                         <div class="col-75">
-                          <input type="text" id="email" name="email" placeholder="Your email address..">
+                          <input type="text" id="emailAddress" name="email" placeholder="Your email address..">
                         </div>
                       </div>
                       <div class="row">
@@ -73,26 +73,26 @@
                       </div>
                       <div class="row">
                         <div class="col-25">
-                          <label for="updateFrequency">Preferences</label>
+                          <label for="browser">Preferences</label>
                         </div>
                         <div class="col-75">
                           <input type="radio" id="browser" name="preferences" value="browser">
-                          <label for="daily">Browser</label>
+                          <label for="browser">Browser</label>
                           <input type="radio" id="email" name="preferences" value="email">
-                          <label for="daily">Email</label>
+                          <label for="email">Email</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-25">
-                          <label for="updateFrequency">Update Frequency</label>
+                          <label for="daily">Update Frequency</label>
                         </div>
                         <div class="col-75">
                           <input type="radio" id="daily" name="updates" value="daily">
                           <label for="daily">Daily</label>
                           <input type="radio" id="weekly" name="updates" value="weekly">
-                          <label for="daily">Weekly</label>
+                          <label for="weekly">Weekly</label>
                           <input type="radio" id="monthly" name="updates" value="monthly">
-                          <label for="daily">Monthly</label>
+                          <label for="monthly">Monthly</label>
                         </div>
                       </div>
                       <div class="row">
@@ -167,7 +167,7 @@
         }
 
         request.onerror = function(){
-            console.log('An error occured fetching JSON from ' + url);
+            console.log('An error occurred fetching JSON from ' + url);
         };
 
         request.send();

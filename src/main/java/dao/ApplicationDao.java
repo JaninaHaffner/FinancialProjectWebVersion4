@@ -4,8 +4,6 @@ import beans.User;
 import dbConnection.DBConnection;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ApplicationDao {
 	String username = "";
@@ -16,10 +14,8 @@ public class ApplicationDao {
 	String updates = "";
 	String stockExchange = "";
 	String symbols = "";
-	User user;
 	int rows;
 	ResultSet userInfo;
-	User userBean;
 	Connection connection;
 	String querySQL;
 	PreparedStatement statement;
@@ -126,20 +122,22 @@ public class ApplicationDao {
 			PreparedStatement statement = connection.prepareStatement(sql);
 			statement.setString(1, user);
 
-			userInfo = statement.executeQuery(sql);
-			if(userInfo.next()) {
-				fullname = userInfo.getString("fullname");
-				email = userInfo.getString("email");
-				preference = userInfo.getString("preference");
-				updates = userInfo.getString("updates");
-				stockExchange = userInfo.getString("stockExchange");
-				symbols = userInfo.getString("symbols");
+			userInfo = statement.executeQuery();
+			while (userInfo.next()) {
+				fullname = userInfo.getString(1);
+				email = userInfo.getString(2);
+				preference = userInfo.getString(3);
+				updates = userInfo.getString(4);
+				stockExchange = userInfo.getString(5);
+				symbols = userInfo.getString(6);
+
 			}
 			statement.close();
 			connection.close();
 		} catch (SQLException e) {
 			return null;
 		}
+		System.out.println("fullname" + fullname);
 		return fullname + "," + email + "," + preference + "," + updates + "," + stockExchange + "," + symbols;
 	}
 	public int userUpdates(String user, String fullname, String email, String preference, String updates, String stockExchange, String symbols) {

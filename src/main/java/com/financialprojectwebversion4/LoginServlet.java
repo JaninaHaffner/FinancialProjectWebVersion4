@@ -10,7 +10,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Objects;
 
 @WebServlet(name = "LoginServlet", value = "/LoginServlet")
@@ -33,19 +32,21 @@ public class LoginServlet extends HttpServlet {
 
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
-		String fullname = "";
-		String email = "";
-		String preference = "";
-		String updates = "";
-		String stockExchange = "";
-		String symbols = "";
+		String fullname;
+		String email;
+		String preference;
+		String updates;
+		String stockExchange;
+		String symbols;
+		String destPage;
 		String errorMessage;
-
 		ApplicationDao dao = new ApplicationDao();
-		ApplicationDao dao1 = new ApplicationDao();
-		boolean isValidUser = dao.validateUser(username, password);
-		String userinfo = dao1.userPreferences(username);
-		String destPage = "/jsps/login.jsp";
+		boolean isValidUser;
+		String userinfo;
+
+		isValidUser = dao.validateUser(username, password);
+		userinfo = dao.userPreferences(username);
+		destPage = "/jsps/login.jsp";
 
 		String[] items = userinfo.split(",");
 
