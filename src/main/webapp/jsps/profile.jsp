@@ -23,44 +23,28 @@
             <div class="card">
                 <h1>User Profile</h1>
                 <img src="../images/usericon.png" alt="" style="width:100%">
-                <h3>Full Name</h3>
-                <h3>Username</h3>
-                <h3>Email Address</h3>
-                <h3>Password</h3>
-                <h3>Update Frequency</h3>
-                <h3>Preferences</h3>
-                <h3>Stock Exchange</h3>
-                <h3>Symbols</h3>
+                <h3>Username: ${username}</h3>
+                <h3>Password: ${password}</h3>
+                <h3>Email Address: ${email}</h3>
+                <h3>Full Name: ${fullname} </h3>
+                <h3>Preferences: ${preferences}</h3>
+                <h3>Update Frequency: ${updates}</h3>
+                <h3>Stock Exchange: ${stockExchange}</h3>
+                <h3>Symbols: ${symbols}</h3>
                 <button onClick="showForm()">Update Profile</button>
             </div>
         </div>
 
         <div class="main">
             <div class="container">
-                <form id="form" action="${pageContext.request.contextPath}/UpdateServlet" method="get" style=>
+                <form id="form" action="" style=>
                     <h1>Update User Profile</h1>
-                    <div class="row">
-                        <div class="col-25">
-                          <label for="fullname">Full Name</label>
-                        </div>
-                        <div class="col-75">
-                          <input type="text" id="fullname" name="fulltname" placeholder=${fullname}>
-                        </div>
-                      </div>
                       <div class="row">
                         <div class="col-25">
                           <label for="username">Username</label>
                         </div>
                         <div class="col-75">
                           <input type="text" id="username" name="username" placeholder="Your username..">
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-25">
-                          <label for="emailAddress">Email Address</label>
-                        </div>
-                        <div class="col-75">
-                          <input type="text" id="emailAddress" name="email" placeholder=${email}>
                         </div>
                       </div>
                       <div class="row">
@@ -73,31 +57,47 @@
                       </div>
                       <div class="row">
                         <div class="col-25">
-                          <label for="daily">Update Frequency - Your current setting is ${updates}</label>
+                          <label for="emailAddress">Email Address</label>
+                        </div>
+                        <div class="col-75">
+                          <input type="text" id="email" name="email" placeholder="Your email address..">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                          <label for="fullname">Full name</label>
+                        </div>
+                        <div class="col-75">
+                          <input type="text" id="fullname" name="fullname" placeholder="Your fullname..">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                          <label for="updateFrequency">Preferences</label>
+                        </div>
+                        <div class="col-75">
+                          <input type="radio" id="browser" name="preferences" value="browser">
+                          <label for="daily">Browser</label>
+                          <input type="radio" id="email" name="preferences" value="email">
+                          <label for="daily">Email</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                          <label for="updateFrequency">Update Frequency</label>
                         </div>
                         <div class="col-75">
                           <input type="radio" id="daily" name="updates" value="daily">
                           <label for="daily">Daily</label>
                           <input type="radio" id="weekly" name="updates" value="weekly">
-                          <label for="weekly">Weekly</label>
+                          <label for="daily">Weekly</label>
                           <input type="radio" id="monthly" name="updates" value="monthly">
-                          <label for="monthly">Monthly</label>
+                          <label for="daily">Monthly</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-25">
-                          <label for="browser">Preferences - Your current setting is ${preference}</label>
-                        </div>
-                        <div class="col-75">
-                          <input type="radio" id="browser" name="preferences" value="browser">
-                          <label for="browser">Browser</label>
-                          <input type="radio" id="email" name="preferences" value="email">
-                          <label for="email">Email</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-25">
-                          <label for="stockExchange">Stock Exchange - Your current preference is ${stockExchange}</label>
+                          <label for="stockExchange">Stock Exchange</label>
                         </div>
                         <div class="col-75">
                             <select name="stockExchange" id="stockExchange">
@@ -121,7 +121,7 @@
                       </div>
                       <br>
                       <div class="row">
-                          <input formaction="/UpdateServlet" formmethod="post" type="submit" value="Update">
+                          <input type="submit" value="Update">
                       </div>
                 </form>
             </div>
