@@ -4,20 +4,37 @@ import beans.User;
 import dbConnection.DBConnection;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ApplicationDao {
+	String username = "";
+	String password = "";
+	String email = "";
+	String fullname = "";
+	String preference = "";
+	String updates = "";
+	String stockExchange = "";
+	String symbols = "";
+	User user;
+	int rows;
+	ResultSet userInfo;
+	User userBean;
+	Connection connection;
+	String querySQL;
+	PreparedStatement statement;
 
 	public int registerUser(User user) {
 		int rowsAffected;
 
 		try {
-			Connection connection = DBConnection.getConnectionToDatabase();
+			connection = DBConnection.getConnectionToDatabase();
 
-			String insertQuery = "insert into user(username, password, email, fullname, preference, updates, stockExchange, symbols) " +
+			querySQL = "insert into user(username, password, email, fullname, preference, updates, stockExchange, symbols) " +
 					"values(?,?,?,?,?,?,?,?)";
 
 			assert connection != null;
-			PreparedStatement statement = connection.prepareStatement(insertQuery);
+			statement = connection.prepareStatement(querySQL);
 			statement.setString(1, user.getUsername());
 			statement.setString(2, user.getPassword());
 			statement.setString(3, user.getEmail());
@@ -49,11 +66,11 @@ public class ApplicationDao {
 		boolean isValidUser = false;
 		
 		try {
-			Connection connection = DBConnection.getConnectionToDatabase();
-			String sql = "select * from user where username=? and password=?";
+			connection = DBConnection.getConnectionToDatabase();
+			querySQL = "select * from user where username=? and password=?";
 
 			assert connection != null;
-			PreparedStatement statement = connection.prepareStatement(sql);
+			statement = connection.prepareStatement(querySQL);
 			statement.setString(1, username);
 			statement.setString(2, password);
 
@@ -65,7 +82,7 @@ public class ApplicationDao {
 			statement.close();
 		}
 		catch (SQLException exception) {
-			exception.printStackTrace();
+			return false;
 		}
 		return isValidUser;
 	
@@ -76,11 +93,11 @@ public class ApplicationDao {
 		boolean existingValidUser = false;
 
 		try {
-			Connection connection = DBConnection.getConnectionToDatabase();
-			String sql = "select * from user where username=?";
+			connection = DBConnection.getConnectionToDatabase();
+			querySQL = "select * from user where username=?";
 
 			assert connection != null;
-			PreparedStatement statement = connection.prepareStatement(sql);
+			statement = connection.prepareStatement(querySQL);
 			statement.setString(1, username);
 
 			ResultSet set = statement.executeQuery();
@@ -99,39 +116,56 @@ public class ApplicationDao {
 
 	/* connect to database retrieve current users details and return them
 	*  close all connections */
-	public String userPreferences(String usernameLogged) {
-		String fullname = "";
-		String email = "";
-		String preference = "";
-		String updates = "";
-		String stockExchange = "";
-		String symbols = "";
+	public String userPreferences(String user) {
 
 		try {
 			Connection connection = DBConnection.getConnectionToDatabase();
-			String sql = "select fullname, email, preference, updates, stockExchange, symbols from user where username=?";
+			String sql = "select fullname, email, preference, updates, stockExchange, symbols from user  where username=?";
 
 			assert connection != null;
 			PreparedStatement statement = connection.prepareStatement(sql);
-			statement.setString(1, usernameLogged);
+			statement.setString(1, user);
 
-			ResultSet set = statement.executeQuery();
-			while (set.next()) {
-				fullname = set.getString(1);
-				email = set.getString(2);
-				preference = set.getString(3);
-				updates = set.getString(4);
-				stockExchange = set.getString(5);
-				symbols = set.getString(6);
-				
+			userInfo = statement.executeQuery(sql);
+			if(userInfo.next()) {
+				fullname = userInfo.getString("fullname");
+				email = userInfo.getString("email");
+				preference = userInfo.getString("preference");
+				updates = userInfo.getString("updates");
+				stockExchange = userInfo.getString("stockExchange");
+				symbols = userInfo.getString("symbols");
 			}
-			connection.close();
 			statement.close();
-
-		} catch (SQLException exception) {
-			exception.printStackTrace();
+			connection.close();
+		} catch (SQLException e) {
+			return null;
 		}
-		return fullname + "," + email + "," + preference + "," +  updates + "," +  stockExchange + "," +  symbols;
+		return fullname + "," + email + "," + preference + "," + updates + "," + stockExchange + "," + symbols;
+	}
+	public int userUpdates(String user, String fullname, String email, String preference, String updates, String stockExchange, String symbols) {
+
+		try {
+			connection = DBConnection.getConnectionToDatabase();
+			querySQL = "update user set fullname=?, email=?, preference=?, updates=?, stockExchange=?, symbols=? where username=?";
+
+			assert connection != null;
+			statement = connection.prepareStatement(querySQL);
+			statement.setString(1, fullname);
+			statement.setString(2, email);
+			statement.setString(3,preference);
+			statement.setString(4,updates);
+			statement.setString(5,stockExchange);
+			statement.setString(6,symbols);
+			statement.setString(7,user);
+
+			rows = statement.executeUpdate();
+
+			statement.close();
+			connection.close();
+		} catch (SQLException e) {
+			return 0;
+		}
+		return rows;
 	}
 }
 

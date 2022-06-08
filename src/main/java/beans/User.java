@@ -24,6 +24,15 @@ public class User {
 		this.symbols=symbols;
 	}
 
+	public User() {
+		this.email=getEmail();
+		this.fullname=getFullname();
+		this.preferences=getPreferences();
+		this.updates=getUpdates();
+		this.stockExchange=getStockExchange();
+		this.symbols=getSymbols();
+	}
+
 	public String getUsername() {
 		return username;
 	}

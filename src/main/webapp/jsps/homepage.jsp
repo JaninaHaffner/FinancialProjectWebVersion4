@@ -19,6 +19,9 @@
     <a href="profile.jsp">Profile</a>
     <a href="${pageContext.request.contextPath}/Logout" class="right">Logout</a>
 </div>
+
+<br>${errorMessage}
+<br>
 <div class="row">
     <div class="side">
         <script>

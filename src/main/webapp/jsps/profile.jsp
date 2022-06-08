@@ -37,14 +37,14 @@
 
         <div class="main">
             <div class="container">
-                <form id="form" action="" style=>
+                <form id="form" action="${pageContext.request.contextPath}/UpdateServlet" method="get" style=>
                     <h1>Update User Profile</h1>
                     <div class="row">
                         <div class="col-25">
                           <label for="fullname">Full Name</label>
                         </div>
                         <div class="col-75">
-                          <input type="text" id="fullname" name="fulltname" placeholder="Your fullname..">
+                          <input type="text" id="fullname" name="fulltname" placeholder=${fullname}>
                         </div>
                       </div>
                       <div class="row">
@@ -60,7 +60,7 @@
                           <label for="emailAddress">Email Address</label>
                         </div>
                         <div class="col-75">
-                          <input type="text" id="email" name="email" placeholder="Your email address..">
+                          <input type="text" id="emailAddress" name="email" placeholder=${email}>
                         </div>
                       </div>
                       <div class="row">
@@ -73,31 +73,31 @@
                       </div>
                       <div class="row">
                         <div class="col-25">
-                          <label for="updateFrequency">Update Frequency</label>
+                          <label for="daily">Update Frequency - Your current setting is ${updates}</label>
                         </div>
                         <div class="col-75">
                           <input type="radio" id="daily" name="updates" value="daily">
                           <label for="daily">Daily</label>
                           <input type="radio" id="weekly" name="updates" value="weekly">
-                          <label for="daily">Weekly</label>
+                          <label for="weekly">Weekly</label>
                           <input type="radio" id="monthly" name="updates" value="monthly">
-                          <label for="daily">Monthly</label>
+                          <label for="monthly">Monthly</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-25">
-                          <label for="updateFrequency">Preferences</label>
+                          <label for="browser">Preferences - Your current setting is ${preference}</label>
                         </div>
                         <div class="col-75">
                           <input type="radio" id="browser" name="preferences" value="browser">
-                          <label for="daily">Browser</label>
+                          <label for="browser">Browser</label>
                           <input type="radio" id="email" name="preferences" value="email">
-                          <label for="daily">Email</label>
+                          <label for="email">Email</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col-25">
-                          <label for="stockExchange">Stock Exchange</label>
+                          <label for="stockExchange">Stock Exchange - Your current preference is ${stockExchange}</label>
                         </div>
                         <div class="col-75">
                             <select name="stockExchange" id="stockExchange">
@@ -121,7 +121,7 @@
                       </div>
                       <br>
                       <div class="row">
-                          <input type="submit" value="Update">
+                          <input formaction="/UpdateServlet" formmethod="post" type="submit" value="Update">
                       </div>
                 </form>
             </div>
