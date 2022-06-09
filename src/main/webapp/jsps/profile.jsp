@@ -12,10 +12,10 @@
         <h1>The Financial Curation</h1>
     </div>
     <div class="navbar">
-        <a href="homepage.jsp">Home</a>
-        <a href="newsPage.jsp">News</a>
-        <a href="markets.jsp">Markets</a>
-        <a href="profile.jsp">Profile</a>
+        <a href="${pageContext.request.contextPath}/jsps/homepage.jsp">Home</a>
+        <a href="${pageContext.request.contextPath}/jsps/newsPage.jsp">News</a>
+        <a href="${pageContext.request.contextPath}/jsps/markets.jsp">Markets</a>
+        <a href="${pageContext.request.contextPath}/jsps/profile.jsp">Profile</a>
         <a href="${pageContext.request.contextPath}/Logout" class="right">Logout</a>
     </div>
     <div class="row">
@@ -37,7 +37,7 @@
 
         <div class="main">
             <div class="container">
-                <form id="form" action="" style=>
+                <form id="form" action="${pageContext.request.contextPath}/UpdateServlet" style=>
                     <h1>Update User Profile</h1>
                       <div class="row">
                         <div class="col-25">

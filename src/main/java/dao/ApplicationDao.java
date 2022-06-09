@@ -81,7 +81,7 @@ public class ApplicationDao {
 			return false;
 		}
 		return isValidUser;
-	
+
 	}
 	/* Check if user all ready exists
 	 *  If so return to login with message else move to register user */

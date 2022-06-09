@@ -43,21 +43,22 @@ public class LoginServlet extends HttpServlet {
 		ApplicationDao dao = new ApplicationDao();
 		boolean isValidUser;
 		String userinfo;
+		String[] items;
 
 		isValidUser = dao.validateUser(username, password);
-		userinfo = dao.userPreferences(username);
 		destPage = "/jsps/login.jsp";
 
-		String[] items = userinfo.split(",");
-
-		fullname = items[0];
-		email = items[1];
-		preference = items[2];
-		updates = items[3];
-		stockExchange = items[4];
-		symbols = items[5];
-
 		if(isValidUser) {
+			userinfo = dao.userPreferences(username);
+			items = userinfo.split(",");
+
+			fullname = items[0];
+			email = items[1];
+			preference = items[2];
+			updates = items[3];
+			stockExchange = items[4];
+			symbols = items[5];
+
 			HttpSession session = req.getSession();
 			session.setAttribute("username", username);
 			session.setAttribute("fullname", fullname);
