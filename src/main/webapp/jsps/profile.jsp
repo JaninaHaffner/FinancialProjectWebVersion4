@@ -100,12 +100,8 @@
                           <label for="stockExchange">Stock Exchange</label>
                         </div>
                         <div class="col-75">
-                            <select name="stockExchange" id="stockExchange">
-                                <option value="currencies trading">Currencies Trading</option>
-                                <option value="commodities trading">Commodities Trading</option>
-                                <option value="crypto">Crypto</option>
-                                <option value="futures">Futures</option>
-                                <option value="Bonds">Bonds</option>
+                            <select name="stockExchange" id="stockExchange" onchange="getStockExchange()">
+                                
                             </select>
                         </div>
                       </div>
@@ -114,9 +110,7 @@
                           <label for="symbols">Symbols</label>
                         </div>
                         <div class="col-75">
-                            <select id="symbols" name="symbols" multiple>
-
-                            </select>
+                            <textarea id="symbols"></textarea>
                         </div>
                       </div>
                       <br>
@@ -136,16 +130,16 @@
     </div>
 
     <script>
-        let dropdown = document.getElementById('symbols');
+        let dropdown = document.getElementById('stockExchange');
         dropdown.length = 0;
 
         let defaultOption = document.createElement('option');
-        defaultOption.text = 'Choose symbols';
+        defaultOption.text = 'Choose stock exchange';
 
         dropdown.add(defaultOption);
         dropdown.selectedIndex = 0;
 
-        const url = 'https://financialmodelingprep.com/api/v3/financial-statement-symbol-lists?apikey=9b0d24686886ebb2d95340f1c567e26f';
+        const url = 'https://eodhistoricaldata.com/api/exchanges-list/?api_token=62a1cee7bbc9e0.26407688&fmt=json';
 
         const request = new XMLHttpRequest();
         request.open('GET', url, true);
@@ -156,8 +150,8 @@
                 let option;
                 for(let i = 0; i < data.length; i++){
                     option = document.createElement('option');
-                    option.text = data[i];
-                    option.value = data[i];
+                    option.text = data[i].Name;
+                    option.value = data[i].Code;
                     dropdown.add(option);
 
                 }
@@ -167,10 +161,46 @@
         }
 
         request.onerror = function(){
-            console.log('An error occurred fetching JSON from ' + url);
+            console.log('An error occured fetching JSON from ' + url);
         };
 
         request.send();
+
+
+
+        function getStockExchange(){
+            let list1 = document.getElementById('stockExchange');
+            let textarea = document.getElementById('symbols');
+            let exchangeCode = list1.options[list1.selectedIndex].value;
+
+            const url = `https://eodhistoricaldata.com/api/exchange-symbol-list/${exchangeCode}?fmt=json&api_token=62a1cee7bbc9e0.26407688`;
+
+            const request = new XMLHttpRequest();
+            request.open('GET', url, true);
+
+            request.onload = function(){
+            if(request.status === 200){
+                const data = JSON.parse(request.responseText);
+                let symbols = '';
+                for(let i = 0; i < data.length; i++){
+                    symbols += data[i].Code + ",";
+                    textarea.value = symbols;
+                }
+               
+            } else {
+
+            }
+        }
+        
+
+        request.onerror = function(){
+            console.log('An error occured fetching JSON from ' + url);
+        };
+
+        request.send();
+        
+        }
+       
 
         function hideForm(){
             document.getElementById("form").style.display = "none";
