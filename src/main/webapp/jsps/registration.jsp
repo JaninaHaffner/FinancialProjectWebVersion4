@@ -92,12 +92,9 @@
       </div>
       <div class="input-box">
         <span class="details">Symbols</span>
-        <textarea id="mySymbols"></textarea>
+        <textarea id="Symbols"></textarea>
         
      </div>
-     <%
-        String[] syms = request.getParameterValues("symbols");
-      %>
         <div class="button">
             <input type="submit" value="Register">
 
@@ -144,13 +141,9 @@
     
      function getStockExchange(){
             let list1 = document.getElementById('stockExchange');
-            let list2 = document.getElementById('symbols');
+            let textarea = document.getElementById('symbols');
             let exchangeCode = list1.options[list1.selectedIndex].value;
-
-            list2.options.length = 0;
-
-            let syms = [];
-
+       
             const url = `https://eodhistoricaldata.com/api/exchange-symbol-list/${exchangeCode}?fmt=json&api_token=62a1cee7bbc9e0.26407688`;
 
             const request = new XMLHttpRequest();
@@ -159,9 +152,10 @@
             request.onload = function(){
             if(request.status === 200){
                 const data = JSON.parse(request.responseText);
-                let option;
+                let symbols = '';
                 for(let i = 0; i < data.length; i++){
-                    syms.push(data[i].Code);
+                  symbols += data[i].Code + ",";
+                  textarea.value = symbols;
                 }
             } else {
 
