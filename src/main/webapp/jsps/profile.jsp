@@ -16,7 +16,7 @@
         <a href="${pageContext.request.contextPath}/jsps/newsPage.jsp">News</a>
         <a href="${pageContext.request.contextPath}/jsps/markets.jsp">Markets</a>
         <a href="${pageContext.request.contextPath}/jsps/profile.jsp">Profile</a>
-        <a href="${pageContext.request.contextPath}/Logout" class="right">Logout</a>
+        <a href="${pageContext.request.contextPath}/LoginServlet" class="right">Logout</a>
     </div>
     <div class="row">
         <div class="side">
@@ -27,7 +27,7 @@
                 <h3>Password: ${password}</h3>
                 <h3>Email Address: ${email}</h3>
                 <h3>Full Name: ${fullname} </h3>
-                <h3>Preferences: ${preferences}</h3>
+                <h3>Preferences: ${preference}</h3>
                 <h3>Update Frequency: ${updates}</h3>
                 <h3>Stock Exchange: ${stockExchange}</h3>
                 <h3>Symbols: ${symbols}</h3>
@@ -60,9 +60,9 @@
                           <label for="browser">Preferences</label>
                         </div>
                         <div class="col-75">
-                          <input type="radio" id="browser" name="preferences" value="browser">
+                          <input type="radio" id="browser" name="preference" value="browser">
                           <label for="browser">Browser</label>
-                          <input type="radio" id="email" name="preferences" value="email">
+                          <input type="radio" id="email" name="preference" value="email">
                           <label for="email">Email</label>
                         </div>
                       </div>

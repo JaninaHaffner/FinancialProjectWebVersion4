@@ -21,12 +21,12 @@ public class UpdateServlet extends HttpServlet {
     }
 
     /* Get all the form data for updates
-     * put it in a user bean - creating a new instance of the user object
-     * create instance of the application DAO
-     * check if user all ready exists
-     * save the user object to the database.
-     * information message for user about success or failure of operation
-     * */
+     * Get user current information from DAO
+     * Check if new information is not null - if it is null replace with current information
+     * Update information using DAO to update database
+     * Check if database error occurred, if so return to home page with appropriate message
+     * If no errors, retrieve new user information and return the new user information to the home page with appropriate message
+    */
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -60,14 +60,6 @@ public class UpdateServlet extends HttpServlet {
         stockExchange = request.getParameter("stockExchange");
         symbols = request.getParameter("symbols");
 
-        System.out.println(username);
-        System.out.println(fullname);
-        System.out.println(email);
-        System.out.println(preference);
-        System.out.println(updates);
-        System.out.println(stockExchange);
-        System.out.println(symbols);
-
         userinfo = dao.userPreferences(username);
         items = userinfo.split(",");
 
@@ -92,6 +84,24 @@ public class UpdateServlet extends HttpServlet {
             errorMessage = "Your details were not updated! Please retry.";
             session.setAttribute("errorMessage", errorMessage);
         } else {
+            userinfo = dao.userPreferences(username);
+            items = userinfo.split(",");
+
+            fullname = items[0];
+            email = items[1];
+            preference = items[2];
+            updates = items[3];
+            stockExchange = items[4];
+            symbols = items[5];
+
+            session.setAttribute("username", username);
+            session.setAttribute("fullname", fullname);
+            session.setAttribute("email", email);
+            session.setAttribute("preference", preference);
+            session.setAttribute("updates", updates);
+            session.setAttribute("stockExchange", stockExchange);
+            session.setAttribute("symbols", symbols);
+
             destpage = "/jsps/homepage.jsp";
             errorMessage = "Your details were successfully updated.";
             session.setAttribute("errorMessage", errorMessage);

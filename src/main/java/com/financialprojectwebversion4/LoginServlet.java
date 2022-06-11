@@ -18,12 +18,15 @@ public class LoginServlet extends HttpServlet {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/jsps/login.jsp");
 		dispatcher.forward(req, resp);
 	}
-	/* get the username from the login form
-	 * call DAO to validate user credentials
-	 * set up the HTTP session
-	 * get all user's info and set to variables to use in jsp pages and other methods
-	 * set the destination page for the response
-	 * dispatch request with user info or message */
+	/* Get the username and password from the login form
+	 * Call DAO to validate user credentials is valid
+	 * If user is valid, set username as a cookie to use in other pages, set cookie age.
+	 * Call DAO to retrieve user information to use in jsp pages and update servlet.
+	 * Split returned info and set up HTTP session, then set user info as attributes.
+	 * If user preference is browser, forward user to homepage.jsp, with all attributes.
+	 * If user preference is email, call email servlet, send info to user via email and forward user to emailHomePage.jsp
+	 * Set the destination page for the response
+	 * Dispatch request with user info or message */
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -76,6 +79,7 @@ public class LoginServlet extends HttpServlet {
 			if(Objects.equals(preference, "Browser")){
 				resp.addCookie(usernameCookie);
 				destPage = "/jsps/homepage.jsp";
+
 			} else {
 				// send email from here.
 				String messageBody = """  

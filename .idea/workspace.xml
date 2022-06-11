@@ -9,19 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;added update servlet to profile.jsp">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_02_18_53_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_02_18_53__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;updates on UpdateServlet.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UpdateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/homepage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/homepage.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/registration.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/registration.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/financialprojectwebversion4/LoginServletTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/financialprojectwebversion4/UserRegistrationServletTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +257,7 @@
       <workItem from="1653827186592" duration="28459000" />
       <workItem from="1654766112951" duration="110000" />
       <workItem from="1654766524971" duration="35565000" />
-      <workItem from="1654936630983" duration="602000" />
+      <workItem from="1654936630983" duration="5037000" />
     </task>
     <task id="LOCAL-00001" summary="version 4&#10;working - need to go to logged in page">
       <created>1653833946685</created>
@@ -390,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654771826989</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="version 4&#10;updates on UpdateServlet.java">
+      <created>1654938353458</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1654938353458</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,6 +436,7 @@
     <MESSAGE value="version 4&#10;added EmailServlet.java" />
     <MESSAGE value="version 4&#10;added update servlet" />
     <MESSAGE value="version 4&#10;added update servlet to profile.jsp" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;added update servlet to profile.jsp" />
+    <MESSAGE value="version 4&#10;updates on UpdateServlet.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;updates on UpdateServlet.java" />
   </component>
 </project>
