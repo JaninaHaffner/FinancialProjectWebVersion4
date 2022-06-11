@@ -41,22 +41,6 @@
                     <h1>Update User Profile</h1>
                       <div class="row">
                         <div class="col-25">
-                          <label for="username">Username</label>
-                        </div>
-                        <div class="col-75">
-                          <input type="text" id="username" name="username" placeholder="Your username..">
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-25">
-                          <label for="password">Password</label>
-                        </div>
-                        <div class="col-75">
-                          <input type="password" id="password" name="password" placeholder="Your password..">
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-25">
                           <label for="emailAddress">Email Address</label>
                         </div>
                         <div class="col-75">
