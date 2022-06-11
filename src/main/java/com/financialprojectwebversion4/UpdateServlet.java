@@ -4,55 +4,20 @@ import dao.ApplicationDao;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.*;
+
 import java.io.IOException;
+import java.util.Objects;
 
 
 @WebServlet(name = "UpdateServlet", value = "/UpdateServlet")
 public class UpdateServlet extends HttpServlet {
 
-    String username;
-    String password;
-    String fullname = "";
-    String email = "";
-    String preference = "";
-    String updates = "";
-    String stockExchange = "";
-    String symbols = "";
-    String errorMessage;
-    String userinfo;
-    String destpage = "/jsps/login.jsp";
-    int updateCompleted;
-    boolean isValidUser;
-    String[] items;
-    ApplicationDao dao;
-    HttpSession session;
-
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        dao = new ApplicationDao();
-
-        isValidUser = dao.validateUser(username, password);
-
-        if (isValidUser) {
-            userinfo = dao.userPreferences(username);
-
-            items = userinfo.split(",");
-            fullname = items[0];
-            email = items[1];
-            preference = items[2];
-            updates = items[3];
-            stockExchange = items[4];
-            symbols = items[5];
-
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/jsps/profile.jsp");
-            dispatcher.forward(req, resp);
-        }
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/jsps/profile.jsp");
+        dispatcher.forward(req, resp);
     }
 
     /* Get all the form data for updates
@@ -66,15 +31,59 @@ public class UpdateServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        session = request.getSession();
-        session.setAttribute("username", username);
-        session.setAttribute("password", password);
-        session.setAttribute("fullname", fullname);
-        session.setAttribute("email", email);
-        session.setAttribute("preference", preference);
-        session.setAttribute("updates", updates);
-        session.setAttribute("stockExchange", stockExchange);
-        session.setAttribute("symbols", symbols);
+        String username;
+        String fullname;
+        String email;
+        String preference;
+        String updates;
+        String stockExchange;
+        String symbols;
+        String fullnameCurrent;
+        String emailCurrent;
+        String preferenceCurrent;
+        String updatesCurrent;
+        String stockExchangeCurrent;
+        String symbolsCurrent;
+        String errorMessage;
+        String userinfo;
+        String destpage;
+        int updateCompleted;
+        String[] items;
+        ApplicationDao dao = new ApplicationDao();
+        HttpSession session = request.getSession();
+
+        username = (String) session.getAttribute("username");
+        fullname = request.getParameter("fullname");
+        email = request.getParameter("email");
+        preference = request.getParameter("preference");
+        updates = request.getParameter("updates");
+        stockExchange = request.getParameter("stockExchange");
+        symbols = request.getParameter("symbols");
+
+        System.out.println(username);
+        System.out.println(fullname);
+        System.out.println(email);
+        System.out.println(preference);
+        System.out.println(updates);
+        System.out.println(stockExchange);
+        System.out.println(symbols);
+
+        userinfo = dao.userPreferences(username);
+        items = userinfo.split(",");
+
+        fullnameCurrent = items[0];
+        emailCurrent = items[1];
+        preferenceCurrent = items[2];
+        updatesCurrent = items[3];
+        stockExchangeCurrent = items[4];
+        symbolsCurrent = items[5];
+
+        if (Objects.equals(fullname, "")) { fullname = fullnameCurrent;}
+        if (Objects.equals(email, "")) { email = emailCurrent;}
+        if (preference == null) { preference = preferenceCurrent;}
+        if (updates == null) { updates = updatesCurrent;}
+        if (Objects.equals(stockExchange, "Choose stock exchange")) { stockExchange = stockExchangeCurrent;}
+        if (symbols == null) { symbols = symbolsCurrent;}
 
         updateCompleted = dao.userUpdates(username, fullname, email, preference, updates, stockExchange, symbols);
 

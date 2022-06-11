@@ -37,14 +37,14 @@
 
         <div class="main">
             <div class="container">
-                <form id="form" action="${pageContext.request.contextPath}/UpdateServlet" style=>
+                <form id="form" action="${pageContext.request.contextPath}/UpdateServlet" method="post" style=>
                     <h1>Update User Profile</h1>
                       <div class="row">
                         <div class="col-25">
                           <label for="emailAddress">Email Address</label>
                         </div>
                         <div class="col-75">
-                          <input type="text" id="emailAddress" name="email" placeholder="Your email address..">
+                          <input type="text" id="emailAddress" name="email" placeholder=${email}>
                         </div>
                       </div>
                       <div class="row">
@@ -52,7 +52,7 @@
                           <label for="fullname">Full name</label>
                         </div>
                         <div class="col-75">
-                          <input type="text" id="fullname" name="fullname" placeholder="Your fullname..">
+                          <input type="text" id="fullname" name="fullname" placeholder=${fullname}>
                         </div>
                       </div>
                       <div class="row">
@@ -123,7 +123,7 @@
         dropdown.add(defaultOption);
         dropdown.selectedIndex = 0;
 
-        const url = 'https://eodhistoricaldata.com/api/exchanges-list/?api_token=62a1cee7bbc9e0.26407688&fmt=json';
+        const url = 'https://eodhistoricaldata.com/api/exchanges-list/?api_token=62a3b3fbe45951.51740298&fmt=json';
 
         const request = new XMLHttpRequest();
         request.open('GET', url, true);
@@ -145,7 +145,7 @@
         }
 
         request.onerror = function(){
-            console.log('An error occured fetching JSON from ' + url);
+            console.log('An error occurred fetching JSON from ' + url);
         };
 
         request.send();
@@ -157,7 +157,7 @@
             let textarea = document.getElementById('symbols');
             let exchangeCode = list1.options[list1.selectedIndex].value;
 
-            const url = `https://eodhistoricaldata.com/api/exchange-symbol-list/${exchangeCode}?fmt=json&api_token=62a1cee7bbc9e0.26407688`;
+            const url = `https://eodhistoricaldata.com/api/exchange-symbol-list/${exchangeCode}?fmt=json&api_token=62a3b3fbe45951.51740298`;
 
             const request = new XMLHttpRequest();
             request.open('GET', url, true);
@@ -178,7 +178,7 @@
         
 
         request.onerror = function(){
-            console.log('An error occured fetching JSON from ' + url);
+            console.log('An error occurred fetching JSON from ' + url);
         };
 
         request.send();

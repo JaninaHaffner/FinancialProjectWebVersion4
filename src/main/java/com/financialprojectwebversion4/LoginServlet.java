@@ -4,10 +4,7 @@ import dao.ApplicationDao;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.*;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -30,8 +27,8 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String username = req.getParameter("username");
-		String password = req.getParameter("password");
+		String username;
+		String password;
 		String fullname;
 		String email;
 		String preference;
@@ -44,11 +41,19 @@ public class LoginServlet extends HttpServlet {
 		boolean isValidUser;
 		String userinfo;
 		String[] items;
+		Cookie usernameCookie;
+
+		username = req.getParameter("username");
+		password = req.getParameter("password");
 
 		isValidUser = dao.validateUser(username, password);
 		destPage = "/jsps/login.jsp";
 
 		if(isValidUser) {
+
+			usernameCookie = new Cookie("username", username);
+			usernameCookie.setMaxAge(365*24*60*60);
+
 			userinfo = dao.userPreferences(username);
 			items = userinfo.split(",");
 
@@ -69,6 +74,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("symbols", symbols);
 
 			if(Objects.equals(preference, "Browser")){
+				resp.addCookie(usernameCookie);
 				destPage = "/jsps/homepage.jsp";
 			} else {
 				// send email from here.

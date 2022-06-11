@@ -112,7 +112,7 @@
         dropdown.add(defaultOption);
         dropdown.selectedIndex = 0;
 
-        const url = ''https://eodhistoricaldata.com/api/exchanges-list/?api_token=62a1cee7bbc9e0.26407688&fmt=json'';
+        const url = 'https://eodhistoricaldata.com/api/exchanges-list/?api_token=62a1cee7bbc9e0.26407688&fmt=json';
 
         const request = new XMLHttpRequest();
         request.open('GET', url, true);
@@ -163,7 +163,7 @@
         }
 
         request.onerror = function(){
-            console.log('An error occured fetching JSON from ' + url);
+            console.log('An error occurred fetching JSON from ' + url);
         };
 
         request.send();

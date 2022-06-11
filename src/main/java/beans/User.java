@@ -25,6 +25,7 @@ public class User {
 	}
 
 	public User() {
+		this.username=getUsername();
 		this.email=getEmail();
 		this.fullname=getFullname();
 		this.preferences=getPreferences();

@@ -3,6 +3,7 @@ package dao;
 import beans.User;
 import dbConnection.DBConnection;
 
+import java.beans.Beans;
 import java.sql.*;
 
 public class ApplicationDao {
@@ -19,6 +20,7 @@ public class ApplicationDao {
 	Connection connection;
 	String querySQL;
 	PreparedStatement statement;
+	String userProfileInfo;
 
 	public int registerUser(User user) {
 		int rowsAffected;
@@ -137,7 +139,6 @@ public class ApplicationDao {
 		} catch (SQLException e) {
 			return null;
 		}
-		System.out.println("fullname" + fullname);
 		return fullname + "," + email + "," + preference + "," + updates + "," + stockExchange + "," + symbols;
 	}
 	public int userUpdates(String user, String fullname, String email, String preference, String updates, String stockExchange, String symbols) {
@@ -150,11 +151,11 @@ public class ApplicationDao {
 			statement = connection.prepareStatement(querySQL);
 			statement.setString(1, fullname);
 			statement.setString(2, email);
-			statement.setString(3,preference);
-			statement.setString(4,updates);
-			statement.setString(5,stockExchange);
-			statement.setString(6,symbols);
-			statement.setString(7,user);
+			statement.setString(3, preference);
+			statement.setString(4, updates);
+			statement.setString(5, stockExchange);
+			statement.setString(6, symbols);
+			statement.setString(7, user);
 
 			rows = statement.executeUpdate();
 
