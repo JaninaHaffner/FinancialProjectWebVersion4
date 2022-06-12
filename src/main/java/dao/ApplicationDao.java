@@ -3,12 +3,9 @@ package dao;
 import beans.User;
 import dbConnection.DBConnection;
 
-import java.beans.Beans;
 import java.sql.*;
 
 public class ApplicationDao {
-	String username = "";
-	String password = "";
 	String email = "";
 	String fullname = "";
 	String preference = "";

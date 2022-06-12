@@ -1,71 +1,79 @@
 package com.financialprojectwebversion4;
 
-import dao.ApplicationDao;
+import email.SendEmail;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import java.io.*;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Properties;
-import javax.activation.*;
+
 import javax.mail.*;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 
 @WebServlet(name = "EmailServlet", value = "/EmailServlet")
 public class EmailServlet extends HttpServlet {
 
-    public void sendEmail (String fullname, String toEmail, String messageBody) {
-        String to = toEmail;
-        String from = "janinahaffner@gmail.com";
-        String host = "localhost";
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Properties properties = System.getProperties();
-        properties.setProperty("mail.smtp.host", host);
+        String errorMessage = "";
+        String destPage = "/jsps/profile.jsp";
+        String username;
+        String fullname;
+        String email;
+        String preference;
+        String updates;
+        String stockExchange;
+        String symbols;
 
-    }
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        resp.setContentType("text/jsp");
+        PrintWriter out = resp.getWriter();
+        HttpSession session = req.getSession();
 
-    }
+        email = req.getParameter("email");
+        fullname = req.getParameter("fullname");
+        String subject = "Financial Curation Report for " + fullname;
+        String message = req.getParameter("message");
+        username = (String) session.getAttribute("username");
+        preference = (String) session.getAttribute("preference");
+        updates = (String) session.getAttribute("updates");
+        stockExchange = (String) session.getAttribute("stockExchange");
+        symbols = (String) session.getAttribute("symbols");
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-        String to = "email";
-        String from = "janinahaffner@gmail.com";
-        String host = "localhost";
-
-        Properties properties = System.getProperties();
-        properties.setProperty("mail.smtp.host", host);
-
-        Session session = Session.getDefaultInstance(properties);
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-
-        try {
-            MimeMessage emailMessage = new MimeMessage(session);
-
-            emailMessage.setFrom(new InternetAddress(from));
-            emailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-            emailMessage.setSubject("Financial Curation Report for {fullname}");
-            emailMessage.setContent(" ", "");
-
-            Transport.send(emailMessage);
-            String title = "Send Email";
-            String res = "Sent message successfully";
-            String docType = "....";
-
-            out.println(docType + "html tags and code");
+        session.setAttribute("username", username);
+        session.setAttribute("fullname", fullname);
+        session.setAttribute("email", email);
+        session.setAttribute("preference", preference);
+        session.setAttribute("updates", updates);
+        session.setAttribute("stockExchange", stockExchange);
+        session.setAttribute("symbols", symbols);
 
 
-        } catch (MessagingException e) {
-            throw new RuntimeException(e);
+        SendEmail mail = new SendEmail();
+        boolean mailSent = mail.SendMail(email, subject, message);
+
+        if (mailSent) {
+            errorMessage = "Your information was sent to your email.";
+            session.setAttribute("errorMessage", errorMessage);
+        } else {
+            errorMessage = "An error occurred, we were un able to send your email!";
+            session.setAttribute("errorMessage", errorMessage);
         }
-    }
-
-    public void destroy() {
+        RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
+        dispatcher.forward(req, resp);
     }
 }

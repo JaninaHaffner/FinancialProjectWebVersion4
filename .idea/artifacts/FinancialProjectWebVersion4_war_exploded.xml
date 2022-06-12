@@ -14,6 +14,8 @@
           <element id="module-output" name="FinancialProjectWebVersion4" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.sun.mail:jakarta.mail:2.0.1" />
+          <element id="library" level="project" name="Maven: com.sun.activation:jakarta.activation:2.0.1" />
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-frontend-jaxrs:3.5.2" />
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-core:3.5.2" />
           <element id="library" level="project" name="Maven: org.glassfish.jaxb:jaxb-runtime:2.3.5" />
@@ -31,7 +33,6 @@
           <element id="library" level="project" name="Maven: jakarta.jws:jakarta.jws-api:2.1.0" />
           <element id="library" level="project" name="Maven: jakarta.xml.soap:jakarta.xml.soap-api:1.4.2" />
           <element id="library" level="project" name="Maven: jakarta.activation:jakarta.activation-api:1.2.2" />
-          <element id="library" level="project" name="Maven: com.sun.activation:jakarta.activation:1.2.2" />
           <element id="library" level="project" name="Maven: com.sun.xml.messaging.saaj:saaj-impl:1.5.3" />
           <element id="library" level="project" name="Maven: org.jvnet.staxex:stax-ex:1.8.3" />
           <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1" />
@@ -56,6 +57,20 @@
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.19.4" />
           <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.6.2" />
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: com.mailgun:mailgun-java:1.0.0" />
+          <element id="library" level="project" name="Maven: io.github.openfeign:feign-core:11.8" />
+          <element id="library" level="project" name="Maven: io.github.openfeign.form:feign-form:3.8.0" />
+          <element id="library" level="project" name="Maven: io.github.openfeign:feign-jackson:11.8" />
+          <element id="library" level="project" name="Maven: io.github.openfeign:feign-slf4j:11.8" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-simple:1.7.36" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.2" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.12.0" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-collections4:4.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">
