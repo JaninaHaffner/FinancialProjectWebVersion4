@@ -10,27 +10,20 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Properties;
 
-import javax.mail.*;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
-
+/* Email servlet with doPost method
+ * Set content type to jsp, and get request session
+ * Get all information from jsp and set as attributes
+ * Call SendEmail class to send the email to the user
+ * If the mail was sent successfully, send user to the email homepage with all attributes and message
+ * Else return error message with user to homepage.     */
 @WebServlet(name = "EmailServlet", value = "/EmailServlet")
 public class EmailServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String errorMessage = "";
+        String errorMessage;
         String destPage = "/jsps/profile.jsp";
         String username;
         String fullname;
@@ -41,7 +34,6 @@ public class EmailServlet extends HttpServlet {
         String symbols;
 
         resp.setContentType("text/jsp");
-        PrintWriter out = resp.getWriter();
         HttpSession session = req.getSession();
 
         email = req.getParameter("email");

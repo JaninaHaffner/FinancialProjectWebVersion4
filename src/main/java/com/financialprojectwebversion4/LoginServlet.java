@@ -42,7 +42,6 @@ public class LoginServlet extends HttpServlet {
 		String errorMessage;
 		ApplicationDao dao = new ApplicationDao();
 		boolean isValidUser;
-		boolean mailSent;
 		String userinfo;
 		String[] items;
 		Cookie usernameCookie;

@@ -17,8 +17,12 @@ public class ApplicationDao {
 	Connection connection;
 	String querySQL;
 	PreparedStatement statement;
-	String userProfileInfo;
 
+	/* Get connecting to database
+	 * set sql query to insert information form registration form in to user table 
+	 * prepared statement to insert information
+	 * execute statement and close connections.
+	 * return amount of rows affected. */
 	public int registerUser(User user) {
 		int rowsAffected;
 
@@ -138,6 +142,12 @@ public class ApplicationDao {
 		}
 		return fullname + "," + email + "," + preference + "," + updates + "," + stockExchange + "," + symbols;
 	}
+	
+	/* Connect to database
+	 * Prepare sql query 
+	 * Prepare prepared statement
+	 * Execute update to edit the information in the sql database.
+	 * Close connections and return rows affected. */
 	public int userUpdates(String user, String fullname, String email, String preference, String updates, String stockExchange, String symbols) {
 
 		try {

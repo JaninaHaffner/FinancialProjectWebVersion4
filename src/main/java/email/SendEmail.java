@@ -9,13 +9,16 @@ import javax.mail.internet.MimeMessage;
 import java.util.Date;
 import java.util.Properties;
 
+/* Set up mail properties and calls authentication class
+ * Then gets a session and compile and sends the email
+ * Return boolean to say if mail was sent or not. */
 public class SendEmail {
 
     public boolean SendMail(String to, String subject, String msgBody) {
 
         String usernameFrom = "janinahaffner@gmail.com";
         String passwordFrom = "Janinahaf12";
-        boolean mailStatus = false;
+        boolean mailStatus;
         Properties properties = new Properties();
         properties.put("mail.smtp.host", "smtp.gmail.com");
         properties.put("mail.smtp.socketFactory.port", "465");
@@ -26,7 +29,7 @@ public class SendEmail {
         authentication.getPasswordAuthentication();
         properties.put("mail.debug", "true");
 
-        Session session = (Session) Session.getInstance(properties, authentication);
+        Session session = Session.getInstance(properties, authentication);
 
         try {
             Message message = new MimeMessage(session);

@@ -10,20 +10,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.text.MessageFormat;
 
 @WebServlet(name = "UserRegistrationServlet", value = "/UserRegistrationServlet")
 public class UserRegistrationServlet extends HttpServlet {
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String page = getHTMLString(request.getServletContext().getRealPath("/jsps/registration.jsp"), "");
-        response.getWriter().write(page);
-
-    }
 
     /* Get all the form data for new user
      * put it in a user bean - creating a new instance of the user object
@@ -76,21 +66,5 @@ public class UserRegistrationServlet extends HttpServlet {
             RequestDispatcher dispatcher = request.getRequestDispatcher(destpage);
             dispatcher.forward(request, response);
         }
-    }
-
-    public String getHTMLString(String filePath, String message) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(filePath));
-        String line;
-        StringBuilder buffer = new StringBuilder();
-        while((line=reader.readLine()) != null) {
-            buffer.append(line);
-        }
-        reader.close();
-        String page = buffer.toString();
-
-        // append stocks back to page, fill in stock details - replace data in place holders
-        page = MessageFormat.format(page, message);
-
-        return page;
     }
 }
