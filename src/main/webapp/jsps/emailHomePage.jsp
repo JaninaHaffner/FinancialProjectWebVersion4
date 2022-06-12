@@ -26,7 +26,7 @@
         ${stockExchange}
         ${symbols}
     </form>
-
+</div>
     <form name="message" action="${pageContext.request.contextPath}/EmailServlet" method="post" hidden="hidden" >
 <div class="row">
     <div class="side">
@@ -92,7 +92,6 @@
     </div>
 </div>
     </form>
-
 
 </body>
 </html>
