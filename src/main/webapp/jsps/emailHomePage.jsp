@@ -27,7 +27,15 @@
         ${symbols}
     </form>
 </div>
-    <form name="message" action="${pageContext.request.contextPath}/EmailServlet" method="post" hidden="hidden" >
+<div>
+    <p></p>
+</div>
+
+<div class="navbar">
+    <a href="${pageContext.request.contextPath}/jsps/profile.jsp">Profile</a>
+    <a href="${pageContext.request.contextPath}/Logout" class="right">Logout</a>
+</div>
+
 <div class="row">
     <div class="side">
         <script>
@@ -91,8 +99,11 @@
 
     </div>
 </div>
-    </form>
+
+<div class="footer">
+    <p>Copyright 2022 The Finance Curation. All rights reserved</p>
+    <p>Terms of Service | Privacy Policy</p>
+</div>
 
 </body>
 </html>
-

@@ -81,6 +81,8 @@ public class LoginServlet extends HttpServlet {
 				destPage = "/jsps/homepage.jsp";
 
 			} else {
+				EmailServlet emailSend = new EmailServlet();
+				System.out.println(emailSend);
 				destPage = "/jsps/emailHomePage.jsp";
 			}
 		} else {

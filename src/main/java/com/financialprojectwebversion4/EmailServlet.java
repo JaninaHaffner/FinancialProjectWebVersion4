@@ -20,6 +20,13 @@ import java.io.IOException;
 @WebServlet(name = "EmailServlet", value = "/EmailServlet")
 public class EmailServlet extends HttpServlet {
 
+/*
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    }
+*/
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -32,6 +39,7 @@ public class EmailServlet extends HttpServlet {
         String updates;
         String stockExchange;
         String symbols;
+        String message = "test to see if email is working";
 
         resp.setContentType("text/jsp");
         HttpSession session = req.getSession();
@@ -39,7 +47,7 @@ public class EmailServlet extends HttpServlet {
         email = req.getParameter("email");
         fullname = req.getParameter("fullname");
         String subject = "Financial Curation Report for " + fullname;
-        String message = req.getParameter("message");
+       // String message = req.getParameter("message");
         username = (String) session.getAttribute("username");
         preference = (String) session.getAttribute("preference");
         updates = (String) session.getAttribute("updates");

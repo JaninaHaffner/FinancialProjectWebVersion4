@@ -9,16 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;emailHomePage.jsp updated">
-      <change afterPath="$PROJECT_DIR$/src/test/java/dao/ApplicationDaoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;updated notes and added junit tests">
+      <change afterPath="$PROJECT_DIR$/Referencing.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_07_15_22_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_07_15_22__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/email/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/email/Authentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/email/SendEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/email/SendEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/emailHomePage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/emailHomePage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -54,13 +54,16 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="29q4FwUlBMKr1x6s0BKhydw4BnT" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -68,7 +71,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
-    "last_opened_file_path": "C:/Users/janin/IdeaProjects/FinancialProjectWebVersion4/src/main/webapp",
+    "last_opened_file_path": "C:/Users/janin/IdeaProjects/ProjectManagementSystemPoisedDataBaseVersion",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   },
   "keyToStringList": {
@@ -95,6 +98,7 @@
       <recent name="com.financialprojectwebversion4" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="dao" />
       <recent name="dbConnection" />
       <recent name="com.financialprojectwebversion4" />
       <recent name="beans" />
@@ -106,7 +110,7 @@
       <recent name="beans" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ApplicationDaoTest">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.10">
     <configuration name="SendEmail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.financialprojectwebversion4.SendEmail" />
       <module name="FinancialProjectWebVersion4" />
@@ -259,7 +263,8 @@
       <workItem from="1654766112951" duration="110000" />
       <workItem from="1654766524971" duration="35565000" />
       <workItem from="1654936630983" duration="14933000" />
-      <workItem from="1654953744597" duration="19711000" />
+      <workItem from="1654953744597" duration="20946000" />
+      <workItem from="1655050060384" duration="10767000" />
     </task>
     <task id="LOCAL-00001" summary="version 4&#10;working - need to go to logged in page">
       <created>1653833946685</created>
@@ -415,7 +420,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655043053747</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="version 4&#10;updated notes and added junit tests">
+      <created>1655045016051</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1655045016051</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,6 +457,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="version 4&#10;working - need to go to logged in page" />
     <MESSAGE value="version 4&#10;login working, need to reroute to log in again after registration was done successfully" />
     <MESSAGE value="version 4&#10;login working, failed login returns to login page" />
@@ -462,6 +475,7 @@
     <MESSAGE value="version 4&#10;updated notes" />
     <MESSAGE value="version 4&#10;emailHomePage.jsp added&#10;EmailServlet.java added" />
     <MESSAGE value="version 4&#10;emailHomePage.jsp updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;emailHomePage.jsp updated" />
+    <MESSAGE value="version 4&#10;updated notes and added junit tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;updated notes and added junit tests" />
   </component>
 </project>
