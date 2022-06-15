@@ -16,3 +16,8 @@ https://stackoverflow.com/questions/14632252/servlet-redirect-to-same-page-with-
 https://www.ibm.com/docs/en/db2/10.1.0?topic=applications-retrieving-data-from-tables-using-preparedstatementexecutequery-method
 https://www.journaldev.com/2532/javamail-example-send-mail-in-java-smtp
 https://memorynotfound.com/taking-selenium-screenshot-junit-java/
+https://eodhistoricaldata.com/financial-apis/exchanges-api-list-of-tickers-and-trading-hours/
+https://www.w3schools.com/howto/howto_css_profile_card.asp
+https://www.youtube.com/watch?v=hVdTQWASliE
+https://blog.devgenius.io/i-created-a-responsive-registration-form-using-html-and-css-54a938f45ab
+https://www.w3schools.com/howto/howto_css_responsive_form.asp
