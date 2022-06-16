@@ -1,31 +1,40 @@
 package com.financialprojectwebversion4;
 
 import email.SendEmail;
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
+
+import javax.servlet.http.HttpServlet;
 import java.io.IOException;
 
+public class EmailServlet extends HttpServlet {
+
+}
+
+
+
+
+
+/*
+
+*/
 /* Email servlet with doPost method
  * Set content type to jsp, and get request session
  * Get all information from jsp and set as attributes
  * Call SendEmail class to send the email to the user
  * If the mail was sent successfully, send user to the email homepage with all attributes and message
- * Else return error message with user to homepage.     */
+ * Else return error message with user to homepage.     *//*
+
 @WebServlet(name = "EmailServlet", value = "/EmailServlet")
 public class EmailServlet extends HttpServlet {
 
+*/
 /*
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
     }
-*/
+*//*
+
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -76,4 +85,4 @@ public class EmailServlet extends HttpServlet {
         RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
         dispatcher.forward(req, resp);
     }
-}
+}*/

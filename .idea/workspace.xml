@@ -9,16 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;updated notes and added junit tests">
-      <change afterPath="$PROJECT_DIR$/Referencing.txt" afterDir="false" />
+    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;Referencing.txt added">
+      <change afterPath="$PROJECT_DIR$/lib/javax.annotation.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.jms.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/javax.transaction.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_07_15_22_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_07_15_22__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ae8f333b-ff84-43ee-9019-75c9b30a378f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ae8f333b-ff84-43ee-9019-75c9b30a378f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LogOutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LogOutServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/emailHomePage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/emailHomePage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UpdateServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/email/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/email/Authentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/email/SendEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/email/SendEmail.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +160,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LogOutServletTest.testLog" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LogOutServletTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FinancialProjectWebVersion4" />
       <extension name="coverage">
         <pattern>
@@ -164,22 +170,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.financialprojectwebversion4" />
       <option name="MAIN_CLASS_NAME" value="com.financialprojectwebversion4.LogOutServletTest" />
-      <option name="METHOD_NAME" value="testLog" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRegistrationServletTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FinancialProjectWebVersion4" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.financialprojectwebversion4.*" />
+          <option name="PATTERN" value="beans.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.financialprojectwebversion4" />
-      <option name="MAIN_CLASS_NAME" value="com.financialprojectwebversion4.UserRegistrationServletTest" />
+      <option name="PACKAGE_NAME" value="beans" />
+      <option name="MAIN_CLASS_NAME" value="beans.UserTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -243,11 +248,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ApplicationDaoTest" />
-        <item itemvalue="Application.SendEmail" />
         <item itemvalue="JUnit.DBConnectionTest" />
-        <item itemvalue="JUnit.UserRegistrationServletTest" />
-        <item itemvalue="JUnit.LogOutServletTest.testLog" />
+        <item itemvalue="JUnit.ApplicationDaoTest" />
+        <item itemvalue="JUnit.LogOutServletTest" />
+        <item itemvalue="JUnit.UserTest" />
+        <item itemvalue="Application.SendEmail" />
       </list>
     </recent_temporary>
   </component>
@@ -264,7 +269,7 @@
       <workItem from="1654766524971" duration="35565000" />
       <workItem from="1654936630983" duration="14933000" />
       <workItem from="1654953744597" duration="20946000" />
-      <workItem from="1655050060384" duration="10767000" />
+      <workItem from="1655050060384" duration="18531000" />
     </task>
     <task id="LOCAL-00001" summary="version 4&#10;working - need to go to logged in page">
       <created>1653833946685</created>
@@ -427,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655045016051</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="version 4&#10;Referencing.txt added">
+      <created>1655295802985</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1655295802985</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,6 +488,7 @@
     <MESSAGE value="version 4&#10;emailHomePage.jsp added&#10;EmailServlet.java added" />
     <MESSAGE value="version 4&#10;emailHomePage.jsp updated" />
     <MESSAGE value="version 4&#10;updated notes and added junit tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;updated notes and added junit tests" />
+    <MESSAGE value="version 4&#10;Referencing.txt added" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;Referencing.txt added" />
   </component>
 </project>

@@ -33,4 +33,9 @@ class ApplicationDaoTest {
     @Test
     void userUpdates() {
     }
+
+    @Test
+    void EmailSetup(){
+
+    }
 }

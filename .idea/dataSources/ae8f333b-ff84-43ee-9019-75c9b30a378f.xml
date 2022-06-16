@@ -1074,78 +1074,116 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="293" parent="276" name="user">
+    <table id="293" parent="276" name="apppasswords">
+      <Comment>Stores emailing passwords and usernames to use in the financial application to hide from plain text. </Comment>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="294" parent="292" name="id">
+    <table id="294" parent="276" name="user">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="295" parent="292" name="id">
       <DataType>int|0s</DataType>
       <Position>1</Position>
     </column>
-    <column id="295" parent="292" name="name">
+    <column id="296" parent="292" name="name">
       <DataType>varchar(50)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="296" parent="292" name="grade">
+    <column id="297" parent="292" name="grade">
       <DataType>float|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="297" parent="293" name="username">
+    <column id="298" parent="293" name="username">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="298" parent="293" name="password">
+    <column id="299" parent="293" name="password">
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="299" parent="293" name="email">
-      <DataType>varchar(50)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="300" parent="293" name="fullname">
-      <DataType>varchar(45)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="301" parent="293" name="preference">
-      <DataType>varchar(45)|0s</DataType>
-      <Position>5</Position>
-    </column>
-    <column id="302" parent="293" name="updates">
-      <DataType>varchar(45)|0s</DataType>
-      <Position>6</Position>
-    </column>
-    <column id="303" parent="293" name="stockExchange">
-      <DataType>varchar(100)|0s</DataType>
-      <Position>7</Position>
-    </column>
-    <column id="304" parent="293" name="symbols">
-      <DataType>varchar(150)|0s</DataType>
-      <Position>8</Position>
-    </column>
-    <index id="305" parent="293" name="id_UNIQUE">
+    <index id="300" parent="293" name="Username_UNIQUE">
       <ColNames>username</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="306" parent="293" name="username_UNIQUE">
+    <index id="301" parent="293" name="Password_UNIQUE">
       <ColNames>password</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="307" parent="293" name="PRIMARY">
+    <key id="302" parent="293" name="PRIMARY">
       <ColNames>username</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="308" parent="293" name="id_UNIQUE">
+    <key id="303" parent="293" name="Username_UNIQUE">
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>Username_UNIQUE</UnderlyingIndexName>
+    </key>
+    <key id="304" parent="293" name="Password_UNIQUE">
+      <ColNames>password</ColNames>
+      <UnderlyingIndexName>Password_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="305" parent="294" name="username">
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="306" parent="294" name="password">
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="307" parent="294" name="email">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="308" parent="294" name="fullname">
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="309" parent="294" name="preference">
+      <DataType>varchar(45)|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="310" parent="294" name="updates">
+      <DataType>varchar(45)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="311" parent="294" name="stockExchange">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="312" parent="294" name="symbols">
+      <DataType>varchar(150)|0s</DataType>
+      <Position>8</Position>
+    </column>
+    <index id="313" parent="294" name="id_UNIQUE">
+      <ColNames>username</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="314" parent="294" name="username_UNIQUE">
+      <ColNames>password</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="315" parent="294" name="PRIMARY">
+      <ColNames>username</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="316" parent="294" name="id_UNIQUE">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="309" parent="293" name="username_UNIQUE">
+    <key id="317" parent="294" name="username_UNIQUE">
       <ColNames>password</ColNames>
       <UnderlyingIndexName>username_UNIQUE</UnderlyingIndexName>
     </key>

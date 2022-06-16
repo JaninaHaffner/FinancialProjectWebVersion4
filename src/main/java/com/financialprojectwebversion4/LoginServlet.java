@@ -1,11 +1,13 @@
 package com.financialprojectwebversion4;
 
 import dao.ApplicationDao;
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
+import email.SendEmail;
 
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -81,9 +83,19 @@ public class LoginServlet extends HttpServlet {
 				destPage = "/jsps/homepage.jsp";
 
 			} else {
-				EmailServlet emailSend = new EmailServlet();
+				String subject = "Financial Curation Report for " + fullname;
+				String msgBody = "test to see if email is working";
+				Boolean emailSend = new SendEmail().SendMail(email, subject, msgBody);
 				System.out.println(emailSend);
-				destPage = "/jsps/emailHomePage.jsp";
+				if(emailSend){
+					errorMessage = "Your information was sent to your email: " + email;
+					req.setAttribute("errorMessage", errorMessage);
+					destPage = "/jsp/profile.jsp";
+				} else {
+					errorMessage = "Your email could not be sent.";
+					req.setAttribute("errorMessage", errorMessage);
+					destPage = "/jsps/profile.jsp";
+				}
 			}
 		} else {
 			errorMessage = "Invalid credentials, please login again!";

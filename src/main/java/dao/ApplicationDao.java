@@ -119,10 +119,10 @@ public class ApplicationDao {
 
 		try {
 			Connection connection = DBConnection.getConnectionToDatabase();
-			String sql = "select fullname, email, preference, updates, stockExchange, symbols from user  where username=?";
+			querySQL = "select fullname, email, preference, updates, stockExchange, symbols from user  where username=?";
 
 			assert connection != null;
-			PreparedStatement statement = connection.prepareStatement(sql);
+			statement = connection.prepareStatement(querySQL);
 			statement.setString(1, user);
 
 			userInfo = statement.executeQuery();
@@ -172,6 +172,31 @@ public class ApplicationDao {
 			return 0;
 		}
 		return rows;
+	}
+	/* retrieve username and password to be used for the sending of emails for the database to keep them hidden in the code.  */
+	public String EmailSetup() {
+		String emailUsername = "";
+		String emailPassword = "";
+
+		try {
+			connection = DBConnection.getConnectionToDatabase();
+			querySQL = "SELECT username, password FROM apppasswords";
+
+			assert connection != null;
+			statement = connection.prepareStatement(querySQL);
+
+			userInfo = statement.executeQuery();
+			while (userInfo.next()) {
+				emailUsername = userInfo.getString(1);
+				emailPassword = userInfo.getString(2);
+
+			}
+			statement.close();
+			connection.close();
+		} catch (SQLException e) {
+			return null;
+		}
+		return emailUsername + "," + emailPassword;
 	}
 }
 

@@ -1,5 +1,7 @@
 package email;
 
+import dao.ApplicationDao;
+
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -16,18 +18,23 @@ public class SendEmail {
 
     public boolean SendMail(String to, String subject, String msgBody) {
 
-        String usernameFrom = "janinahaffner@gmail.com";
-        String passwordFrom = "Janinahaf12";
-        boolean mailStatus;
+        String usernameFrom;
+        String passwordFrom;
         Properties properties = new Properties();
         properties.put("mail.smtp.host", "smtp.gmail.com");
-        properties.put("mail.smtp.socketFactory.port", "465");
+        properties.put("mail.smtp.socketFactory.port", "587");
         properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         properties.put("mail.smtp.auth", "true");
+
+        String sendInfo = new ApplicationDao().EmailSetup();
+        String[] sendInfoSplit = sendInfo.split(",");
+        usernameFrom = sendInfoSplit[0];
+        passwordFrom = sendInfoSplit[1];
 
         Authentication authentication = new Authentication(usernameFrom, passwordFrom);
         authentication.getPasswordAuthentication();
         properties.put("mail.debug", "true");
+
 
         Session session = Session.getInstance(properties, authentication);
 
@@ -40,10 +47,9 @@ public class SendEmail {
             message.setSentDate(new Date());
             message.setText(msgBody);
             Transport.send(message);
-            mailStatus = true;
         } catch (MessagingException mex) {
             return false;
         }
-        return mailStatus;
+        return true;
     }
 }
