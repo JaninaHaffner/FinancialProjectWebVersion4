@@ -9,22 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;Referencing.txt added">
-      <change afterPath="$PROJECT_DIR$/lib/javax.annotation.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.jms.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/javax.transaction.jar" afterDir="false" />
+    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;Emailing settings added">
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ae8f333b-ff84-43ee-9019-75c9b30a378f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ae8f333b-ff84-43ee-9019-75c9b30a378f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_02_18_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_02_18_50__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_10_19_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_10_19_15__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_11_11_04__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_11_11_04__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Referencing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Referencing.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LogOutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LogOutServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UpdateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/email/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/email/Authentication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/email/SendEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/email/SendEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,28 +64,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
-    "last_opened_file_path": "C:/Users/janin/IdeaProjects/ProjectManagementSystemPoisedDataBaseVersion",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/janin/IdeaProjects/ProjectManagementSystemPoisedDataBaseVersion&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "MySQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;MySQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\janin\IdeaProjects\FinancialProjectWebVersion4\src\main\webapp" />
@@ -456,13 +453,33 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/B1" />
+                        <option value="B4" />
                       </list>
                     </value>
                   </entry>
                 </map>
               </option>
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="B4" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="B1" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -489,6 +506,7 @@
     <MESSAGE value="version 4&#10;emailHomePage.jsp updated" />
     <MESSAGE value="version 4&#10;updated notes and added junit tests" />
     <MESSAGE value="version 4&#10;Referencing.txt added" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;Referencing.txt added" />
+    <MESSAGE value="version 4&#10;Emailing settings added" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;Emailing settings added" />
   </component>
 </project>

@@ -6,6 +6,8 @@ import dbConnection.DBConnection;
 import java.sql.*;
 
 public class ApplicationDao {
+	String username = "";
+	String password = "";
 	String email = "";
 	String fullname = "";
 	String preference = "";
@@ -173,10 +175,8 @@ public class ApplicationDao {
 		}
 		return rows;
 	}
-	/* retrieve username and password to be used for the sending of emails for the database to keep them hidden in the code.  */
-	public String EmailSetup() {
-		String emailUsername = "";
-		String emailPassword = "";
+
+	public String mailInfo() {
 
 		try {
 			connection = DBConnection.getConnectionToDatabase();
@@ -186,17 +186,16 @@ public class ApplicationDao {
 			statement = connection.prepareStatement(querySQL);
 
 			userInfo = statement.executeQuery();
-			while (userInfo.next()) {
-				emailUsername = userInfo.getString(1);
-				emailPassword = userInfo.getString(2);
-
+			while (userInfo.next()){
+				username = userInfo.getString(1);
+				password = userInfo.getString(2);
 			}
 			statement.close();
 			connection.close();
 		} catch (SQLException e) {
 			return null;
 		}
-		return emailUsername + "," + emailPassword;
+		return username + "," + password;
 	}
 }
 

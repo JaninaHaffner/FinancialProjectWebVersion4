@@ -4,10 +4,11 @@ import dao.ApplicationDao;
 import email.SendEmail;
 
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.mail.MessagingException;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -47,6 +48,7 @@ public class LoginServlet extends HttpServlet {
 		String userinfo;
 		String[] items;
 		Cookie usernameCookie;
+		String subject;
 
 		username = req.getParameter("username");
 		password = req.getParameter("password");
@@ -78,24 +80,22 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("stockExchange", stockExchange);
 			session.setAttribute("symbols", symbols);
 
+			subject = "The Financial Curation Report for " + fullname;
+
 			if(Objects.equals(preference, "Browser")){
 				resp.addCookie(usernameCookie);
 				destPage = "/jsps/homepage.jsp";
 
 			} else {
-				String subject = "Financial Curation Report for " + fullname;
-				String msgBody = "test to see if email is working";
-				Boolean emailSend = new SendEmail().SendMail(email, subject, msgBody);
-				System.out.println(emailSend);
-				if(emailSend){
-					errorMessage = "Your information was sent to your email: " + email;
+				boolean emailSend = false;
+				try {
+					emailSend = new SendEmail().sendMail(email, subject);
+				} catch (MessagingException e) {
+					errorMessage = "Email was not sent. ";
 					req.setAttribute("errorMessage", errorMessage);
-					destPage = "/jsp/profile.jsp";
-				} else {
-					errorMessage = "Your email could not be sent.";
-					req.setAttribute("errorMessage", errorMessage);
-					destPage = "/jsps/profile.jsp";
 				}
+				System.out.println(emailSend);
+				destPage = "/jsps/emailHomePage.jsp";
 			}
 		} else {
 			errorMessage = "Invalid credentials, please login again!";

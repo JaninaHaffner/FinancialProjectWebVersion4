@@ -21,3 +21,6 @@ https://www.w3schools.com/howto/howto_css_profile_card.asp
 https://www.youtube.com/watch?v=hVdTQWASliE
 https://blog.devgenius.io/i-created-a-responsive-registration-form-using-html-and-css-54a938f45ab
 https://www.w3schools.com/howto/howto_css_responsive_form.asp
+http://javatechnologycenter.com/question/javajsptutorial/sendingemail.php
+https://www.codejava.net/java-ee/jsp/sending-e-mail-with-jsp-servlet-and-javamail
+

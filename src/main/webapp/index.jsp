@@ -24,7 +24,7 @@
                stockdio_events = true;
                var stockdio_eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
                var stockdio_eventer = window[stockdio_eventMethod];
-               var stockdio_messageEvent = stockdio_eventMethod == "attachEvent" ? "onmessage" : "message";
+               var stockdio_messageEvent = stockdio_eventMethod === "attachEvent" ? "onmessage" : "message";
                stockdio_eventer(stockdio_messageEvent, function (e) {
                   if (typeof(e.data) != "undefined" && typeof(e.data.method) != "undefined") {
                      eval(e.data.method);
@@ -32,7 +32,7 @@
                },false);
             }
          </script>
-         <iframe id='st_87ea7382535b4f9d82157b7900dedbc7' frameBorder='0' scrolling='no' width='100%' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/EconomicNews?app-key=3F3765F6FF284467B14A9241127AF282&includeDescription=false&includeImage=false&palette=Financial-Light&onload=st_87ea7382535b4f9d82157b7900dedbc7'></iframe>
+         <iframe id='st_87ea7382535b4f9d82157b7900dedbc7' width='100%' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/EconomicNews?app-key=3F3765F6FF284467B14A9241127AF282&includeDescription=false&includeImage=false&palette=Financial-Light&onload=st_87ea7382535b4f9d82157b7900dedbc7'></iframe>
     </div>
     <div class="main">
         <h3>Popular stocks</h3>
@@ -41,7 +41,7 @@
                stockdio_events = true;
                var stockdio_eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
                var stockdio_eventer = window[stockdio_eventMethod];
-               var stockdio_messageEvent = stockdio_eventMethod == "attachEvent" ? "onmessage" : "message";
+               var stockdio_messageEvent = stockdio_eventMethod === "attachEvent" ? "onmessage" : "message";
                stockdio_eventer(stockdio_messageEvent, function (e) {
                   if (typeof(e.data) != "undefined" && typeof(e.data.method) != "undefined") {
                      eval(e.data.method);
@@ -49,7 +49,7 @@
                },false);
             }
          </script>
-         <iframe id='st_6cb589336e50445fbf79f9411a696d91' frameBorder='0' scrolling='no' width='400' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/MarketOverview?app-key=3F3765F6FF284467B14A9241127AF282&showHeader=true&palette=Financial-Light&onload=st_6cb589336e50445fbf79f9411a696d91'></iframe>
+         <iframe id='st_6cb589336e50445fbf79f9411a696d91' width='400' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/MarketOverview?app-key=3F3765F6FF284467B14A9241127AF282&showHeader=true&palette=Financial-Light&onload=st_6cb589336e50445fbf79f9411a696d91'></iframe>
     </div>
 </body>
 </html>

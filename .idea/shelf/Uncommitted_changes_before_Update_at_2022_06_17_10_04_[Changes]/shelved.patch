@@ -1,0 +1,614 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>com</groupId>\r\n    <artifactId>FinancialProjectWebVersion4</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n    <name>FinancialProjectWebVersion4</name>\r\n    <packaging>war</packaging>\r\n\r\n    <properties>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n        <maven.compiler.target>1.8</maven.compiler.target>\r\n        <maven.compiler.source>1.8</maven.compiler.source>\r\n        <junit.version>5.8.2</junit.version>\r\n    </properties>\r\n\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>com.sun.mail</groupId>\r\n            <artifactId>jakarta.mail</artifactId>\r\n            <version>2.0.1</version>\r\n        </dependency>\r\n            <dependency>\r\n                <groupId>jakarta.servlet</groupId>\r\n                <artifactId>jakarta.servlet-api</artifactId>\r\n                <version>5.0.0</version>\r\n                <scope>provided</scope>\r\n            </dependency>\r\n            <dependency>\r\n                <groupId>jakarta.servlet.jsp</groupId>\r\n                <artifactId>jakarta.servlet.jsp-api</artifactId>\r\n                <version>3.0.0</version>\r\n                <scope>provided</scope>\r\n            </dependency>\r\n            <dependency>\r\n                <groupId>jakarta.el</groupId>\r\n                <artifactId>jakarta.el-api</artifactId>\r\n                <version>4.0.0</version>\r\n                <scope>provided</scope>\r\n            </dependency>\r\n            <dependency>\r\n                <groupId>jakarta.websocket</groupId>\r\n                <artifactId>jakarta.websocket-api</artifactId>\r\n                <version>2.0.0</version>\r\n                <scope>provided</scope>\r\n            </dependency>\r\n            <dependency>\r\n                <groupId>jakarta.security.enterprise</groupId>\r\n                <artifactId>jakarta.security.enterprise-api</artifactId>\r\n                <version>2.0.0</version>\r\n                <scope>provided</scope>\r\n            </dependency>\r\n        <dependency>\r\n            <groupId>org.apache.cxf</groupId>\r\n            <artifactId>cxf-rt-frontend-jaxrs</artifactId>\r\n            <version>3.5.2</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.apache.cxf</groupId>\r\n            <artifactId>cxf-rt-frontend-jaxws</artifactId>\r\n            <version>3.5.2</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.apache.activemq</groupId>\r\n            <artifactId>activemq-client</artifactId>\r\n            <version>5.17.0</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-api</artifactId>\r\n            <version>${junit.version}</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-engine</artifactId>\r\n            <version>${junit.version}</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>mysql</groupId>\r\n            <artifactId>mysql-connector-java</artifactId>\r\n            <version>8.0.29</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>com.sun.mail</groupId>\r\n            <artifactId>javax.mail</artifactId>\r\n            <version>1.6.2</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.seleniumhq.selenium</groupId>\r\n            <artifactId>selenium-java</artifactId>\r\n            <version>4.2.1</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.testng</groupId>\r\n            <artifactId>testng</artifactId>\r\n            <version>RELEASE</version>\r\n            <scope>compile</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>ru.yandex.qatools.ashot</groupId>\r\n            <artifactId>ashot</artifactId>\r\n            <version>1.5.4</version>\r\n        </dependency>\r\n    </dependencies>\r\n\r\n    <build>\r\n        <plugins>\r\n            <plugin>\r\n                <groupId>org.apache.maven.plugins</groupId>\r\n                <artifactId>maven-war-plugin</artifactId>\r\n                <version>3.3.2</version>\r\n            </plugin>\r\n            <plugin>\r\n                <groupId>org.apache.maven.plugins</groupId>\r\n                <artifactId>maven-compiler-plugin</artifactId>\r\n                <configuration>\r\n                    <source>15</source>\r\n                    <target>15</target>\r\n                </configuration>\r\n            </plugin>\r\n        </plugins>\r\n    </build>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	
++++ b/pom.xml	
+@@ -18,11 +18,6 @@
+     </properties>
+ 
+     <dependencies>
+-        <dependency>
+-            <groupId>com.sun.mail</groupId>
+-            <artifactId>jakarta.mail</artifactId>
+-            <version>2.0.1</version>
+-        </dependency>
+             <dependency>
+                 <groupId>jakarta.servlet</groupId>
+                 <artifactId>jakarta.servlet-api</artifactId>
+@@ -114,14 +109,6 @@
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-war-plugin</artifactId>
+                 <version>3.3.2</version>
+-            </plugin>
+-            <plugin>
+-                <groupId>org.apache.maven.plugins</groupId>
+-                <artifactId>maven-compiler-plugin</artifactId>
+-                <configuration>
+-                    <source>15</source>
+-                    <target>15</target>
+-                </configuration>
+             </plugin>
+         </plugins>
+     </build>
+Index: src/main/java/dao/ApplicationDao.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package dao;\r\n\r\nimport beans.User;\r\nimport dbConnection.DBConnection;\r\n\r\nimport java.sql.*;\r\n\r\npublic class ApplicationDao {\r\n\tString email = \"\";\r\n\tString fullname = \"\";\r\n\tString preference = \"\";\r\n\tString updates = \"\";\r\n\tString stockExchange = \"\";\r\n\tString symbols = \"\";\r\n\tint rows;\r\n\tResultSet userInfo;\r\n\tConnection connection;\r\n\tString querySQL;\r\n\tPreparedStatement statement;\r\n\r\n\t/* Get connecting to database\r\n\t * set sql query to insert information form registration form in to user table \r\n\t * prepared statement to insert information\r\n\t * execute statement and close connections.\r\n\t * return amount of rows affected. */\r\n\tpublic int registerUser(User user) {\r\n\t\tint rowsAffected;\r\n\r\n\t\ttry {\r\n\t\t\tconnection = DBConnection.getConnectionToDatabase();\r\n\r\n\t\t\tquerySQL = \"insert into user(username, password, email, fullname, preference, updates, stockExchange, symbols) \" +\r\n\t\t\t\t\t\"values(?,?,?,?,?,?,?,?)\";\r\n\r\n\t\t\tassert connection != null;\r\n\t\t\tstatement = connection.prepareStatement(querySQL);\r\n\t\t\tstatement.setString(1, user.getUsername());\r\n\t\t\tstatement.setString(2, user.getPassword());\r\n\t\t\tstatement.setString(3, user.getEmail());\r\n\t\t\tstatement.setString(4, user.getFullname());\r\n\t\t\tstatement.setString(5, user.getPreferences());\r\n\t\t\tstatement.setString(6, user.getUpdates());\r\n\t\t\tstatement.setString(7, user.getStockExchange());\r\n\t\t\tstatement.setString(8, user.getSymbols());\r\n\r\n\t\t\trowsAffected = statement.executeUpdate();\r\n\r\n\t\t\tconnection.close();\r\n\t\t\tstatement.close();\r\n\r\n\t\t} catch (SQLException e) {\r\n\t\t\trowsAffected = 0;\r\n\t\t\treturn rowsAffected;\r\n\t\t}\r\n\t\treturn rowsAffected;\r\n\t}\r\n\t/* user validation method\r\n\t * get connection to database\r\n\t * write the select query\r\n\t * set parameters with prepared statement\r\n\t * execute the statement and check if user exists\r\n\t * use try catch block to catch exceptions\r\n\t * return boolean for valid user  */\r\n\tpublic boolean validateUser(String username, String password) {\r\n\t\tboolean isValidUser = false;\r\n\t\t\r\n\t\ttry {\r\n\t\t\tconnection = DBConnection.getConnectionToDatabase();\r\n\t\t\tquerySQL = \"select * from user where username=? and password=?\";\r\n\r\n\t\t\tassert connection != null;\r\n\t\t\tstatement = connection.prepareStatement(querySQL);\r\n\t\t\tstatement.setString(1, username);\r\n\t\t\tstatement.setString(2, password);\r\n\r\n\t\t\tResultSet set = statement.executeQuery();\r\n\t\t\twhile(set.next()) {\r\n\t\t\t\tisValidUser = true;\r\n\t\t\t}\r\n\t\t\tconnection.close();\r\n\t\t\tstatement.close();\r\n\t\t}\r\n\t\tcatch (SQLException exception) {\r\n\t\t\treturn false;\r\n\t\t}\r\n\t\treturn isValidUser;\r\n\r\n\t}\r\n\t/* Check if user all ready exists\r\n\t *  If so return to login with message else move to register user */\r\n\tpublic boolean existingUser(String username) {\r\n\t\tboolean existingValidUser = false;\r\n\r\n\t\ttry {\r\n\t\t\tconnection = DBConnection.getConnectionToDatabase();\r\n\t\t\tquerySQL = \"select * from user where username=?\";\r\n\r\n\t\t\tassert connection != null;\r\n\t\t\tstatement = connection.prepareStatement(querySQL);\r\n\t\t\tstatement.setString(1, username);\r\n\r\n\t\t\tResultSet set = statement.executeQuery();\r\n\t\t\twhile(set.next()) {\r\n\t\t\t\texistingValidUser = true;\r\n\t\t\t}\r\n\t\t\tconnection.close();\r\n\t\t\tstatement.close();\r\n\t\t}\r\n\t\tcatch (SQLException exception) {\r\n\t\t\treturn existingValidUser;\r\n\t\t}\r\n\t\treturn existingValidUser;\r\n\r\n\t}\r\n\r\n\t/* connect to database retrieve current users details and return them\r\n\t*  close all connections */\r\n\tpublic String userPreferences(String user) {\r\n\r\n\t\ttry {\r\n\t\t\tConnection connection = DBConnection.getConnectionToDatabase();\r\n\t\t\tString sql = \"select fullname, email, preference, updates, stockExchange, symbols from user  where username=?\";\r\n\r\n\t\t\tassert connection != null;\r\n\t\t\tPreparedStatement statement = connection.prepareStatement(sql);\r\n\t\t\tstatement.setString(1, user);\r\n\r\n\t\t\tuserInfo = statement.executeQuery();\r\n\t\t\twhile (userInfo.next()) {\r\n\t\t\t\tfullname = userInfo.getString(1);\r\n\t\t\t\temail = userInfo.getString(2);\r\n\t\t\t\tpreference = userInfo.getString(3);\r\n\t\t\t\tupdates = userInfo.getString(4);\r\n\t\t\t\tstockExchange = userInfo.getString(5);\r\n\t\t\t\tsymbols = userInfo.getString(6);\r\n\r\n\t\t\t}\r\n\t\t\tstatement.close();\r\n\t\t\tconnection.close();\r\n\t\t} catch (SQLException e) {\r\n\t\t\treturn null;\r\n\t\t}\r\n\t\treturn fullname + \",\" + email + \",\" + preference + \",\" + updates + \",\" + stockExchange + \",\" + symbols;\r\n\t}\r\n\t\r\n\t/* Connect to database\r\n\t * Prepare sql query \r\n\t * Prepare prepared statement\r\n\t * Execute update to edit the information in the sql database.\r\n\t * Close connections and return rows affected. */\r\n\tpublic int userUpdates(String user, String fullname, String email, String preference, String updates, String stockExchange, String symbols) {\r\n\r\n\t\ttry {\r\n\t\t\tconnection = DBConnection.getConnectionToDatabase();\r\n\t\t\tquerySQL = \"update user set fullname=?, email=?, preference=?, updates=?, stockExchange=?, symbols=? where username=?\";\r\n\r\n\t\t\tassert connection != null;\r\n\t\t\tstatement = connection.prepareStatement(querySQL);\r\n\t\t\tstatement.setString(1, fullname);\r\n\t\t\tstatement.setString(2, email);\r\n\t\t\tstatement.setString(3, preference);\r\n\t\t\tstatement.setString(4, updates);\r\n\t\t\tstatement.setString(5, stockExchange);\r\n\t\t\tstatement.setString(6, symbols);\r\n\t\t\tstatement.setString(7, user);\r\n\r\n\t\t\trows = statement.executeUpdate();\r\n\r\n\t\t\tstatement.close();\r\n\t\t\tconnection.close();\r\n\t\t} catch (SQLException e) {\r\n\t\t\treturn 0;\r\n\t\t}\r\n\t\treturn rows;\r\n\t}\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/dao/ApplicationDao.java b/src/main/java/dao/ApplicationDao.java
+--- a/src/main/java/dao/ApplicationDao.java	
++++ b/src/main/java/dao/ApplicationDao.java	
+@@ -6,6 +6,8 @@
+ import java.sql.*;
+ 
+ public class ApplicationDao {
++	String username = "";
++	String password = "";
+ 	String email = "";
+ 	String fullname = "";
+ 	String preference = "";
+@@ -173,6 +175,28 @@
+ 		}
+ 		return rows;
+ 	}
++
++	public String mailInfo() {
++
++		try {
++			connection = DBConnection.getConnectionToDatabase();
++			querySQL = "SELECT username, password FROM apppasswords";
++
++			statement = connection.prepareStatement(querySQL);
++
++			userInfo = statement.executeQuery();
++			while (userInfo.next()){
++				username = userInfo.getString(1);
++				password = userInfo.getString(2);
++			}
++			statement.close();
++			connection.close();
++
++		} catch (SQLException e) {
++			return null;
++		}
++		return username + "," + password;
++	}
+ }
+ 
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ArtifactsWorkspaceSettings\">\r\n    <artifacts-to-build>\r\n      <artifact name=\"FinancialProjectWebVersion4:war exploded\" />\r\n    </artifacts-to-build>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"a42901e7-0c65-44b5-84ef-79e9b8217fbd\" name=\"Changes\" comment=\"version 4&#10;updated notes and added junit tests\">\r\n      <change afterPath=\"$PROJECT_DIR$/Referencing.txt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_07_15_22_[Changes]/shelved.patch\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_07_15_22__Changes_.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pom.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailServlet.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailServlet.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/jsps/emailHomePage.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/jsps/emailHomePage.jsp\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Jsp File\" />\r\n        <option value=\"JUnit5 Test Class\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"B1\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\r\n  </component>\r\n  <component name=\"LogFilters\">\r\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\r\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\r\n    <option name=\"FILTER_INFO\" value=\"true\" />\r\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\r\n    <option name=\"CUSTOM_FILTER\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"29q4FwUlBMKr1x6s0BKhydw4BnT\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary\": \"JUnit5\",\r\n    \"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5\": \"\",\r\n    \"com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/janin/IdeaProjects/ProjectManagementSystemPoisedDataBaseVersion\",\r\n    \"settings.editor.selected.configurable\": \"preferences.pluginManager\"\r\n  },\r\n  \"keyToStringList\": {\r\n    \"DatabaseDriversLRU\": [\r\n      \"mysql\"\r\n    ],\r\n    \"com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect\": [\r\n      \"MySQL\"\r\n    ]\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\janin\\IdeaProjects\\FinancialProjectWebVersion4\\src\\main\\webapp\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\janin\\IdeaProjects\\FinancialProjectWebVersion4\\src\\main\\webapp\" />\r\n      <recent name=\"C:\\Users\\janin\\IdeaProjects\\FinancialProjectWebVersion4\\src\\main\\webapp\\jsps\" />\r\n    </key>\r\n    <key name=\"CreateTestDialog.Recents.Supers\">\r\n      <recent name=\"\" />\r\n    </key>\r\n    <key name=\"ExtractSuperBase.RECENT_KEYS\">\r\n      <recent name=\"com.financialprojectwebversion4\" />\r\n    </key>\r\n    <key name=\"CreateTestDialog.RecentsKey\">\r\n      <recent name=\"dao\" />\r\n      <recent name=\"dbConnection\" />\r\n      <recent name=\"com.financialprojectwebversion4\" />\r\n      <recent name=\"beans\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"com.financialprojectwebversion4\" />\r\n      <recent name=\"dbConnection\" />\r\n      <recent name=\"dao\" />\r\n      <recent name=\"beans\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Tomcat Server.Tomcat 10.0.10\">\r\n    <configuration name=\"SendEmail\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.financialprojectwebversion4.SendEmail\" />\r\n      <module name=\"FinancialProjectWebVersion4\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.financialprojectwebversion4.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"ApplicationDaoTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"FinancialProjectWebVersion4\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"dao.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"dao\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"dao.ApplicationDaoTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"DBConnectionTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"FinancialProjectWebVersion4\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"dbConnection.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"dbConnection\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"dbConnection.DBConnectionTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"LogOutServletTest.testLog\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"FinancialProjectWebVersion4\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.financialprojectwebversion4.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.financialprojectwebversion4\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.financialprojectwebversion4.LogOutServletTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"testLog\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"UserRegistrationServletTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"FinancialProjectWebVersion4\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.financialprojectwebversion4.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"com.financialprojectwebversion4\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.financialprojectwebversion4.UserRegistrationServletTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Tomcat 10.0.10\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 10.0.10\" ALTERNATIVE_JRE_ENABLED=\"false\">\r\n      <deployment>\r\n        <artifact name=\"FinancialProjectWebVersion4:war exploded\">\r\n          <settings>\r\n            <option name=\"CONTEXT_PATH\" value=\"/FinancialProjectWebVersion4_war_exploded\" />\r\n          </settings>\r\n        </artifact>\r\n      </deployment>\r\n      <server-settings>\r\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"8d9e4f25-8a8b-43c4-9b87-63da3e2d0e87\" />\r\n      </server-settings>\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\r\n      <predefined_log_file id=\"Tomcat Manager\" />\r\n      <predefined_log_file id=\"Tomcat Host Manager\" />\r\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\r\n      <RunnerSettings RunnerId=\"Debug\">\r\n        <option name=\"DEBUG_PORT\" value=\"54662\" />\r\n      </RunnerSettings>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n        <option name=\"BuildArtifacts\" enabled=\"true\">\r\n          <artifact name=\"FinancialProjectWebVersion4:war exploded\" />\r\n        </option>\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"JUnit.ApplicationDaoTest\" />\r\n        <item itemvalue=\"Application.SendEmail\" />\r\n        <item itemvalue=\"JUnit.DBConnectionTest\" />\r\n        <item itemvalue=\"JUnit.UserRegistrationServletTest\" />\r\n        <item itemvalue=\"JUnit.LogOutServletTest.testLog\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"a42901e7-0c65-44b5-84ef-79e9b8217fbd\" name=\"Changes\" comment=\"\" />\r\n      <created>1653827184865</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1653827184865</updated>\r\n      <workItem from=\"1653827186592\" duration=\"28459000\" />\r\n      <workItem from=\"1654766112951\" duration=\"110000\" />\r\n      <workItem from=\"1654766524971\" duration=\"35565000\" />\r\n      <workItem from=\"1654936630983\" duration=\"14933000\" />\r\n      <workItem from=\"1654953744597\" duration=\"20946000\" />\r\n      <workItem from=\"1655050060384\" duration=\"10767000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"version 4&#10;working - need to go to logged in page\">\r\n      <created>1653833946685</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1653833946685</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"version 4&#10;working - need to go to logged in page\">\r\n      <created>1654011787796</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654011787796</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"version 4&#10;login working, need to reroute to log in again after registration was done successfully\">\r\n      <created>1654014441651</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654014441651</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"version 4&#10;login working, failed login returns to login page\">\r\n      <created>1654016445976</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654016445976</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"version 4&#10;new item on landing page\">\r\n      <created>1654082184570</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654082184570</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"version 4&#10;new item on landing page top\">\r\n      <created>1654102738578</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654102738578</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"version 4&#10;added exchange.jsp, newsPage.jsp and markets.jsp&#10;linked LogOutServlet\">\r\n      <created>1654439264965</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654439264965</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"version 4&#10;added links on home page to exchange.jsp, newsPage.jsp and markets.jsp\">\r\n      <created>1654439483820</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654439483820</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"version 4&#10;updated notes\">\r\n      <created>1654440942779</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654440942779</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"version 4&#10;check that user does not all ready exist.\">\r\n      <created>1654441536343</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654441536343</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"version 4&#10;check that user does not all ready exist.\">\r\n      <created>1654441893014</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654441893014</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"version 4&#10;added unit tests\">\r\n      <created>1654508656179</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654508656179</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"version 4&#10;added parameters to get attributes from sql\">\r\n      <created>1654529153120</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654529153120</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"version 4&#10;added EmailServlet.java\">\r\n      <created>1654594525106</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654594525106</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"version 4&#10;added EmailServlet.java\">\r\n      <created>1654608325641</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654608325641</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"version 4&#10;added update servlet\">\r\n      <created>1654717978981</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654717978981</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"version 4&#10;added update servlet\">\r\n      <created>1654719839551</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654719839551</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"version 4&#10;added update servlet to profile.jsp\">\r\n      <created>1654771826989</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654771826989</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"version 4&#10;updates on UpdateServlet.java\">\r\n      <created>1654938353458</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654938353458</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"version 4&#10;updated notes\">\r\n      <created>1654943262354</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654943262354</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\"version 4&#10;emailHomePage.jsp added&#10;EmailServlet.java added\">\r\n      <created>1655042770612</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655042770612</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00022\" summary=\"version 4&#10;emailHomePage.jsp updated\">\r\n      <created>1655043053747</created>\r\n      <option name=\"number\" value=\"00022\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00022\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655043053747</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00023\" summary=\"version 4&#10;updated notes and added junit tests\">\r\n      <created>1655045016051</created>\r\n      <option name=\"number\" value=\"00023\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00023\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655045016051</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"24\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/B1\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"version 4&#10;working - need to go to logged in page\" />\r\n    <MESSAGE value=\"version 4&#10;login working, need to reroute to log in again after registration was done successfully\" />\r\n    <MESSAGE value=\"version 4&#10;login working, failed login returns to login page\" />\r\n    <MESSAGE value=\"version 4&#10;new item on landing page\" />\r\n    <MESSAGE value=\"version 4&#10;new item on landing page top\" />\r\n    <MESSAGE value=\"version 4&#10;added exchange.jsp, newsPage.jsp and markets.jsp&#10;linked LogOutServlet\" />\r\n    <MESSAGE value=\"version 4&#10;added links on home page to exchange.jsp, newsPage.jsp and markets.jsp\" />\r\n    <MESSAGE value=\"version 4&#10;check that user does not all ready exist.\" />\r\n    <MESSAGE value=\"version 4&#10;added unit tests\" />\r\n    <MESSAGE value=\"version 4&#10;added parameters to get attributes from sql\" />\r\n    <MESSAGE value=\"version 4&#10;added EmailServlet.java\" />\r\n    <MESSAGE value=\"version 4&#10;added update servlet\" />\r\n    <MESSAGE value=\"version 4&#10;added update servlet to profile.jsp\" />\r\n    <MESSAGE value=\"version 4&#10;updates on UpdateServlet.java\" />\r\n    <MESSAGE value=\"version 4&#10;updated notes\" />\r\n    <MESSAGE value=\"version 4&#10;emailHomePage.jsp added&#10;EmailServlet.java added\" />\r\n    <MESSAGE value=\"version 4&#10;emailHomePage.jsp updated\" />\r\n    <MESSAGE value=\"version 4&#10;updated notes and added junit tests\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"version 4&#10;updated notes and added junit tests\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -9,16 +9,19 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;updated notes and added junit tests">
+-      <change afterPath="$PROJECT_DIR$/Referencing.txt" afterDir="false" />
++    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;Referencing.txt added">
+       <change beforePath="$PROJECT_DIR$/.idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_07_15_22_[Changes]/shelved.patch" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_07_15_22__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_02_18_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_02_18_50__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_10_19_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_10_19_15__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_11_11_04__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_11_11_04__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailServlet.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/email/SendEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/email/SendEmail.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/emailHomePage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/emailHomePage.jsp" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/homepage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/homepage.jsp" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -41,6 +44,7 @@
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="RESET_MODE" value="HARD" />
+     <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="LogFilters">
+@@ -61,28 +65,28 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ASKED_ADD_EXTERNAL_FILES": "true",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+-    "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
+-    "last_opened_file_path": "C:/Users/janin/IdeaProjects/ProjectManagementSystemPoisedDataBaseVersion",
+-    "settings.editor.selected.configurable": "preferences.pluginManager"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
++    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
++    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/janin/IdeaProjects/ProjectManagementSystemPoisedDataBaseVersion&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+   },
+-  "keyToStringList": {
+-    "DatabaseDriversLRU": [
+-      "mysql"
++  &quot;keyToStringList&quot;: {
++    &quot;DatabaseDriversLRU&quot;: [
++      &quot;mysql&quot;
+     ],
+-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+-      "MySQL"
++    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
++      &quot;MySQL&quot;
+     ]
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\janin\IdeaProjects\FinancialProjectWebVersion4\src\main\webapp" />
+@@ -124,48 +128,45 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="ApplicationDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="email.SendEmail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="email.SendEmail" />
+       <module name="FinancialProjectWebVersion4" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="dao.*" />
++          <option name="PATTERN" value="email.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+-      <option name="PACKAGE_NAME" value="dao" />
+-      <option name="MAIN_CLASS_NAME" value="dao.ApplicationDaoTest" />
+-      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="DBConnectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="ApplicationDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="FinancialProjectWebVersion4" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="dbConnection.*" />
++          <option name="PATTERN" value="dao.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+-      <option name="PACKAGE_NAME" value="dbConnection" />
+-      <option name="MAIN_CLASS_NAME" value="dbConnection.DBConnectionTest" />
++      <option name="PACKAGE_NAME" value="dao" />
++      <option name="MAIN_CLASS_NAME" value="dao.ApplicationDaoTest" />
+       <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="LogOutServletTest.testLog" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++    <configuration name="DBConnectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+       <module name="FinancialProjectWebVersion4" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="com.financialprojectwebversion4.*" />
++          <option name="PATTERN" value="dbConnection.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+-      <option name="PACKAGE_NAME" value="com.financialprojectwebversion4" />
+-      <option name="MAIN_CLASS_NAME" value="com.financialprojectwebversion4.LogOutServletTest" />
+-      <option name="METHOD_NAME" value="testLog" />
+-      <option name="TEST_OBJECT" value="method" />
++      <option name="PACKAGE_NAME" value="dbConnection" />
++      <option name="MAIN_CLASS_NAME" value="dbConnection.DBConnectionTest" />
++      <option name="TEST_OBJECT" value="class" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -243,11 +244,11 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Application.email.SendEmail" />
+         <item itemvalue="JUnit.ApplicationDaoTest" />
+         <item itemvalue="Application.SendEmail" />
+         <item itemvalue="JUnit.DBConnectionTest" />
+         <item itemvalue="JUnit.UserRegistrationServletTest" />
+-        <item itemvalue="JUnit.LogOutServletTest.testLog" />
+       </list>
+     </recent_temporary>
+   </component>
+Index: .idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><component name=\"ArtifactManager\">\r\n  <artifact type=\"exploded-war\" name=\"FinancialProjectWebVersion4:war exploded\">\r\n    <output-path>$PROJECT_DIR$/target/FinancialProjectWebVersion4-1.0-SNAPSHOT</output-path>\r\n    <properties id=\"maven-jee-properties\">\r\n      <options>\r\n        <exploded>true</exploded>\r\n        <module>FinancialProjectWebVersion4</module>\r\n        <packaging>war</packaging>\r\n      </options>\r\n    </properties>\r\n    <root id=\"root\">\r\n      <element id=\"directory\" name=\"WEB-INF\">\r\n        <element id=\"directory\" name=\"classes\">\r\n          <element id=\"module-output\" name=\"FinancialProjectWebVersion4\" />\r\n        </element>\r\n        <element id=\"directory\" name=\"lib\">\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.sun.mail:jakarta.mail:2.0.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.sun.activation:jakarta.activation:2.0.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.cxf:cxf-rt-frontend-jaxrs:3.5.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.cxf:cxf-core:3.5.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.glassfish.jaxb:jaxb-runtime:2.3.5\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.glassfish.jaxb:txw2:2.3.5\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.sun.istack:istack-commons-runtime:3.0.12\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.fasterxml.woodstox:woodstox-core:6.2.7\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.codehaus.woodstox:stax2-api:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.ws.xmlschema:xmlschema-core:2.3.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: jakarta.ws.rs:jakarta.ws.rs-api:2.1.6\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: jakarta.annotation:jakarta.annotation-api:1.3.5\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.cxf:cxf-rt-transports-http:3.5.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.cxf:cxf-rt-security:3.5.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: jakarta.xml.ws:jakarta.xml.ws-api:2.3.3\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: jakarta.jws:jakarta.jws-api:2.1.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: jakarta.xml.soap:jakarta.xml.soap-api:1.4.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: jakarta.activation:jakarta.activation-api:1.2.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.sun.xml.messaging.saaj:saaj-impl:1.5.3\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.jvnet.staxex:stax-ex:1.8.3\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.cxf:cxf-rt-frontend-jaxws:3.5.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: xml-resolver:xml-resolver:1.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.ow2.asm:asm:9.3\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.cxf:cxf-rt-bindings-soap:3.5.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.cxf:cxf-rt-wsdl:3.5.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: wsdl4j:wsdl4j:1.6.3\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.cxf:cxf-rt-databinding-jaxb:3.5.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.cxf:cxf-rt-bindings-xml:3.5.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.cxf:cxf-rt-frontend-simple:3.5.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.cxf:cxf-rt-ws-addr:3.5.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.cxf:cxf-rt-ws-policy:3.5.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.neethi:neethi:3.2.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.activemq:activemq-client:5.17.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.slf4j:slf4j-api:1.7.36\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.fusesource.hawtbuf:hawtbuf:1.11\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.geronimo.specs:geronimo-j2ee-management_1.1_spec:1.0.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: mysql:mysql-connector-java:8.0.29\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.google.protobuf:protobuf-java:3.19.4\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.sun.mail:javax.mail:1.6.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: javax.activation:activation:1.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-java:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-api:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-chrome-driver:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.google.auto.service:auto-service-annotations:1.0.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.google.auto.service:auto-service:1.0.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.google.auto:auto-common:1.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.google.guava:guava:31.1-jre\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.google.guava:failureaccess:1.0.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.checkerframework:checker-qual:3.12.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.google.errorprone:error_prone_annotations:2.11.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.google.j2objc:j2objc-annotations:1.3\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-chromium-driver:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-json:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-devtools-v100:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-devtools-v101:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-devtools-v102:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-devtools-v85:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-edge-driver:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-firefox-driver:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-ie-driver:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-opera-driver:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-remote-driver:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.netty:netty-buffer:4.1.77.Final\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.netty:netty-codec-http:4.1.77.Final\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.netty:netty-codec:4.1.77.Final\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.netty:netty-handler:4.1.77.Final\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.netty:netty-common:4.1.77.Final\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.netty:netty-transport-classes-epoll:4.1.77.Final\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.netty:netty-transport-classes-kqueue:4.1.77.Final\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.netty:netty-transport-native-epoll:4.1.77.Final\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.netty:netty-transport-native-kqueue:4.1.77.Final\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.netty:netty-transport-native-unix-common:4.1.77.Final\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.netty:netty-transport:4.1.77.Final\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.netty:netty-resolver:4.1.77.Final\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.opentelemetry:opentelemetry-api:1.14.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.opentelemetry:opentelemetry-context:1.14.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.opentelemetry:opentelemetry-exporter-logging:1.14.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.opentelemetry:opentelemetry-sdk-metrics:1.14.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.opentelemetry:opentelemetry-sdk-logs:1.14.0-alpha\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.opentelemetry:opentelemetry-sdk-common:1.14.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi:1.14.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.opentelemetry:opentelemetry-sdk-extension-autoconfigure:1.14.0-alpha\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.opentelemetry:opentelemetry-sdk-trace:1.14.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.opentelemetry:opentelemetry-sdk:1.14.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.opentelemetry:opentelemetry-semconv:1.14.0-alpha\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.ous:jtoml:2.0.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: net.bytebuddy:byte-buddy:1.12.10\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.apache.commons:commons-exec:1.3\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.asynchttpclient:async-http-client:2.12.3\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.asynchttpclient:async-http-client-netty-utils:2.12.3\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.netty:netty-codec-socks:4.1.60.Final\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.netty:netty-handler-proxy:4.1.60.Final\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.netty:netty-transport-native-epoll:linux-x86_64:4.1.60.Final\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: io.netty:netty-transport-native-kqueue:osx-x86_64:4.1.60.Final\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.reactivestreams:reactive-streams:1.0.3\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.typesafe.netty:netty-reactive-streams:2.0.4\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-http:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: dev.failsafe:failsafe:3.2.4\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-safari-driver:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.seleniumhq.selenium:selenium-support:4.2.1\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.testng:testng:7.6.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.google.code.findbugs:jsr305:3.0.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.beust:jcommander:1.82\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.webjars:jquery:3.6.0\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: ru.yandex.qatools.ashot:ashot:1.5.4\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: commons-io:commons-io:2.5\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: com.google.code.gson:gson:2.6.2\" />\r\n          <element id=\"library\" level=\"project\" name=\"Maven: org.hamcrest:hamcrest-core:1.3\" />\r\n        </element>\r\n      </element>\r\n      <element id=\"directory\" name=\"META-INF\">\r\n        <element id=\"file-copy\" path=\"$PROJECT_DIR$/target/FinancialProjectWebVersion4-1.0-SNAPSHOT/META-INF/MANIFEST.MF\" />\r\n      </element>\r\n      <element id=\"javaee-facet-resources\" facet=\"FinancialProjectWebVersion4/web/Web\" />\r\n    </root>\r\n  </artifact>\r\n</component>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml b/.idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml
+--- a/.idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml	
++++ b/.idea/artifacts/FinancialProjectWebVersion4_war_exploded.xml	
+@@ -14,8 +14,6 @@
+           <element id="module-output" name="FinancialProjectWebVersion4" />
+         </element>
+         <element id="directory" name="lib">
+-          <element id="library" level="project" name="Maven: com.sun.mail:jakarta.mail:2.0.1" />
+-          <element id="library" level="project" name="Maven: com.sun.activation:jakarta.activation:2.0.1" />
+           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-frontend-jaxrs:3.5.2" />
+           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-core:3.5.2" />
+           <element id="library" level="project" name="Maven: org.glassfish.jaxb:jaxb-runtime:2.3.5" />
+@@ -33,6 +31,7 @@
+           <element id="library" level="project" name="Maven: jakarta.jws:jakarta.jws-api:2.1.0" />
+           <element id="library" level="project" name="Maven: jakarta.xml.soap:jakarta.xml.soap-api:1.4.2" />
+           <element id="library" level="project" name="Maven: jakarta.activation:jakarta.activation-api:1.2.2" />
++          <element id="library" level="project" name="Maven: com.sun.activation:jakarta.activation:1.2.2" />
+           <element id="library" level="project" name="Maven: com.sun.xml.messaging.saaj:saaj-impl:1.5.3" />
+           <element id="library" level="project" name="Maven: org.jvnet.staxex:stax-ex:1.8.3" />
+           <element id="library" level="project" name="Maven: org.apache.geronimo.specs:geronimo-jta_1.1_spec:1.1.1" />
+Index: src/main/java/email/SendEmail.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package email;\r\n\r\nimport javax.mail.Message;\r\nimport javax.mail.MessagingException;\r\nimport javax.mail.Session;\r\nimport javax.mail.Transport;\r\nimport javax.mail.internet.InternetAddress;\r\nimport javax.mail.internet.MimeMessage;\r\nimport java.util.Date;\r\nimport java.util.Properties;\r\n\r\n/* Set up mail properties and calls authentication class\r\n * Then gets a session and compile and sends the email\r\n * Return boolean to say if mail was sent or not. */\r\npublic class SendEmail {\r\n\r\n    public boolean SendMail(String to, String subject, String msgBody) {\r\n\r\n        String usernameFrom = \"janinahaffner@gmail.com\";\r\n        String passwordFrom = \"Janinahaf12\";\r\n        boolean mailStatus;\r\n        Properties properties = new Properties();\r\n        properties.put(\"mail.smtp.host\", \"smtp.gmail.com\");\r\n        properties.put(\"mail.smtp.socketFactory.port\", \"465\");\r\n        properties.put(\"mail.smtp.socketFactory.class\", \"javax.net.ssl.SSLSocketFactory\");\r\n        properties.put(\"mail.smtp.auth\", \"true\");\r\n\r\n        Authentication authentication = new Authentication(usernameFrom, passwordFrom);\r\n        authentication.getPasswordAuthentication();\r\n        properties.put(\"mail.debug\", \"true\");\r\n\r\n        Session session = Session.getInstance(properties, authentication);\r\n\r\n        try {\r\n            Message message = new MimeMessage(session);\r\n            message.setFrom(new InternetAddress(usernameFrom));\r\n            InternetAddress addresses = new InternetAddress(to);\r\n            message.setRecipient(Message.RecipientType.TO, addresses);\r\n            message.setSubject(subject);\r\n            message.setSentDate(new Date());\r\n            message.setText(msgBody);\r\n            Transport.send(message);\r\n            mailStatus = true;\r\n        } catch (MessagingException mex) {\r\n            return false;\r\n        }\r\n        return mailStatus;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/email/SendEmail.java b/src/main/java/email/SendEmail.java
+--- a/src/main/java/email/SendEmail.java	
++++ b/src/main/java/email/SendEmail.java	
+@@ -1,3 +1,63 @@
++package email;
++
++
++import dao.ApplicationDao;
++
++import javax.mail.*;
++import javax.mail.internet.InternetAddress;
++import javax.mail.internet.MimeMessage;
++import java.util.Properties;
++
++public class SendEmail {
++
++    public static boolean sendMail(String recepient, String subject) throws MessagingException {
++        System.out.println("preparing to send email.");
++
++        Properties properties = new Properties();
++
++        properties.put("mail.smtp.auth", "true");
++      //  properties.put("mail.smtp.starttls.enable", "true");
++        properties.put("mail.smtp.host", "localhost");
++       // properties.put("mail.smtp.port", "587");
++
++        String emailInfo = new ApplicationDao().mailInfo();
++        String[] userPass = emailInfo.split(",");
++        String myAccEmail = userPass[0];
++        String myPass = userPass[1];
++
++        Authentication authentication = new Authentication(myAccEmail, myPass);
++        Session session = Session.getInstance(properties, authentication);
++
++        Message message = preparedMessage(session, myAccEmail, recepient, subject);
++
++        Transport.send(message);
++
++        System.out.println("Message was sent.");
++        return true;
++    }
++
++    private static Message preparedMessage(Session session, String myAccEmail, String recipient, String subject){
++        try {
++            System.out.println("came in here.");
++            Message message = new MimeMessage(session);
++            message.setFrom(new InternetAddress(myAccEmail));
++            message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
++            message.setSubject(subject);
++            message.setText("Email body");
++            return message;
++
++        } catch (MessagingException e) {
++            throw new RuntimeException(e);
++        }
++    }
++}
++
++
++
++
++
++
++/*
+ package email;
+ 
+ import javax.mail.Message;
+@@ -9,32 +69,43 @@
+ import java.util.Date;
+ import java.util.Properties;
+ 
++*/
+ /* Set up mail properties and calls authentication class
+  * Then gets a session and compile and sends the email
+- * Return boolean to say if mail was sent or not. */
++ * Return boolean to say if mail was sent or not. *//*
++
+ public class SendEmail {
+ 
+     public boolean SendMail(String to, String subject, String msgBody) {
+ 
++        System.out.println("preparing to send");
++
+         String usernameFrom = "janinahaffner@gmail.com";
+         String passwordFrom = "Janinahaf12";
+         boolean mailStatus;
+         Properties properties = new Properties();
++        properties.put("mail.smtp.auth", "true");
++        properties.put("mail.smtp.starttls", "true");
+         properties.put("mail.smtp.host", "smtp.gmail.com");
+-        properties.put("mail.smtp.socketFactory.port", "465");
+-        properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+-        properties.put("mail.smtp.auth", "true");
++        properties.put("mail.smtp.port", "587");
+ 
+         Authentication authentication = new Authentication(usernameFrom, passwordFrom);
+         authentication.getPasswordAuthentication();
+         properties.put("mail.debug", "true");
+ 
++        System.out.println("properties set");
++
+         Session session = Session.getInstance(properties, authentication);
+ 
++        System.out.println("session received");
++        subject = "hallo";
++        msgBody = "sending mail";
++
++
+         try {
+             Message message = new MimeMessage(session);
+             message.setFrom(new InternetAddress(usernameFrom));
+-            InternetAddress addresses = new InternetAddress(to);
++            InternetAddress addresses = new InternetAddress(usernameFrom);
+             message.setRecipient(Message.RecipientType.TO, addresses);
+             message.setSubject(subject);
+             message.setSentDate(new Date());
+@@ -46,4 +117,14 @@
+         }
+         return mailStatus;
+     }
++
++    public static void main (String [] arg) {
++        String to = "janinahaffner@gmail.com";
++        String sub = "testing, testing";
++        String msg = " testing emails";
++
++        boolean sent = new SendEmail().SendMail(to,sub,msg);
++        System.out.println(sent);
++    }
+ }
++*/
+Index: src/main/webapp/jsps/emailHomePage.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%--\r\n  Created by IntelliJ IDEA.\r\n  User: janin\r\n  Date: 2022/06/12\r\n  Time: 12:05\r\n  To change this template use File | Settings | File Templates.\r\n--%>\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" href=\"../css/style2.css\">\r\n    <title>EmailHomepage</title>\r\n</head>\r\n<body>\r\n<div class=\"header\">\r\n    <h1>The Financial Curation</h1>\r\n    <form hidden=\"hidden\" >\r\n        ${username}\r\n        ${fullname}\r\n        ${email}\r\n        ${preference}\r\n        ${updates}\r\n        ${stockExchange}\r\n        ${symbols}\r\n    </form>\r\n</div>\r\n<div>\r\n    <p></p>\r\n</div>\r\n\r\n<div class=\"navbar\">\r\n    <a href=\"${pageContext.request.contextPath}/jsps/profile.jsp\">Profile</a>\r\n    <a href=\"${pageContext.request.contextPath}/Logout\" class=\"right\">Logout</a>\r\n</div>\r\n\r\n<div class=\"row\">\r\n    <div class=\"side\">\r\n        <script>\r\n            if (typeof(stockdio_events) == \"undefined\") {\r\n                stockdio_events = true;\r\n                const stockdio_eventMethod = window.addEventListener ? \"addEventListener\" : \"attachEvent\";\r\n                const stockdio_eventer = window[stockdio_eventMethod];\r\n                const stockdio_messageEvent = stockdio_eventMethod === \"attachEvent\" ? \"onmessage\" : \"message\";\r\n                stockdio_eventer(stockdio_messageEvent, function (e) {\r\n                    if (typeof(e.data) != \"undefined\" && typeof(e.data.method) != \"undefined\") {\r\n                        eval(e.data.method);\r\n                    }\r\n                },false);\r\n            }\r\n        </script>\r\n        <iframe id='st_d51489f83c2947cb847dc3186c5df69d' width='100%' height='100%'\r\n                src='https://api.stockdio.com/visualization/financial/charts/v1/EconomicNews?app-key=3F3765F6FF284467B14A9241127AF282&includeDescription=false&imageWidth=40&imageHeight=40&palette=Financial-Light&onload=st_d51489f83c2947cb847dc3186c5df69d'>\r\n\r\n        </iframe>\r\n    </div>\r\n    <div class=\"main\">\r\n        <script>\r\n            if (typeof(stockdio_events) == \"undefined\") {\r\n                stockdio_events = true;\r\n                const stockdio_eventMethod = window.addEventListener ? \"addEventListener\" : \"attachEvent\";\r\n                const stockdio_eventer = window[stockdio_eventMethod];\r\n                const stockdio_messageEvent = stockdio_eventMethod === \"attachEvent\" ? \"onmessage\" : \"message\";\r\n                stockdio_eventer(stockdio_messageEvent, function (e) {\r\n                    if (typeof(e.data) != \"undefined\" && typeof(e.data.method) != \"undefined\") {\r\n                        eval(e.data.method);\r\n                    }\r\n                },false);\r\n            }\r\n        </script>\r\n        <iframe id='st_726f2915c60a4930b73d054a3c013725' width='100%' height='100%'\r\n                src='https://api.stockdio.com/visualization/financial/charts/v1/Ticker?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=${stockExchange}&symbols=${symbols};GLN&palette=Financial-Light&layoutType=10&onload=st_726f2915c60a4930b73d054a3c013725'>\r\n\r\n        </iframe>\r\n        <br>\r\n\r\n        <script>\r\n            if (typeof(stockdio_events) == \"undefined\") {\r\n                stockdio_events = true;\r\n                const stockdio_eventMethod = window.addEventListener ? \"addEventListener\" : \"attachEvent\";\r\n                const stockdio_eventer = window[stockdio_eventMethod];\r\n                const stockdio_messageEvent = stockdio_eventMethod === \"attachEvent\" ? \"onmessage\" : \"message\";\r\n                stockdio_eventer(stockdio_messageEvent, function (e) {\r\n                    if (typeof(e.data) != \"undefined\" && typeof(e.data.method) != \"undefined\") {\r\n                        eval(e.data.method);\r\n                    }\r\n                },false);\r\n            }\r\n        </script>\r\n        <iframe id='st_89d5f55da3d0437b824fe93458dc161a' width='100%' height='100%'\r\n                src='https://api.stockdio.com/visualization/financial/charts/v1/QuoteBoard?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=${stockExchange}&symbols=${symbols};&includeVolume=true&palette=Financial-Light&title=Watch%20List&onload=st_89d5f55da3d0437b824fe93458dc161a'>\r\n\r\n        </iframe>\r\n\r\n\r\n\r\n\r\n    </div>\r\n</div>\r\n\r\n<div class=\"footer\">\r\n    <p>Copyright 2022 The Finance Curation. All rights reserved</p>\r\n    <p>Terms of Service | Privacy Policy</p>\r\n</div>\r\n\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/jsps/emailHomePage.jsp b/src/main/webapp/jsps/emailHomePage.jsp
+--- a/src/main/webapp/jsps/emailHomePage.jsp	
++++ b/src/main/webapp/jsps/emailHomePage.jsp	
+@@ -5,6 +5,7 @@
+   Time: 12:05
+   To change this template use File | Settings | File Templates.
+ --%>
++
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+@@ -17,15 +18,6 @@
+ <body>
+ <div class="header">
+     <h1>The Financial Curation</h1>
+-    <form hidden="hidden" >
+-        ${username}
+-        ${fullname}
+-        ${email}
+-        ${preference}
+-        ${updates}
+-        ${stockExchange}
+-        ${symbols}
+-    </form>
+ </div>
+ <div>
+     <p></p>
+@@ -35,7 +27,6 @@
+     <a href="${pageContext.request.contextPath}/jsps/profile.jsp">Profile</a>
+     <a href="${pageContext.request.contextPath}/Logout" class="right">Logout</a>
+ </div>
+-
+ <div class="row">
+     <div class="side">
+         <script>
+@@ -94,9 +85,6 @@
+ 
+         </iframe>
+ 
+-
+-
+-
+     </div>
+ </div>
+ 
+Index: src/main/webapp/jsps/homepage.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page contentType=\"text/html;charset=UTF-8\" pageEncoding=\"utf-8\" %>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" href=\"../css/style2.css\">\r\n    <title>Homepage</title>\r\n</head>\r\n<body>\r\n<div class=\"header\">\r\n    <h1>The Financial Curation</h1>\r\n\r\n</div>\r\n<div class=\"navbar\">\r\n    <a href=\"${pageContext.request.contextPath}/jsps/homepage.jsp\">Home</a>\r\n    <a href=\"${pageContext.request.contextPath}/jsps/newsPage.jsp\">News</a>\r\n    <a href=\"${pageContext.request.contextPath}/jsps/markets.jsp\">Markets</a>\r\n    <a href=\"${pageContext.request.contextPath}/jsps/profile.jsp\">Profile</a>\r\n    <a href=\"${pageContext.request.contextPath}/Logout\" class=\"right\">Logout</a>\r\n</div>\r\n\r\n<br>${errorMessage}\r\n<br>\r\n<div class=\"row\">\r\n    <div class=\"side\">\r\n        <script>\r\n            if (typeof(stockdio_events) == \"undefined\") {\r\n                stockdio_events = true;\r\n                const stockdio_eventMethod = window.addEventListener ? \"addEventListener\" : \"attachEvent\";\r\n                const stockdio_eventer = window[stockdio_eventMethod];\r\n                const stockdio_messageEvent = stockdio_eventMethod === \"attachEvent\" ? \"onmessage\" : \"message\";\r\n                stockdio_eventer(stockdio_messageEvent, function (e) {\r\n                    if (typeof(e.data) != \"undefined\" && typeof(e.data.method) != \"undefined\") {\r\n                        eval(e.data.method);\r\n                    }\r\n                },false);\r\n            }\r\n        </script>\r\n        <iframe id='st_d51489f83c2947cb847dc3186c5df69d' width='100%' height='100%'\r\n                src='https://api.stockdio.com/visualization/financial/charts/v1/EconomicNews?app-key=3F3765F6FF284467B14A9241127AF282&includeDescription=false&imageWidth=40&imageHeight=40&palette=Financial-Light&onload=st_d51489f83c2947cb847dc3186c5df69d'>\r\n\r\n        </iframe>\r\n    </div>\r\n    <div class=\"main\">\r\n        <script>\r\n            if (typeof(stockdio_events) == \"undefined\") {\r\n                stockdio_events = true;\r\n                const stockdio_eventMethod = window.addEventListener ? \"addEventListener\" : \"attachEvent\";\r\n                const stockdio_eventer = window[stockdio_eventMethod];\r\n                const stockdio_messageEvent = stockdio_eventMethod === \"attachEvent\" ? \"onmessage\" : \"message\";\r\n                stockdio_eventer(stockdio_messageEvent, function (e) {\r\n                    if (typeof(e.data) != \"undefined\" && typeof(e.data.method) != \"undefined\") {\r\n                        eval(e.data.method);\r\n                    }\r\n                },false);\r\n            }\r\n        </script>\r\n        <iframe id='st_726f2915c60a4930b73d054a3c013725' width='100%' height='100%'\r\n                src='https://api.stockdio.com/visualization/financial/charts/v1/Ticker?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=${stockExchange}&symbols=${symbols};GLN&palette=Financial-Light&layoutType=10&onload=st_726f2915c60a4930b73d054a3c013725'>\r\n\r\n        </iframe>\r\n        <br>\r\n\r\n        <script>\r\n            if (typeof(stockdio_events) == \"undefined\") {\r\n                stockdio_events = true;\r\n                const stockdio_eventMethod = window.addEventListener ? \"addEventListener\" : \"attachEvent\";\r\n                const stockdio_eventer = window[stockdio_eventMethod];\r\n                const stockdio_messageEvent = stockdio_eventMethod === \"attachEvent\" ? \"onmessage\" : \"message\";\r\n                stockdio_eventer(stockdio_messageEvent, function (e) {\r\n                    if (typeof(e.data) != \"undefined\" && typeof(e.data.method) != \"undefined\") {\r\n                        eval(e.data.method);\r\n                    }\r\n                },false);\r\n            }\r\n        </script>\r\n        <iframe id='st_89d5f55da3d0437b824fe93458dc161a' width='100%' height='100%'\r\n                src='https://api.stockdio.com/visualization/financial/charts/v1/QuoteBoard?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=${stockExchange}&symbols=${symbols};&includeVolume=true&palette=Financial-Light&title=Watch%20List&onload=st_89d5f55da3d0437b824fe93458dc161a'>\r\n\r\n        </iframe>\r\n\r\n\r\n\r\n\r\n    </div>\r\n</div>\r\n\r\n<div class=\"footer\">\r\n    <p>Copyright 2022 The Finance Curation. All rights reserved</p>\r\n    <p>Terms of Service | Privacy Policy</p>\r\n</div>\r\n\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/jsps/homepage.jsp b/src/main/webapp/jsps/homepage.jsp
+--- a/src/main/webapp/jsps/homepage.jsp	
++++ b/src/main/webapp/jsps/homepage.jsp	
+@@ -1,4 +1,5 @@
+ <%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" %>
++
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+@@ -82,7 +83,6 @@
+ 
+ 
+ 
+-
+     </div>
+ </div>
+ 
+Index: src/main/java/com/financialprojectwebversion4/LoginServlet.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.financialprojectwebversion4;\r\n\r\nimport dao.ApplicationDao;\r\nimport jakarta.servlet.RequestDispatcher;\r\nimport jakarta.servlet.ServletException;\r\nimport jakarta.servlet.annotation.WebServlet;\r\nimport jakarta.servlet.http.*;\r\n\r\nimport java.io.IOException;\r\nimport java.util.Objects;\r\n\r\n@WebServlet(name = \"LoginServlet\", value = \"/LoginServlet\")\r\npublic class LoginServlet extends HttpServlet {\r\n\r\n\t@Override\r\n\tprotected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {\r\n\t\t// send request to login.jsp resource\r\n\t\tRequestDispatcher dispatcher = req.getRequestDispatcher(\"/jsps/login.jsp\");\r\n\t\tdispatcher.forward(req, resp);\r\n\t}\r\n\t/* Get the username and password from the login form\r\n\t * Call DAO to validate user credentials is valid\r\n\t * If user is valid, set username as a cookie to use in other pages, set cookie age.\r\n\t * Call DAO to retrieve user information to use in jsp pages and update servlet.\r\n\t * Split returned info and set up HTTP session, then set user info as attributes.\r\n\t * If user preference is browser, forward user to homepage.jsp, with all attributes.\r\n\t * If user preference is email,forward user to emailHomePage.jsp\r\n\t * Set the destination page for the response\r\n\t * Dispatch request with user info or message */\r\n\t@Override\r\n\tprotected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {\r\n\r\n\t\tString username;\r\n\t\tString password;\r\n\t\tString fullname;\r\n\t\tString email;\r\n\t\tString preference;\r\n\t\tString updates;\r\n\t\tString stockExchange;\r\n\t\tString symbols;\r\n\t\tString destPage;\r\n\t\tString errorMessage;\r\n\t\tApplicationDao dao = new ApplicationDao();\r\n\t\tboolean isValidUser;\r\n\t\tString userinfo;\r\n\t\tString[] items;\r\n\t\tCookie usernameCookie;\r\n\r\n\t\tusername = req.getParameter(\"username\");\r\n\t\tpassword = req.getParameter(\"password\");\r\n\r\n\t\tisValidUser = dao.validateUser(username, password);\r\n\t\tdestPage = \"/jsps/login.jsp\";\r\n\r\n\t\tif(isValidUser) {\r\n\r\n\t\t\tusernameCookie = new Cookie(\"username\", username);\r\n\t\t\tusernameCookie.setMaxAge(365*24*60*60);\r\n\r\n\t\t\tuserinfo = dao.userPreferences(username);\r\n\t\t\titems = userinfo.split(\",\");\r\n\r\n\t\t\tfullname = items[0];\r\n\t\t\temail = items[1];\r\n\t\t\tpreference = items[2];\r\n\t\t\tupdates = items[3];\r\n\t\t\tstockExchange = items[4];\r\n\t\t\tsymbols = items[5];\r\n\r\n\t\t\tHttpSession session = req.getSession();\r\n\t\t\tsession.setAttribute(\"username\", username);\r\n\t\t\tsession.setAttribute(\"fullname\", fullname);\r\n\t\t\tsession.setAttribute(\"email\", email);\r\n\t\t\tsession.setAttribute(\"preference\", preference);\r\n\t\t\tsession.setAttribute(\"updates\", updates);\r\n\t\t\tsession.setAttribute(\"stockExchange\", stockExchange);\r\n\t\t\tsession.setAttribute(\"symbols\", symbols);\r\n\r\n\t\t\tif(Objects.equals(preference, \"Browser\")){\r\n\t\t\t\tresp.addCookie(usernameCookie);\r\n\t\t\t\tdestPage = \"/jsps/homepage.jsp\";\r\n\r\n\t\t\t} else {\r\n\t\t\t\tEmailServlet emailSend = new EmailServlet();\r\n\t\t\t\tSystem.out.println(emailSend);\r\n\t\t\t\tdestPage = \"/jsps/emailHomePage.jsp\";\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\terrorMessage = \"Invalid credentials, please login again!\";\r\n\t\t\treq.setAttribute(\"errorMessage\", errorMessage);\r\n\t\t}\r\n\t\tRequestDispatcher dispatcher = req.getRequestDispatcher(destPage);\r\n\t\tdispatcher.forward(req, resp);\r\n\t}\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/financialprojectwebversion4/LoginServlet.java b/src/main/java/com/financialprojectwebversion4/LoginServlet.java
+--- a/src/main/java/com/financialprojectwebversion4/LoginServlet.java	
++++ b/src/main/java/com/financialprojectwebversion4/LoginServlet.java	
+@@ -1,11 +1,13 @@
+ package com.financialprojectwebversion4;
+ 
+ import dao.ApplicationDao;
++import email.SendEmail;
+ import jakarta.servlet.RequestDispatcher;
+ import jakarta.servlet.ServletException;
+ import jakarta.servlet.annotation.WebServlet;
+ import jakarta.servlet.http.*;
+ 
++import javax.mail.MessagingException;
+ import java.io.IOException;
+ import java.util.Objects;
+ 
+@@ -45,6 +47,13 @@
+ 		String userinfo;
+ 		String[] items;
+ 		Cookie usernameCookie;
++		String subject;
++		String msgbody;
++		String fromInfo;
++		String[] fromInfoSplit;
++		String fromEmail;
++		String fromPW;
++
+ 
+ 		username = req.getParameter("username");
+ 		password = req.getParameter("password");
+@@ -67,6 +76,11 @@
+ 			stockExchange = items[4];
+ 			symbols = items[5];
+ 
++			fromInfo = dao.mailInfo();
++			fromInfoSplit = fromInfo.split(",");
++			fromEmail = fromInfoSplit[0];
++			fromPW = fromInfoSplit[1];
++
+ 			HttpSession session = req.getSession();
+ 			session.setAttribute("username", username);
+ 			session.setAttribute("fullname", fullname);
+@@ -75,13 +89,23 @@
+ 			session.setAttribute("updates", updates);
+ 			session.setAttribute("stockExchange", stockExchange);
+ 			session.setAttribute("symbols", symbols);
++			session.setAttribute("fromEmail", fromEmail);
++			session.setAttribute("fromPW", fromPW);
++
++			subject = "The Financial Curation Report for " + fullname;
++			msgbody = "Testing if email is working";
+ 
+ 			if(Objects.equals(preference, "Browser")){
+ 				resp.addCookie(usernameCookie);
+ 				destPage = "/jsps/homepage.jsp";
+ 
+ 			} else {
+-				EmailServlet emailSend = new EmailServlet();
++				boolean emailSend = false;
++				try {
++					emailSend = new SendEmail().sendMail(email, subject);
++				} catch (MessagingException e) {
++					throw new RuntimeException(e);
++				}
+ 				System.out.println(emailSend);
+ 				destPage = "/jsps/emailHomePage.jsp";
+ 			}
+Index: src/main/java/com/financialprojectwebversion4/EmailServlet.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.financialprojectwebversion4;\r\n\r\nimport email.SendEmail;\r\nimport jakarta.servlet.RequestDispatcher;\r\nimport jakarta.servlet.ServletException;\r\nimport jakarta.servlet.annotation.WebServlet;\r\nimport jakarta.servlet.http.HttpServlet;\r\nimport jakarta.servlet.http.HttpServletRequest;\r\nimport jakarta.servlet.http.HttpServletResponse;\r\nimport jakarta.servlet.http.HttpSession;\r\n\r\nimport java.io.IOException;\r\n\r\n/* Email servlet with doPost method\r\n * Set content type to jsp, and get request session\r\n * Get all information from jsp and set as attributes\r\n * Call SendEmail class to send the email to the user\r\n * If the mail was sent successfully, send user to the email homepage with all attributes and message\r\n * Else return error message with user to homepage.     */\r\n@WebServlet(name = \"EmailServlet\", value = \"/EmailServlet\")\r\npublic class EmailServlet extends HttpServlet {\r\n\r\n/*\r\n    @Override\r\n    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {\r\n\r\n    }\r\n*/\r\n\r\n    @Override\r\n    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {\r\n\r\n        String errorMessage;\r\n        String destPage = \"/jsps/profile.jsp\";\r\n        String username;\r\n        String fullname;\r\n        String email;\r\n        String preference;\r\n        String updates;\r\n        String stockExchange;\r\n        String symbols;\r\n        String message = \"test to see if email is working\";\r\n\r\n        resp.setContentType(\"text/jsp\");\r\n        HttpSession session = req.getSession();\r\n\r\n        email = req.getParameter(\"email\");\r\n        fullname = req.getParameter(\"fullname\");\r\n        String subject = \"Financial Curation Report for \" + fullname;\r\n       // String message = req.getParameter(\"message\");\r\n        username = (String) session.getAttribute(\"username\");\r\n        preference = (String) session.getAttribute(\"preference\");\r\n        updates = (String) session.getAttribute(\"updates\");\r\n        stockExchange = (String) session.getAttribute(\"stockExchange\");\r\n        symbols = (String) session.getAttribute(\"symbols\");\r\n\r\n        session.setAttribute(\"username\", username);\r\n        session.setAttribute(\"fullname\", fullname);\r\n        session.setAttribute(\"email\", email);\r\n        session.setAttribute(\"preference\", preference);\r\n        session.setAttribute(\"updates\", updates);\r\n        session.setAttribute(\"stockExchange\", stockExchange);\r\n        session.setAttribute(\"symbols\", symbols);\r\n\r\n\r\n        SendEmail mail = new SendEmail();\r\n        boolean mailSent = mail.SendMail(email, subject, message);\r\n\r\n        if (mailSent) {\r\n            errorMessage = \"Your information was sent to your email.\";\r\n            session.setAttribute(\"errorMessage\", errorMessage);\r\n        } else {\r\n            errorMessage = \"An error occurred, we were un able to send your email!\";\r\n            session.setAttribute(\"errorMessage\", errorMessage);\r\n        }\r\n        RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);\r\n        dispatcher.forward(req, resp);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/financialprojectwebversion4/EmailServlet.java b/src/main/java/com/financialprojectwebversion4/EmailServlet.java
+--- a/src/main/java/com/financialprojectwebversion4/EmailServlet.java	
++++ b/src/main/java/com/financialprojectwebversion4/EmailServlet.java	
+@@ -1,3 +1,4 @@
++/*
+ package com.financialprojectwebversion4;
+ 
+ import email.SendEmail;
+@@ -11,21 +12,25 @@
+ 
+ import java.io.IOException;
+ 
++*/
+ /* Email servlet with doPost method
+  * Set content type to jsp, and get request session
+  * Get all information from jsp and set as attributes
+  * Call SendEmail class to send the email to the user
+  * If the mail was sent successfully, send user to the email homepage with all attributes and message
+- * Else return error message with user to homepage.     */
++ * Else return error message with user to homepage.     *//*
++
+ @WebServlet(name = "EmailServlet", value = "/EmailServlet")
+ public class EmailServlet extends HttpServlet {
+ 
++*/
+ /*
+     @Override
+     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+ 
+     }
+-*/
++*//*
++
+ 
+     @Override
+     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+@@ -76,4 +81,4 @@
+         RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
+         dispatcher.forward(req, resp);
+     }
+-}
+\ No newline at end of file
++}*/
