@@ -70,5 +70,12 @@ body{
     color: grey;
 }
 
+.footer{
+    padding: 20px;
+    text-align: center;
+    background: black;
+    color: white;
+}
+
 
 
