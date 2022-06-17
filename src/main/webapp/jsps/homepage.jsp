@@ -80,37 +80,7 @@
 
         </iframe>
         
-         <br>
-            <script>
-                if (typeof(stockdio_events) == "undefined") {
-                   stockdio_events = true;
-                   var stockdio_eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-                   var stockdio_eventer = window[stockdio_eventMethod];
-                   var stockdio_messageEvent = stockdio_eventMethod == "attachEvent" ? "onmessage" : "message";
-                   stockdio_eventer(stockdio_messageEvent, function (e) {
-                      if (typeof(e.data) != "undefined" && typeof(e.data.method) != "undefined") {
-                         eval(e.data.method);
-                      }
-                   },false);
-                }
-             </script>
-             <iframe id='st_e0558d2416a4433b90957a90066f41c0' frameBorder='0' scrolling='no' width='600' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/QuoteBoard?app-key=3F3765F6FF284467B14A9241127AF282&stockExchange=FOREX&symbols=EUR%2FUSD;GBP%2FUSD;USD%2FJPY;USD%2FCHF;AUD%2FUSD&palette=Financial-Light&title=Watch%20List&onload=st_e0558d2416a4433b90957a90066f41c0'></iframe>
-
-             <br>
-             <script>
-                if (typeof(stockdio_events) == "undefined") {
-                   stockdio_events = true;
-                   var stockdio_eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-                   var stockdio_eventer = window[stockdio_eventMethod];
-                   var stockdio_messageEvent = stockdio_eventMethod == "attachEvent" ? "onmessage" : "message";
-                   stockdio_eventer(stockdio_messageEvent, function (e) {
-                      if (typeof(e.data) != "undefined" && typeof(e.data.method) != "undefined") {
-                         eval(e.data.method);
-                      }
-                   },false);
-                }
-             </script>
-             <iframe id='st_dc24818a430446c0b3834252fed99120' frameBorder='0' scrolling='no' width='600' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/QuoteBoard?app-key=3F3765F6FF284467B14A9241127AF282&stockExchange=CRYPTO&symbols=BTC;ETH;XRP;BCH;LTC;&palette=Financial-Light&title=Watch%20List&onload=st_dc24818a430446c0b3834252fed99120'></iframe>
+        
 
     </div>
 </div>
