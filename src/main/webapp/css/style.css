@@ -51,6 +51,10 @@ body{
     color:grey;
 }
 
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .side{
     flex: 30%;
