@@ -88,6 +88,11 @@
             <iframe id='st_0071e4b4f52a44d68ceded531f3005ce' frameBorder='0' scrolling='no' width='600' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/QuoteBoard?app-key=3F3765F6FF284467B14A9241127AF282&stockExchange=COMMODITIES&symbols=GC;SI;CO;CL;CR&palette=Financial-Light&title=Watch%20List&onload=st_0071e4b4f52a44d68ceded531f3005ce'></iframe>
       </div>
     </div>
+     
+    <div class="footer">
+      <p>Copyright 2022 The Finance Curation. All rights reserved</p>
+      <p>Terms of Service | Privacy Policy</p>
+  </div>
     
 </body>
 </html>
