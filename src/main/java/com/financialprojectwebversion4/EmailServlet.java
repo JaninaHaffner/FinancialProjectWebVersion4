@@ -1,15 +1,51 @@
 package com.financialprojectwebversion4;
 
 import email.SendEmail;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
-
-import javax.servlet.http.HttpServlet;
+import javax.mail.MessagingException;
 import java.io.IOException;
 
+
+@WebServlet (name = "EmailServlet", value = "/EmailServlet")
 public class EmailServlet extends HttpServlet {
 
-}
+    String destpage;
+    String errorMessage;
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        HttpSession session = req.getSession();
+        String email = (String) session.getAttribute("email");
+        String subject = (String) session.getAttribute("subject");
+
+        System.out.println(email);
+        System.out.println(subject);
+
+        boolean emailSent;
+
+        try {
+            emailSent = new SendEmail().sendMail(email, subject);
+            if(emailSent) {
+                destpage = "/jsps/profile.jsp";
+            }else {
+                destpage = "/jsps/emailHomePage.jsp";
+            }
+            System.out.println(emailSent);
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
+        RequestDispatcher dispatcher = req.getRequestDispatcher(destpage);
+        dispatcher.include(req, resp);
+    }
+}
 
 
 

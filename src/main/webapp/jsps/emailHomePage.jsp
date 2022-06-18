@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style2.css">
     <title>EmailHomepage</title>
+
 </head>
 <body>
 <div class="header">
@@ -25,10 +26,8 @@
         ${updates}
         ${stockExchange}
         ${symbols}
+        ${subject}
     </form>
-</div>
-<div>
-    <p></p>
 </div>
 
 <div class="navbar">
@@ -94,11 +93,9 @@
 
         </iframe>
 
-
-
-
     </div>
 </div>
+</iframe>
 
 <div class="footer">
     <p>Copyright 2022 The Finance Curation. All rights reserved</p>

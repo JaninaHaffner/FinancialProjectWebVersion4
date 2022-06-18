@@ -4,12 +4,21 @@ import dao.ApplicationDao;
 import email.SendEmail;
 
 
+import javax.imageio.ImageIO;
+import javax.imageio.ImageReader;
 import javax.mail.MessagingException;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
+import org.asynchttpclient.request.body.generator.InputStreamBodyGenerator;
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Objects;
 
 @WebServlet(name = "LoginServlet", value = "/LoginServlet")
@@ -18,7 +27,7 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// send request to login.jsp resource
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/jsps/login.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("src/main/webapp/jsps/login.jsp");
 		dispatcher.forward(req, resp);
 	}
 	/* Get the username and password from the login form
@@ -49,12 +58,13 @@ public class LoginServlet extends HttpServlet {
 		String[] items;
 		Cookie usernameCookie;
 		String subject;
+		RequestDispatcher dispatcher;
 
 		username = req.getParameter("username");
 		password = req.getParameter("password");
 
 		isValidUser = dao.validateUser(username, password);
-		destPage = "/jsps/login.jsp";
+		destPage = "src/main/webapp/jsps/login.jsp";
 
 		if(isValidUser) {
 
@@ -71,6 +81,8 @@ public class LoginServlet extends HttpServlet {
 			stockExchange = items[4];
 			symbols = items[5];
 
+			subject = "The Financial Curation Report for " + fullname;
+
 			HttpSession session = req.getSession();
 			session.setAttribute("username", username);
 			session.setAttribute("fullname", fullname);
@@ -79,31 +91,25 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("updates", updates);
 			session.setAttribute("stockExchange", stockExchange);
 			session.setAttribute("symbols", symbols);
-
-			subject = "The Financial Curation Report for " + fullname;
+			session.setAttribute("subject", subject);
 
 			if(Objects.equals(preference, "Browser")){
 				resp.addCookie(usernameCookie);
 				destPage = "/jsps/homepage.jsp";
 
 			} else {
-				boolean emailSend = false;
-				try {
-					emailSend = new SendEmail().sendMail(email, subject);
-				} catch (MessagingException e) {
-					errorMessage = "Email was not sent. ";
-					req.setAttribute("errorMessage", errorMessage);
-				}
-				System.out.println(emailSend);
+				new EmailServlet().doPost(req, resp);
 				destPage = "/jsps/emailHomePage.jsp";
 			}
 		} else {
+
 			errorMessage = "Invalid credentials, please login again!";
 			req.setAttribute("errorMessage", errorMessage);
 		}
-		RequestDispatcher dispatcher = req.getRequestDispatcher(destPage);
+		dispatcher = req.getRequestDispatcher(destPage);
 		dispatcher.forward(req, resp);
 	}
+
 }
 
 
