@@ -10,11 +10,11 @@
 <body>
     <div class="header">
        <h1>The Financial Curation</h1>
-       <p>Welcome to The Finance Curation. The ultimate destination for financial news and market updates</p>
-       <P>Please register or login to get personalised financial information</P>
+        <p><h2>Welcome to The Finance Curation. The ultimate destination for financial news and market updates</h2></p>
+        <P><h2>Please register or login to get personalised financial information</h2></P>
     </div>
     <div class="navbar">
-        <a href="jsps/login.jsp"class="right">Login</a>
+        <a href="jsps/login.jsp" class="right">Login</a>
         <a href="jsps/registration.jsp" class="right">Register</a>
     </div>
     <div class="row">
@@ -23,9 +23,9 @@
            <script>
               if (typeof(stockdio_events) == "undefined") {
                  stockdio_events = true;
-                 var stockdio_eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-                 var stockdio_eventer = window[stockdio_eventMethod];
-                 var stockdio_messageEvent = stockdio_eventMethod == "attachEvent" ? "onmessage" : "message";
+                 let stockdio_eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+                 let stockdio_eventer = window[stockdio_eventMethod];
+                 let stockdio_messageEvent = stockdio_eventMethod === "attachEvent" ? "onmessage" : "message";
                  stockdio_eventer(stockdio_messageEvent, function (e) {
                     if (typeof(e.data) != "undefined" && typeof(e.data.method) != "undefined") {
                        eval(e.data.method);
@@ -33,7 +33,7 @@
                  },false);
               }
            </script>
-           <iframe id='st_d51489f83c2947cb847dc3186c5df69d' frameBorder='0' scrolling='no' width='100%' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/EconomicNews?app-key=3F3765F6FF284467B14A9241127AF282&includeDescription=false&imageWidth=40&imageHeight=40&palette=Financial-Light&onload=st_d51489f83c2947cb847dc3186c5df69d'></iframe>
+           <iframe id='st_d51489f83c2947cb847dc3186c5df69d' width='100%' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/EconomicNews?app-key=3F3765F6FF284467B14A9241127AF282&includeDescription=false&imageWidth=40&imageHeight=40&palette=Financial-Light&onload=st_d51489f83c2947cb847dc3186c5df69d'></iframe>
            </div>
            <div class="main">
               <h3>Popular Stocks</h3>
@@ -41,9 +41,9 @@
               <script>
                  if (typeof(stockdio_events) == "undefined") {
                     stockdio_events = true;
-                    var stockdio_eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-                    var stockdio_eventer = window[stockdio_eventMethod];
-                    var stockdio_messageEvent = stockdio_eventMethod == "attachEvent" ? "onmessage" : "message";
+                    let stockdio_eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+                    let stockdio_eventer = window[stockdio_eventMethod];
+                    let stockdio_messageEvent = stockdio_eventMethod === "attachEvent" ? "onmessage" : "message";
                     stockdio_eventer(stockdio_messageEvent, function (e) {
                        if (typeof(e.data) != "undefined" && typeof(e.data.method) != "undefined") {
                           eval(e.data.method);
@@ -51,16 +51,16 @@
                     },false);
                  }
               </script>
-              <iframe id='st_e0558d2416a4433b90957a90066f41c0' frameBorder='0' scrolling='no' width='600' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/QuoteBoard?app-key=3F3765F6FF284467B14A9241127AF282&stockExchange=FOREX&symbols=EUR%2FUSD;GBP%2FUSD;USD%2FJPY;USD%2FCHF;AUD%2FUSD&palette=Financial-Light&title=Watch%20List&onload=st_e0558d2416a4433b90957a90066f41c0'></iframe>
+              <iframe id='st_e0558d2416a4433b90957a90066f41c0' width='600' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/QuoteBoard?app-key=3F3765F6FF284467B14A9241127AF282&stockExchange=FOREX&symbols=EUR%2FUSD;GBP%2FUSD;USD%2FJPY;USD%2FCHF;AUD%2FUSD&palette=Financial-Light&title=Watch%20List&onload=st_e0558d2416a4433b90957a90066f41c0'></iframe>
               <br>
         
               <h5>Crypto</h5>
               <script>
                  if (typeof(stockdio_events) == "undefined") {
                     stockdio_events = true;
-                    var stockdio_eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-                    var stockdio_eventer = window[stockdio_eventMethod];
-                    var stockdio_messageEvent = stockdio_eventMethod == "attachEvent" ? "onmessage" : "message";
+                    let stockdio_eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+                    let stockdio_eventer = window[stockdio_eventMethod];
+                    let stockdio_messageEvent = stockdio_eventMethod === "attachEvent" ? "onmessage" : "message";
                     stockdio_eventer(stockdio_messageEvent, function (e) {
                        if (typeof(e.data) != "undefined" && typeof(e.data.method) != "undefined") {
                           eval(e.data.method);
@@ -68,16 +68,16 @@
                     },false);
                  }
               </script>
-              <iframe id='st_dc24818a430446c0b3834252fed99120' frameBorder='0' scrolling='no' width='600' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/QuoteBoard?app-key=3F3765F6FF284467B14A9241127AF282&stockExchange=CRYPTO&symbols=BTC;ETH;XRP;BCH;LTC;&palette=Financial-Light&title=Watch%20List&onload=st_dc24818a430446c0b3834252fed99120'></iframe>
+              <iframe id='st_dc24818a430446c0b3834252fed99120' width='600' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/QuoteBoard?app-key=3F3765F6FF284467B14A9241127AF282&stockExchange=CRYPTO&symbols=BTC;ETH;XRP;BCH;LTC;&palette=Financial-Light&title=Watch%20List&onload=st_dc24818a430446c0b3834252fed99120'></iframe>
               <br>
         
               <h5>Commodities</h5>
               <script>
                  if (typeof(stockdio_events) == "undefined") {
                     stockdio_events = true;
-                    var stockdio_eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-                    var stockdio_eventer = window[stockdio_eventMethod];
-                    var stockdio_messageEvent = stockdio_eventMethod == "attachEvent" ? "onmessage" : "message";
+                    let stockdio_eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+                    let stockdio_eventer = window[stockdio_eventMethod];
+                    let stockdio_messageEvent = stockdio_eventMethod === "attachEvent" ? "onmessage" : "message";
                     stockdio_eventer(stockdio_messageEvent, function (e) {
                        if (typeof(e.data) != "undefined" && typeof(e.data.method) != "undefined") {
                           eval(e.data.method);
@@ -85,7 +85,7 @@
                     },false);
                  }
               </script>
-              <iframe id='st_0071e4b4f52a44d68ceded531f3005ce' frameBorder='0' scrolling='no' width='600' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/QuoteBoard?app-key=3F3765F6FF284467B14A9241127AF282&stockExchange=COMMODITIES&symbols=GC;SI;CO;CL;CR&palette=Financial-Light&title=Watch%20List&onload=st_0071e4b4f52a44d68ceded531f3005ce'></iframe>
+              <iframe id='st_0071e4b4f52a44d68ceded531f3005ce' width='600' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/QuoteBoard?app-key=3F3765F6FF284467B14A9241127AF282&stockExchange=COMMODITIES&symbols=GC;SI;CO;CL;CR&palette=Financial-Light&title=Watch%20List&onload=st_0071e4b4f52a44d68ceded531f3005ce'></iframe>
         </div>
       </div>
    
