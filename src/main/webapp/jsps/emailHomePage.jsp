@@ -12,6 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
     <title>EmailHomepage</title>
 
 </head>
@@ -121,4 +123,14 @@ Promise.all([
 </div>
 
 </body>
+  <script>
+    window.addEventListener('load', (event) => {
+        html2canvas(document.getElementsByTagName("iframe")).then(canvas => {
+            canvas.toBlob(function(blob){
+                window.saveAs(blob, "screenshot.png");
+            })
+        });
+
+    });
+</script>
 </html>
