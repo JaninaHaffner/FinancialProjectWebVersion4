@@ -18,6 +18,7 @@
     <a href="${pageContext.request.contextPath}/jsps/markets.jsp">Markets</a>
     <a href="${pageContext.request.contextPath}/jsps/profile.jsp">Profile</a>
     <a href="${pageContext.request.contextPath}/Logout" class="right">Logout</a>
+    <a href="${pageContext.request.contextPath}/UnsubscribeServlet" class="right">Unsubscribe</a>
 </div>
 
 <br>${errorMessage}
@@ -80,7 +81,7 @@
 
         </iframe>
         
-        
+
 
     </div>
 </div>

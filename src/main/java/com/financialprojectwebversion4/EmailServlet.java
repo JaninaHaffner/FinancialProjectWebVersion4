@@ -16,9 +16,6 @@ import java.io.IOException;
 @WebServlet (name = "EmailServlet", value = "/EmailServlet")
 public class EmailServlet extends HttpServlet {
 
-    String destpage;
-    String errorMessage;
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -29,21 +26,12 @@ public class EmailServlet extends HttpServlet {
         System.out.println(email);
         System.out.println(subject);
 
-        boolean emailSent;
-
         try {
-            emailSent = new SendEmail().sendMail(email, subject);
-            if(emailSent) {
-                destpage = "/jsps/profile.jsp";
-            }else {
-                destpage = "/jsps/emailHomePage.jsp";
-            }
-            System.out.println(emailSent);
+            new SendEmail().sendMail(email, subject);
+
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
-        RequestDispatcher dispatcher = req.getRequestDispatcher(destpage);
-        dispatcher.include(req, resp);
     }
 }
 

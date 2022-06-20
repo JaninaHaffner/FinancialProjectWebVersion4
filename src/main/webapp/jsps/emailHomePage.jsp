@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style2.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
     <title>EmailHomepage</title>
@@ -19,7 +19,7 @@
 </head>
 <body>
 <script>
-    const canvas = document.getElementById('myCanvas'),
+    const canvas = document.getElementById('myCanvas', 'st_d51489f83c2947cb847dc3186c5df69d', 'st_726f2915c60a4930b73d054a3c013725', 'st_89d5f55da3d0437b824fe93458dc161a' ),
         ctx = canvas.getContext('2d'),
         image = new Image();
 
@@ -51,8 +51,10 @@ Promise.all([
 </div>
 
 <div class="navbar">
+    <a href="${pageContext.request.contextPath}/jsps/emailHomePage.jsp">Home</a>
     <a href="${pageContext.request.contextPath}/jsps/profile.jsp">Profile</a>
     <a href="${pageContext.request.contextPath}/Logout" class="right">Logout</a>
+    <a href="${pageContext.request.contextPath}/UnsubscribeServlet" class="right">Unsubscribe</a>
 </div>
 <iframe id="myCanvas">
 <div class="row">

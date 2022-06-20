@@ -17,6 +17,9 @@
         <a href="jsps/login.jsp" class="right">Login</a>
         <a href="jsps/registration.jsp" class="right">Register</a>
     </div>
+
+    <br>${errorMessage}
+
     <div class="row">
         <div class="side">
            <h3>Recent News</h3>

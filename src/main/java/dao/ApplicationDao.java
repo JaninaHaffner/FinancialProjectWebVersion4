@@ -197,6 +197,27 @@ public class ApplicationDao {
 		}
 		return username + "," + password;
 	}
+
+	public int unSubscribe(String username) {
+
+		try {
+			connection = DBConnection.getConnectionToDatabase();
+			querySQL = "DELETE FROM user WHERE username=?";
+
+			assert connection != null;
+			statement = connection.prepareStatement(querySQL);
+			statement.setString(1, username);
+
+			rows = statement.executeUpdate();
+
+			statement.close();
+			connection.close();
+
+			} catch (SQLException ex) {
+			return 0;
+		}
+		return rows;
+	}
 }
 
 

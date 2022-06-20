@@ -9,15 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;Emailing settings edited">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/jsps/emailHomePage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_11_11_04_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_11_11_04__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_18_08_53__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_06_18_08_53__Changes_.xml" afterDir="false" />
+    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;emailHomePage.jsp added scrip to use createImageBitmap">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UnsubscribeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/scheduler/SchedulingOccurrence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/email/SendEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/email/SendEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/screenShot.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/images/screenShot.bmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/emailHomePage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/emailHomePage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/homepage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/homepage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/profile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +265,7 @@
       <workItem from="1654936630983" duration="14933000" />
       <workItem from="1654953744597" duration="20946000" />
       <workItem from="1655050060384" duration="18531000" />
-      <workItem from="1655535162983" duration="31542000" />
+      <workItem from="1655535162983" duration="45062000" />
     </task>
     <task id="LOCAL-00001" summary="version 4&#10;working - need to go to logged in page">
       <created>1653833946685</created>
@@ -445,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655568019203</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="version 4&#10;emailHomePage.jsp added scrip to use createImageBitmap">
+      <created>1655628654839</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1655628654839</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +473,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="B4" />
+                        <option value="origin/B1" />
                       </list>
                     </value>
                   </entry>
@@ -517,6 +528,7 @@
     <MESSAGE value="version 4&#10;Referencing.txt added" />
     <MESSAGE value="version 4&#10;Emailing settings added" />
     <MESSAGE value="version 4&#10;Emailing settings edited" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;Emailing settings edited" />
+    <MESSAGE value="version 4&#10;emailHomePage.jsp added scrip to use createImageBitmap" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;emailHomePage.jsp added scrip to use createImageBitmap" />
   </component>
 </project>

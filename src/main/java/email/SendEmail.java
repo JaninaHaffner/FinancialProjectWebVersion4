@@ -7,6 +7,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
+import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Properties;
@@ -30,8 +31,47 @@ public class SendEmail {
 
         Authentication authentication = new Authentication(myAccEmail, myPass);
         Session session = Session.getInstance(properties, authentication);
+        try {
 
-        Message message = preparedMessage(session, myAccEmail, recipient, subject);
+            MimeMessage message = new MimeMessage(session);
+
+            message.setFrom(new InternetAddress(myAccEmail));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+            message.setSubject(subject);
+
+            Multipart multipart = new MimeMultipart();
+
+            MimeBodyPart attachementFile = new MimeBodyPart();
+            MimeBodyPart textPart = new MimeBodyPart();
+
+            try {
+                File file = new File("C:\\Users\\janin\\IdeaProjects\\FinancialProjectWebVersion4\\src\\main\\webapp\\images\\screenshot.bmp");
+
+                attachementFile.attachFile(file);
+                textPart.setText("Please see your information attached.");
+                multipart.addBodyPart(textPart);
+                multipart.addBodyPart(attachementFile);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            message.setContent(multipart);
+            message.setSentDate(new Date());
+
+            System.out.println("sending...");
+
+            Transport.send(message);
+            System.out.println("message sent");
+
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
+}
+
+
+
+      /*  Message message = preparedMessage(session, myAccEmail, recipient, subject);
 
         Transport.send(message);
 
@@ -40,78 +80,36 @@ public class SendEmail {
     }
 
     private static Message preparedMessage(Session session, String myAccEmail, String recipient, String subject) {
+
         try {
             System.out.println("came in here.");
 
+         *//*   Multipart multipart = new MimeMultipart();
+            MimeBodyPart attachment = new MimeBodyPart();
+
+            File file = new File("src/main/webapp/images/screenshot.bmp");
+
+            attachment.getDataHandler();
+            attachment.attachFile(file);
+            multipart.addBodyPart(attachment);
+*//*
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(myAccEmail));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
             message.setSubject(subject);
             message.setSentDate(new Date());
-            message.setText("<script>\n" +
-                    "            if (typeof(stockdio_events) == \"undefined\") {\n" +
-                    "                stockdio_events = true;\n" +
-                    "                const stockdio_eventMethod = window.addEventListener ? \"addEventListener\" : \"attachEvent\";\n" +
-                    "                const stockdio_eventer = window[stockdio_eventMethod];\n" +
-                    "                const stockdio_messageEvent = stockdio_eventMethod === \"attachEvent\" ? \"onmessage\" : \"message\";\n" +
-                    "                stockdio_eventer(stockdio_messageEvent, function (e) {\n" +
-                    "                    if (typeof(e.data) != \"undefined\" && typeof(e.data.method) != \"undefined\") {\n" +
-                    "                        eval(e.data.method);\n" +
-                    "                    }\n" +
-                    "                },false);\n" +
-                    "            }\n" +
-                    "        </script>\n" +
-                    "        <iframe id='st_d51489f83c2947cb847dc3186c5df69d' width='100%' height='100%'\n" +
-                    "                src='https://api.stockdio.com/visualization/financial/charts/v1/EconomicNews?app-key=3F3765F6FF284467B14A9241127AF282&includeDescription=false&imageWidth=40&imageHeight=40&palette=Financial-Light&onload=st_d51489f83c2947cb847dc3186c5df69d'>\n" +
-                    "\n" +
-                    "        </iframe>\n" +
-                    "    </div>\n" +
-                    "    <div class=\"main\">\n" +
-                    "        <script>\n" +
-                    "            if (typeof(stockdio_events) == \"undefined\") {\n" +
-                    "                stockdio_events = true;\n" +
-                    "                const stockdio_eventMethod = window.addEventListener ? \"addEventListener\" : \"attachEvent\";\n" +
-                    "                const stockdio_eventer = window[stockdio_eventMethod];\n" +
-                    "                const stockdio_messageEvent = stockdio_eventMethod === \"attachEvent\" ? \"onmessage\" : \"message\";\n" +
-                    "                stockdio_eventer(stockdio_messageEvent, function (e) {\n" +
-                    "                    if (typeof(e.data) != \"undefined\" && typeof(e.data.method) != \"undefined\") {\n" +
-                    "                        eval(e.data.method);\n" +
-                    "                    }\n" +
-                    "                },false);\n" +
-                    "            }\n" +
-                    "        </script>\n" +
-                    "        <iframe id='st_726f2915c60a4930b73d054a3c013725' width='100%' height='100%'\n" +
-                    "                src='https://api.stockdio.com/visualization/financial/charts/v1/Ticker?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=${stockExchange}&symbols=${symbols};GLN&palette=Financial-Light&layoutType=10&onload=st_726f2915c60a4930b73d054a3c013725'>\n" +
-                    "\n" +
-                    "        </iframe>\n" +
-                    "        <br>\n" +
-                    "\n" +
-                    "        <script>\n" +
-                    "            if (typeof(stockdio_events) == \"undefined\") {\n" +
-                    "                stockdio_events = true;\n" +
-                    "                const stockdio_eventMethod = window.addEventListener ? \"addEventListener\" : \"attachEvent\";\n" +
-                    "                const stockdio_eventer = window[stockdio_eventMethod];\n" +
-                    "                const stockdio_messageEvent = stockdio_eventMethod === \"attachEvent\" ? \"onmessage\" : \"message\";\n" +
-                    "                stockdio_eventer(stockdio_messageEvent, function (e) {\n" +
-                    "                    if (typeof(e.data) != \"undefined\" && typeof(e.data.method) != \"undefined\") {\n" +
-                    "                        eval(e.data.method);\n" +
-                    "                    }\n" +
-                    "                },false);\n" +
-                    "            }\n" +
-                    "        </script>\n" +
-                    "        <iframe id='st_89d5f55da3d0437b824fe93458dc161a' width='100%' height='100%'\n" +
-                    "                src='https://api.stockdio.com/visualization/financial/charts/v1/QuoteBoard?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=${stockExchange}&symbols={symbols};&includeVolume=true&palette=Financial-Light&title=Watch%20List&onload=st_89d5f55da3d0437b824fe93458dc161a'>\n" +
-                    "\n" +
-                    "        </iframe>");
+            message.setFileName("src/main/webapp/images/screenshot.bmp");
+
+            //message.setContent(multipart);
 
             return message;
 
-        } catch (MessagingException e) {
+        } catch (MessagingException  e) {
             throw new RuntimeException(e);
         }
     }
 }
-
+*/
 
 /*
 package email;
