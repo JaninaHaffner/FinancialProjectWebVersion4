@@ -1,42 +1,25 @@
 package com.financialprojectwebversion4;
 
 import dao.ApplicationDao;
-import email.SendEmail;
 
-
-import javax.imageio.ImageIO;
-import javax.imageio.ImageReader;
-import javax.mail.MessagingException;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
-import org.asynchttpclient.request.body.generator.InputStreamBodyGenerator;
 
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Objects;
 
 @WebServlet(name = "LoginServlet", value = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// send request to login.jsp resource
-		RequestDispatcher dispatcher = req.getRequestDispatcher("src/main/webapp/jsps/login.jsp");
-		dispatcher.forward(req, resp);
-	}
 	/* Get the username and password from the login form
 	 * Call DAO to validate user credentials is valid
 	 * If user is valid, set username as a cookie to use in other pages, set cookie age.
 	 * Call DAO to retrieve user information to use in jsp pages and update servlet.
 	 * Split returned info and set up HTTP session, then set user info as attributes.
 	 * If user preference is browser, forward user to homepage.jsp, with all attributes.
-	 * If user preference is email,forward user to emailHomePage.jsp
+	 * If user preference is email, send request to email servlet and forward user to emailHomePage.jsp
 	 * Set the destination page for the response
 	 * Dispatch request with user info or message */
 	@Override
@@ -111,13 +94,3 @@ public class LoginServlet extends HttpServlet {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-

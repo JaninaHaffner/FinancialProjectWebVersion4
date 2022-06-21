@@ -4,6 +4,7 @@ import beans.User;
 import dbConnection.DBConnection;
 
 import java.sql.*;
+import java.time.LocalDate;
 
 public class ApplicationDao {
 	String username = "";
@@ -14,6 +15,7 @@ public class ApplicationDao {
 	String updates = "";
 	String stockExchange = "";
 	String symbols = "";
+	LocalDate todayDate = LocalDate.now();
 	int rows;
 	ResultSet userInfo;
 	Connection connection;
@@ -31,8 +33,8 @@ public class ApplicationDao {
 		try {
 			connection = DBConnection.getConnectionToDatabase();
 
-			querySQL = "insert into user(username, password, email, fullname, preference, updates, stockExchange, symbols) " +
-					"values(?,?,?,?,?,?,?,?)";
+			querySQL = "insert into user(username, password, email, fullname, preference, updates, stockExchange, symbols, date) " +
+					"values(?,?,?,?,?,?,?,?,?)";
 
 			assert connection != null;
 			statement = connection.prepareStatement(querySQL);
@@ -44,6 +46,7 @@ public class ApplicationDao {
 			statement.setString(6, user.getUpdates());
 			statement.setString(7, user.getStockExchange());
 			statement.setString(8, user.getSymbols());
+			statement.setDate(9, Date.valueOf(todayDate));
 
 			rowsAffected = statement.executeUpdate();
 
@@ -176,6 +179,7 @@ public class ApplicationDao {
 		return rows;
 	}
 
+	/* Get username and password from database that will be used to send emails from.  */
 	public String mailInfo() {
 
 		try {
@@ -198,6 +202,7 @@ public class ApplicationDao {
 		return username + "," + password;
 	}
 
+	/* Delete user from database when unsubscribing.  */
 	public int unSubscribe(String username) {
 
 		try {

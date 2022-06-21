@@ -18,23 +18,6 @@
 
 </head>
 <body>
-<script>
-    const canvas = document.getElementById('myCanvas', 'st_d51489f83c2947cb847dc3186c5df69d', 'st_726f2915c60a4930b73d054a3c013725', 'st_89d5f55da3d0437b824fe93458dc161a' ),
-        ctx = canvas.getContext('2d'),
-        image = new Image();
-
-    image.onload = function (){
-Promise.all([
-    createImageBitmap(image, 0, 0, 32, 32),
-    createImageBitmap(image, 32, 0, 32, 32)
-]).then(function (sprites) {
-
-    ctx.drawImage(sprites[0], 0, 0);
-    ctx.drawImage(sprites[1], 32, 32);
-});
-    }
-
-    image.src = 'sprites.png'; </script>
 
 <div class="header">
     <h1>The Financial Curation</h1>
@@ -56,7 +39,7 @@ Promise.all([
     <a href="${pageContext.request.contextPath}/Logout" class="right">Logout</a>
     <a href="${pageContext.request.contextPath}/UnsubscribeServlet" class="right">Unsubscribe</a>
 </div>
-<iframe id="myCanvas">
+<div id="myCanvas">
 <div class="row">
     <div class="side">
         <script>
@@ -117,7 +100,7 @@ Promise.all([
 
     </div>
 </div>
-</iframe>
+</div>
 
 <div class="footer">
     <p>Copyright 2022 The Finance Curation. All rights reserved</p>

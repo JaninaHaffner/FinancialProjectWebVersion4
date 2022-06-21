@@ -1164,26 +1164,30 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <DataType>varchar(150)|0s</DataType>
       <Position>8</Position>
     </column>
-    <index id="313" parent="294" name="id_UNIQUE">
+    <column id="313" parent="294" name="date">
+      <DataType>date|0s</DataType>
+      <Position>9</Position>
+    </column>
+    <index id="314" parent="294" name="id_UNIQUE">
       <ColNames>username</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="314" parent="294" name="username_UNIQUE">
+    <index id="315" parent="294" name="username_UNIQUE">
       <ColNames>password</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="315" parent="294" name="PRIMARY">
+    <key id="316" parent="294" name="PRIMARY">
       <ColNames>username</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <key id="316" parent="294" name="id_UNIQUE">
+    <key id="317" parent="294" name="id_UNIQUE">
       <ColNames>username</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="317" parent="294" name="username_UNIQUE">
+    <key id="318" parent="294" name="username_UNIQUE">
       <ColNames>password</ColNames>
       <UnderlyingIndexName>username_UNIQUE</UnderlyingIndexName>
     </key>
