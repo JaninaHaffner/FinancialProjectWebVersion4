@@ -9,17 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;first draft on SchedulingOccurrence.java">
-      <change afterPath="$PROJECT_DIR$/screenshot.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/email/ScreenShot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Referencing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Referencing.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/email/SendEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/email/SendEmail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/emailHomePage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/emailHomePage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/profile.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;ScreenShot added successfully" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -260,7 +250,7 @@
       <workItem from="1654936630983" duration="14933000" />
       <workItem from="1654953744597" duration="20946000" />
       <workItem from="1655050060384" duration="18531000" />
-      <workItem from="1655535162983" duration="68442000" />
+      <workItem from="1655535162983" duration="69401000" />
     </task>
     <task id="LOCAL-00001" summary="version 4&#10;working - need to go to logged in page">
       <created>1653833946685</created>
@@ -465,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655831851938</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="version 4&#10;ScreenShot added successfully">
+      <created>1655922480593</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1655922480593</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -540,6 +537,7 @@
     <MESSAGE value="version 4&#10;emailHomePage.jsp added scrip to use createImageBitmap" />
     <MESSAGE value="version 4&#10;Added UnsubscribeServlet.java&#10;Added unsubscribe button to homepage.jsp &#10;and emailHomePage.jsp" />
     <MESSAGE value="version 4&#10;first draft on SchedulingOccurrence.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;first draft on SchedulingOccurrence.java" />
+    <MESSAGE value="version 4&#10;ScreenShot added successfully" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;ScreenShot added successfully" />
   </component>
 </project>
