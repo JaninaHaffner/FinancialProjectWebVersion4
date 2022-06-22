@@ -27,4 +27,5 @@ https://support.google.com/domains/answer/9437157?hl=en
 https://support.google.com/mail/thread/40210887/urgent-help-server-returned-an-error-535-5-7-8-username-and-password-not-accepted?hl=en
 https://stackoverflow.com/questions/24452332/how-to-create-an-image-from-an-inputstream-resize-it-and-save-it
 https://docs.oracle.com/cd/A97336_01/buslog.102/a83726/basics4.htm
+https://apiflash.com/dashboard/query_builder
 

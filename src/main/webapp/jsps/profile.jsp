@@ -13,12 +13,13 @@
     </div>
     <div class="navbar">
         <a href="${pageContext.request.contextPath}/jsps/homepage.jsp">Home</a>
-        <a href="${pageContext.request.contextPath}/jsps/newsPage.jsp">News</a>
-        <a href="${pageContext.request.contextPath}/jsps/markets.jsp">Markets</a>
         <a href="${pageContext.request.contextPath}/jsps/profile.jsp">Profile</a>
         <a href="${pageContext.request.contextPath}/LoginServlet" class="right">Logout</a>
         <a href="${pageContext.request.contextPath}/UnsubscribeServlet" class="right">Unsubscribe</a>
     </div>
+    <br>
+    ${errorMessage}
+    <br>
     <div class="row">
         <div class="side">
             <div class="card">

@@ -1,10 +1,13 @@
 <%--
+
+this can be removed.
+
+
   Created by IntelliJ IDEA.
   User: janin
   Date: 2022/06/12
   Time: 12:05
   To change this template use File | Settings | File Templates.
---%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -106,16 +109,46 @@
     <p>Copyright 2022 The Finance Curation. All rights reserved</p>
     <p>Terms of Service | Privacy Policy</p>
 </div>
+<canvas id = "output" />
+
+<script>
+    let canvas = document.getElementById("output");
+    let ctx = canvas.getContext("2d");
+</script>
 
 </body>
-  <script>
+&lt;%&ndash;
+<script>html2canvas(document.getElementById("myCanvas"), {
+    allowTaint: true,
+    useCORS: true,
+}).then(function (canvas) {
+    let image = canvas.toDataURL("image/png", 0.5);
+    image.saveAs("screenshot.png")
+
+}).catch((e) => {
+    console.log(e);
+});
+
+</script>&ndash;%&gt;
+
+&lt;%&ndash;  <script>
     window.addEventListener('load', (event) => {
         html2canvas(document.getElementsByTagName("iframe")).then(canvas => {
             canvas.toBlob(function(blob){
                 window.saveAs(blob, "screenshot.png");
             })
         });
-
     });
+</script>&ndash;%&gt;
+<script>
+    var saveImage = document.getElementById("myCanvas");
+
+    function saveImageNow() {
+        var img = document.createElement("img")
+        img.src = "https://api.stockdio.com/visualization/financial/charts/v1/QuoteBoard?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=${stockExchange}&symbols=${symbols};&includeVolume=true&palette=Financial-Light&title=Watch%20List&onload=st_89d5f55da3d0437b824fe93458dc161a";
+
+    }
 </script>
+
 </html>
+--%>

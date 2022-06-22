@@ -9,14 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;Added UnsubscribeServlet.java&#10;Added unsubscribe button to homepage.jsp &#10;and emailHomePage.jsp">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ae8f333b-ff84-43ee-9019-75c9b30a378f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ae8f333b-ff84-43ee-9019-75c9b30a378f.xml" afterDir="false" />
+    <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="version 4&#10;first draft on SchedulingOccurrence.java">
+      <change afterPath="$PROJECT_DIR$/screenshot.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/email/ScreenShot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Referencing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Referencing.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/EmailServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UnsubscribeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UnsubscribeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/scheduler/SchedulingOccurrence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/scheduler/SchedulingOccurrence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/email/SendEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/email/SendEmail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/emailHomePage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/emailHomePage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/profile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +111,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.10">
+    <configuration name="ScreenShot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="email.ScreenShot" />
+      <module name="FinancialProjectWebVersion4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="email.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Screenshot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="email.Screenshot" />
       <module name="FinancialProjectWebVersion4" />
@@ -160,21 +175,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="dbConnection" />
       <option name="MAIN_CLASS_NAME" value="dbConnection.DBConnectionTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LogOutServletTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FinancialProjectWebVersion4" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.financialprojectwebversion4.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.financialprojectwebversion4" />
-      <option name="MAIN_CLASS_NAME" value="com.financialprojectwebversion4.LogOutServletTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -238,11 +238,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ScreenShot" />
         <item itemvalue="Application.Screenshot" />
         <item itemvalue="Application.email.SendEmail" />
         <item itemvalue="JUnit.DBConnectionTest" />
         <item itemvalue="JUnit.ApplicationDaoTest" />
-        <item itemvalue="JUnit.LogOutServletTest" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +260,7 @@
       <workItem from="1654936630983" duration="14933000" />
       <workItem from="1654953744597" duration="20946000" />
       <workItem from="1655050060384" duration="18531000" />
-      <workItem from="1655535162983" duration="53310000" />
+      <workItem from="1655535162983" duration="68442000" />
     </task>
     <task id="LOCAL-00001" summary="version 4&#10;working - need to go to logged in page">
       <created>1653833946685</created>
@@ -458,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655752380890</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="version 4&#10;first draft on SchedulingOccurrence.java">
+      <created>1655831851938</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1655831851938</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,6 +539,7 @@
     <MESSAGE value="version 4&#10;Emailing settings edited" />
     <MESSAGE value="version 4&#10;emailHomePage.jsp added scrip to use createImageBitmap" />
     <MESSAGE value="version 4&#10;Added UnsubscribeServlet.java&#10;Added unsubscribe button to homepage.jsp &#10;and emailHomePage.jsp" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;Added UnsubscribeServlet.java&#10;Added unsubscribe button to homepage.jsp &#10;and emailHomePage.jsp" />
+    <MESSAGE value="version 4&#10;first draft on SchedulingOccurrence.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;first draft on SchedulingOccurrence.java" />
   </component>
 </project>
