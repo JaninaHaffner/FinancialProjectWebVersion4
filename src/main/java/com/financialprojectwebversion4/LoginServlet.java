@@ -19,7 +19,7 @@ public class LoginServlet extends HttpServlet {
 	 * Call DAO to retrieve user information to use in jsp pages and update servlet.
 	 * Split returned info and set up HTTP session, then set user info as attributes.
 	 * If user preference is browser, forward user to homepage.jsp, with all attributes.
-	 * If user preference is email, send request to email servlet
+	 * If user preference is email, forward user to profile.jsp page where they can change info as needed.
 	 * Set the destination page for the response
 	 * Dispatch request with user info or message */
 	@Override
@@ -81,7 +81,7 @@ public class LoginServlet extends HttpServlet {
 				destPage = "/jsps/homepage.jsp";
 
 			} else {
-				new EmailServlet().doPost(req, resp);
+				destPage = "/jsps/profile.jsp";
 			}
 		} else {
 

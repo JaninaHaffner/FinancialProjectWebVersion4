@@ -1,6 +1,7 @@
 package email;
 
 import dao.ApplicationDao;
+import org.quartz.Job;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -18,12 +19,13 @@ import java.util.Properties;
  * Authenticate username and password
  * Get session with properties and authentication
  * Use try catch to catch exceptions
+ * Use a switch case to send user email with screenshot or to send user reminder to log in to webpage.
  * Create message, and set all attributes to it.
  * Create multipart message and add the file for the screenshot.
  * Send email  */
 public class SendEmail {
 
-    public boolean sendMail(String recipient, String subject) throws MessagingException {
+    public Class<? extends Job> sendMail(String recipient, String subject, String preference, String emailBody) throws MessagingException {
 
         Properties properties = new Properties();
 
@@ -39,37 +41,56 @@ public class SendEmail {
 
         Authentication authentication = new Authentication(myAccEmail, myPass);
         Session session = Session.getInstance(properties, authentication);
-        try {
 
-            MimeMessage message = new MimeMessage(session);
+        switch (preference) {
+            case "Email":
+                try {
+                    MimeMessage message = new MimeMessage(session);
 
-            message.setFrom(new InternetAddress(myAccEmail));
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
-            message.setSubject(subject);
+                    message.setFrom(new InternetAddress(myAccEmail));
+                    message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+                    message.setSubject(subject);
 
-            Multipart multipart = new MimeMultipart();
+                    Multipart multipart = new MimeMultipart();
 
-            MimeBodyPart attachementFile = new MimeBodyPart();
-            MimeBodyPart textPart = new MimeBodyPart();
+                    MimeBodyPart attachmentFile = new MimeBodyPart();
+                    MimeBodyPart textPart = new MimeBodyPart();
 
-            try {
-                File file = new File("C:\\Users\\janin\\IdeaProjects\\FinancialProjectWebVersion4\\screenshot.jpeg");
+                    try {
+                        File file = new File("C:\\Users\\janin\\IdeaProjects\\FinancialProjectWebVersion4\\screenshot.jpeg");
 
-                attachementFile.attachFile(file);
-                textPart.setText("Please see your information attached.");
-                multipart.addBodyPart(textPart);
-                multipart.addBodyPart(attachementFile);
-            } catch (IOException e) {
-                return false;
-            }
-            message.setContent(multipart);
-            message.setSentDate(new Date());
+                        attachmentFile.attachFile(file);
+                        textPart.setText("Please see your information attached.");
+                        multipart.addBodyPart(textPart);
+                        multipart.addBodyPart(attachmentFile);
 
-            Transport.send(message);
+                    } catch (IOException e) {
+                        return null;
+                    }
+                    message.setContent(multipart);
+                    message.setSentDate(new Date());
 
-        } catch (MessagingException e) {
-            return false;
+                    Transport.send(message);
+
+                } catch (MessagingException exception) {
+                    return null;
+                }
+
+            case "Browser":
+                try {
+                    MimeMessage message = new MimeMessage(session);
+
+                    message.setFrom(new InternetAddress(myAccEmail));
+                    message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+                    message.setSubject(subject);
+                    message.setText(emailBody);
+                    message.setSentDate(new Date());
+
+                    Transport.send(message);
+                } catch (Exception e) {
+                    return null;
+                }
         }
-        return true;
+        return null;
     }
 }

@@ -5,6 +5,8 @@ import dbConnection.DBConnection;
 
 import java.sql.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ApplicationDao {
 	String username = "";
@@ -15,6 +17,7 @@ public class ApplicationDao {
 	String updates = "";
 	String stockExchange = "";
 	String symbols = "";
+	Date date;
 	LocalDate todayDate = LocalDate.now();
 	int rows;
 	ResultSet userInfo;
@@ -222,6 +225,39 @@ public class ApplicationDao {
 			return 0;
 		}
 		return rows;
+	}
+
+	public List userPreferences() {
+		List list = new ArrayList<String>();
+
+		try {
+			Connection connection = DBConnection.getConnectionToDatabase();
+			querySQL = "select email, fullname, preference, updates, date from user";
+
+			assert connection != null;
+			statement = connection.prepareStatement(querySQL);
+
+			userInfo = statement.executeQuery();
+			while (userInfo.next()) {
+				date = userInfo.getDate(5);
+				list.add(date);
+				updates = userInfo.getString(4);
+				list.add(updates);
+				preference = userInfo.getString(3);
+				list.add(preference);
+				fullname = userInfo.getString(2);
+				list.add(fullname);
+				email = userInfo.getString(1);
+				list.add(email);
+
+			}
+			statement.close();
+			connection.close();
+		} catch (SQLException e) {
+			return null;
+		}
+		//return email + "," + fullname + "," + preference + "," + updates + "," + date;
+		return list;
 	}
 }
 

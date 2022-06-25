@@ -28,4 +28,4 @@ https://support.google.com/mail/thread/40210887/urgent-help-server-returned-an-e
 https://stackoverflow.com/questions/24452332/how-to-create-an-image-from-an-inputstream-resize-it-and-save-it
 https://docs.oracle.com/cd/A97336_01/buslog.102/a83726/basics4.htm
 https://apiflash.com/dashboard/query_builder
-
+https://www.javacodegeeks.com/2012/07/quartz-2-scheduler-example.html

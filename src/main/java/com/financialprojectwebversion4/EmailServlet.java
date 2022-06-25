@@ -1,3 +1,4 @@
+/*
 package com.financialprojectwebversion4;
 
 import email.ScreenShot;
@@ -13,11 +14,13 @@ import jakarta.servlet.http.HttpSession;
 import javax.mail.MessagingException;
 import java.io.IOException;
 
+*/
 /* Email servlet, gets all the relevant information from the login servlet.
  * Then calls the screenShot class to take a screenshot of the users wishlist.
  * Using an if statement to check if screenshot was taken,
  * then call the sendEmail class.
- * Send user to the profile page with appropriate message  */
+ * Send user to the profile page with appropriate message  *//*
+
 @WebServlet (name = "EmailServlet", value = "/EmailServlet")
 public class EmailServlet extends HttpServlet {
 
@@ -52,4 +55,4 @@ public class EmailServlet extends HttpServlet {
             dispatcher.forward(req, resp);
         }
     }
-}
+}*/

@@ -10,6 +10,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import scheduler.JobCreator;
+
 import java.io.IOException;
 
 @WebServlet(name = "UserRegistrationServlet", value = "/UserRegistrationServlet")
@@ -20,8 +22,9 @@ public class UserRegistrationServlet extends HttpServlet {
      * create instance of the application DAO
      * check if user all ready exists
      * save the user object to the database.
+     * If user is registered successfully, send request to JobCreator to create schedule for user.
      * information message for user about success or failure of operation
-     * */
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -46,12 +49,12 @@ public class UserRegistrationServlet extends HttpServlet {
         String errorMessage;
 
         valid = dao.existingUser(username);
-        System.out.println(valid);
+
         if (valid) {
             errorMessage = "This user all ready exist, please log in.";
             session.setAttribute("errorMessage", errorMessage);
             RequestDispatcher dispatcher = request.getRequestDispatcher(destpage);
-            dispatcher.include(request, response);
+            dispatcher.forward(request, response);
             //  request.getRequestDispatcher("/login,jsp" + errorMessage).forward(request, response);
         } else {
             rows = dao.registerUser(user);
@@ -60,6 +63,7 @@ public class UserRegistrationServlet extends HttpServlet {
                 errorMessage = "Sorry, an error has occurred! Please retry to register.";
                 session.setAttribute("errorMessage", errorMessage);
             } else {
+                JobCreator.jobCreator(username, updates, preferences, stockExchange, symbols, email);
                 errorMessage = "Success, you are registered!";
                 session.setAttribute("errorMessage", errorMessage);
             }

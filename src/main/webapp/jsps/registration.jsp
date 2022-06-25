@@ -86,13 +86,13 @@
         </div>
       <div class="input-box">
         <span class="details">Stock Exchange</span>
-         <select name="stockExchange" id="stockExchange" onChange="getStockExchange()">
+          <label for="stockExchange"></label><select name="stockExchange" id="stockExchange" onChange="getStockExchange()">
         
          </select>
       </div>
       <div class="input-box">
         <span class="details">Symbols</span>
-        <select name="symbols" id="symbols" multiple>
+          <label for="symbols"></label><select name="symbols" id="symbols" multiple="multiple">
 
         </select>
         <p>Press and hold the ctrl button to select your symbols</p>
@@ -148,7 +148,7 @@
             let list2 = document.getElementById('symbols');
             let exchangeCode = list1.options[list1.selectedIndex].value;
 
-            const url = `https://eodhistoricaldata.com/api/exchange-symbol-list/${exchangeCode}?fmt=json&api_token=62a1cee7bbc9e0.26407688`;
+            const url = `https://eodhistoricaldata.com/api/exchange-symbol-list/${request.getParameter("exchangeCode")}?fmt=json&api_token=62a1cee7bbc9e0.26407688`;
 
             const request = new XMLHttpRequest();
             request.open('GET', url, true);
@@ -171,7 +171,7 @@
         
 
         request.onerror = function(){
-            console.log('An error occured fetching JSON from ' + url);
+            console.log('An error occurred fetching JSON from ' + url);
         };
 
         request.send();
