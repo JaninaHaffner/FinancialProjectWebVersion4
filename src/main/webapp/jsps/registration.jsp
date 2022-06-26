@@ -131,7 +131,7 @@
 
             const mydata = data;
             let symbols = '';
-            symbols = mydata[exchange].symbols;
+            symbols = mydata[exchange-1].symbols;
             textarea.value = symbols;
 
         }
