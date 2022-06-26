@@ -138,7 +138,7 @@
 
       function getStockExchange(){
             let list1 = document.getElementById('stockExchange');
-            let list2 = document.getElementById('symbols');
+            let textarea = document.getElementById('symbols');
             let exchange = list1.selectedIndex;
 
             const mydata = data;
