@@ -92,7 +92,10 @@
       </div>
       <div class="input-box">
         <span class="details">Symbols</span>
-          <textarea id="symbols"></textarea>
+           <select name="symbols" id="symbols" multiple>
+
+           </select>
+           <p>Hold the ctrl button to select your symbols</p>
          </div>
         
      </div>
@@ -142,25 +145,23 @@
     
          function getStockExchange(){
             let list1 = document.getElementById('stockExchange');
-            let textarea = document.getElementById('symbols');
+            let list2 = document.getElementById('symbols');
             let exchangeCode = list1.options[list1.selectedIndex].value;
-
-            const url = `https://eodhistoricaldata.com/api/exchange-symbol-list/\${exchangeCode}?fmt=json&api_token=62a1cee7bbc9e0.26407688`;
-
+            const url = `https://eodhistoricaldata.com/api/exchange-symbol-list/\${exchangeCode}?fmt=json&api_token=62a3b3fbe45951.51740298`;
             const request = new XMLHttpRequest();
             request.open('GET', url, true);
-
             request.onload = function(){
             if(request.status === 200){
                 const data = JSON.parse(request.responseText);
-                let symbols = '';
+                let option;
                 for(let i = 0; i < data.length; i++){
-                    symbols += data[i].Code + ";";
-                    textarea.value = symbols;
+                  option = document.createElement('option');
+                  option.text = data[i].Code;
+                  option.value = data[i].Code;
+                  list2.add(option);
                 }
                
             } else {
-
             }
         }
         
