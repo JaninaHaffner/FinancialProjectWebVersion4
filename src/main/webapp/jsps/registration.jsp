@@ -86,17 +86,14 @@
         </div>
       <div class="input-box">
         <span class="details">Stock Exchange</span>
-          <label for="stockExchange"></label><select name="stockExchange" id="stockExchange" onChange="getStockExchange()">
+          <label for="stockExchange"></label><select name="stockExchange" id="stockExchange" onchange="getStockExchange()">
         
          </select>
       </div>
       <div class="input-box">
         <span class="details">Symbols</span>
-          <label for="symbols"></label><select name="symbols" id="symbols" multiple="multiple" onchange="getStockExchange()">
-
-        </select>
-        <p>Press and hold the ctrl button to select your symbols</p>
-        
+          <textarea id="symbols"></textarea>
+         </div>
         
      </div>
         <div class="button">
@@ -145,10 +142,10 @@
     
          function getStockExchange(){
             let list1 = document.getElementById('stockExchange');
-            let list2 = document.getElementById('symbols');
+            let textarea = document.getElementById('symbols');
             let exchangeCode = list1.options[list1.selectedIndex].value;
 
-            const url = `https://eodhistoricaldata.com/api/exchange-symbol-list/${request.getParameter("exchangeCode")}?fmt=json&api_token=62a1cee7bbc9e0.26407688`;
+            const url = `https://eodhistoricaldata.com/api/exchange-symbol-list/${exchangeCode}?fmt=json&api_token=62a1cee7bbc9e0.26407688`;
 
             const request = new XMLHttpRequest();
             request.open('GET', url, true);
@@ -156,12 +153,10 @@
             request.onload = function(){
             if(request.status === 200){
                 const data = JSON.parse(request.responseText);
-                let option;
+                let symbols = '';
                 for(let i = 0; i < data.length; i++){
-                  option = document.createElement('option');
-                  option.text = data[i].Code;
-                  option.value = data[i].Code;
-                  list2.add(option);
+                    symbols += data[i].Code + ";";
+                    textarea.value = symbols;
                 }
                
             } else {
