@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/regStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="data.js"></script>
     <title>Register</title>
 </head>
 <body>
@@ -92,10 +93,7 @@
       </div>
       <div class="input-box">
         <span class="details">Symbols</span>
-           <select name="symbols" id="symbols" multiple>
-
-           </select>
-           <p>Hold the ctrl button to select your symbols</p>
+          <textarea id="symbols"></textarea>
          </div>
         
      </div>
@@ -115,66 +113,28 @@
 
         dropdown.add(defaultOption);
         dropdown.selectedIndex = 0;
-
-        const url = 'https://eodhistoricaldata.com/api/exchanges-list/?api_token=62a1cee7bbc9e0.26407688&fmt=json';
-
-        const request = new XMLHttpRequest();
-        request.open('GET', url, true);
-
-        request.onload = function(){
-            if(request.status === 200){
-                const data = JSON.parse(request.responseText);
-                let option;
-                for(let i = 0; i < data.length; i++){
-                    option = document.createElement('option');
-                    option.text = data[i].Name;
-                    option.value = data[i].Code;
-                    dropdown.add(option);
-
-                }
-            } else {
-
-            }
+        
+        const mydata = data;
+        let option;
+        for(let i = 0; i < mydata.length; i++){
+          option = document.createElement('option');
+          option.text = mydata[i].stockExchange;
+          option.value = mydata[i].stockExchange;
+          dropdown.add(option);
         }
 
-        request.onerror = function(){
-            console.log('An error occurred fetching JSON from ' + url);
-        };
-
-        request.send();
-    
-         function getStockExchange(){
+       
+        function getStockExchange(){
             let list1 = document.getElementById('stockExchange');
             let list2 = document.getElementById('symbols');
-            let exchangeCode = list1.options[list1.selectedIndex].value;
-            const url = "https://eodhistoricaldata.com/api/exchange-symbol-list/" + exchangeCode + "?fmt=json&api_token=62a3b3fbe45951.51740298";
-            const request = new XMLHttpRequest();
-            request.open('GET', url, true);
-            request.onload = function(){
-            if(request.status === 200){
-                const data = JSON.parse(request.responseText);
-                let option;
-                for(let i = 0; i < data.length; i++){
-                  option = document.createElement('option');
-                  option.text = data[i].Code;
-                  option.value = data[i].Code;
-                  list2.add(option);
-                }
-               
-            } else {
-            }
+            let exchange = list1.selectedIndex;
+
+            const mydata = data;
+            let symbols = '';
+            symbols = mydata[exchange].symbols;
+            textarea.value = symbols;
+
         }
-        
-
-        request.onerror = function(){
-            console.log('An error occurred fetching JSON from ' + url);
-        };
-
-        request.send();
-        
-        } 
-    
-    
     
     </script>
 
