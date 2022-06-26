@@ -127,11 +127,11 @@
         function getStockExchange(){
             let list1 = document.getElementById('stockExchange');
             let textarea = document.getElementById('symbols');
-            let exchange = list1.selectedIndex;
+            let exchange = list1.selectedIndex-1;
 
             const mydata = data;
             let symbols = '';
-            symbols = mydata[exchange-1].symbols;
+            symbols = mydata[exchange].symbols;
             textarea.value = symbols;
 
         }
