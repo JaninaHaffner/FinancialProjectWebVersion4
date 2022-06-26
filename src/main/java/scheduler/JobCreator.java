@@ -25,14 +25,15 @@ import java.io.IOException;
  * Set the job details, the triggers as per the frequency specified by the user
  * Start the jobs. */
 
-public abstract class JobCreator implements Job {
+public class JobCreator {
 
     //private final Logger logger = Logger.getLogger(JobCreator.class);
 
     public void execute(JobExecutionContext jobExecutionContext) {
 
     }
-    public static void jobCreator(String username, String updates, String preference, String exchange, String symbols, String email) {
+
+    public String jobCreator(String username, String updates, String preference, String exchange, String symbols, String email) {
         int frequency = 0;
         String emailBody = "";
         String subject = "";
@@ -40,13 +41,13 @@ public abstract class JobCreator implements Job {
         try {
             switch (updates) {
                 case "Daily":
-                    frequency = 24;
+                    frequency = 1;
 
                 case "Weekly":
-                    frequency = 24 * 7;
+                    frequency = 7;
 
                 case "Monthly":
-                    frequency = 24 * 30;
+                    frequency = 30;
             }
 
             switch (preference) {
@@ -59,6 +60,65 @@ public abstract class JobCreator implements Job {
                     emailBody = "Please log in to your account to view your financial information.";
 
             }
+        } catch (IOException exception) {
+            return null;
+        }
+        return preference + "," + email + "," +  subject + "," +  emailBody + "," +  frequency;
+    }
+
+    public boolean jobScheduler(String preference, String email, String subject, String emailBody, int frequency) {
+        String jobPref;
+        String jobEmail;
+        String jobSubject;
+        String jobEmailBody;
+        int jobFrequency;
+        boolean jobCompleted;
+
+        try {
+
+            switch (frequency) {
+                case 1:
+                    jobCompleted = new SendEmail().sendMail(email, subject, preference, emailBody);
+                    if (jobCompleted) {
+                        jobPref = preference;
+                        jobEmail = email;
+                        jobSubject = subject;
+                        jobEmailBody = emailBody;
+                        jobFrequency = frequency;
+                        wait(60 * 60 * 24 * 1000);
+                        jobScheduler(jobPref, jobEmail, jobSubject, jobEmailBody, jobFrequency);
+                    }
+                case 7:
+                    jobCompleted = new SendEmail().sendMail(email, subject, preference, emailBody);
+                    if (jobCompleted) {
+                        jobPref = preference;
+                        jobEmail = email;
+                        jobSubject = subject;
+                        jobEmailBody = emailBody;
+                        jobFrequency = frequency;
+                        wait(60 * 60 * 24 * 7 * 1000);
+                        jobScheduler(jobPref, jobEmail, jobSubject, jobEmailBody, jobFrequency);
+                    }
+                case 30:
+                    jobCompleted = new SendEmail().sendMail(email, subject, preference, emailBody);
+                    if (jobCompleted) {
+                        jobPref = preference;
+                        jobEmail = email;
+                        jobSubject = subject;
+                        jobEmailBody = emailBody;
+                        jobFrequency = frequency;
+                        wait(60L * 60 * 24 * 30 * 1000);
+                        jobScheduler(jobPref, jobEmail, jobSubject, jobEmailBody, jobFrequency);
+                    }
+            }
+        } catch (MessagingException | InterruptedException ignored) {
+            return false;
+        }
+        return true;
+    }
+}
+
+/*
 
             JobDetail jobDetail = JobBuilder.newJob(new SendEmail().sendMail(email, subject, preference, emailBody)).withIdentity(username).build();
 
@@ -72,4 +132,8 @@ public abstract class JobCreator implements Job {
             throw new RuntimeException(e);
         }
     }
+    public void scheduler(){
+
+    }
 }
+*/

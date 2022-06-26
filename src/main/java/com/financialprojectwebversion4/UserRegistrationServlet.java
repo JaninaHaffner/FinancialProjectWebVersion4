@@ -63,9 +63,24 @@ public class UserRegistrationServlet extends HttpServlet {
                 errorMessage = "Sorry, an error has occurred! Please retry to register.";
                 session.setAttribute("errorMessage", errorMessage);
             } else {
-                JobCreator.jobCreator(username, updates, preferences, stockExchange, symbols, email);
-                errorMessage = "Success, you are registered!";
-                session.setAttribute("errorMessage", errorMessage);
+                String createJob = new JobCreator().jobCreator(username, updates, preferences, stockExchange, symbols, email);
+
+                String[] jobInfo;
+                jobInfo = createJob.split(",");
+                String jobPref = jobInfo[0];
+                String jobEmail = jobInfo[1];
+                String jobSubject = jobInfo[2];
+                String jobEmailBody = jobInfo[3];
+                int jobFrequency = Integer.parseInt(jobInfo[4]);
+
+                boolean scheduled = new JobCreator().jobScheduler(jobPref, jobEmail, jobSubject, jobEmailBody, jobFrequency);
+                if(scheduled) {
+                    errorMessage = "Success, you are registered!";
+                    session.setAttribute("errorMessage", errorMessage);
+                }else {
+                    errorMessage = "We were unable to schedule your request. ";
+                    session.setAttribute("errorMessage", errorMessage);
+                }
             }
             RequestDispatcher dispatcher = request.getRequestDispatcher(destpage);
             dispatcher.forward(request, response);

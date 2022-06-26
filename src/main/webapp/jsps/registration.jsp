@@ -92,7 +92,7 @@
       </div>
       <div class="input-box">
         <span class="details">Symbols</span>
-          <label for="symbols"></label><select name="symbols" id="symbols" multiple="multiple">
+          <label for="symbols"></label><select name="symbols" id="symbols" multiple="multiple" onchange="getStockExchange()">
 
         </select>
         <p>Press and hold the ctrl button to select your symbols</p>

@@ -25,7 +25,7 @@ import java.util.Properties;
  * Send email  */
 public class SendEmail {
 
-    public Class<? extends Job> sendMail(String recipient, String subject, String preference, String emailBody) throws MessagingException {
+    public boolean sendMail(String recipient, String subject, String preference, String emailBody) throws MessagingException {
 
         Properties properties = new Properties();
 
@@ -65,7 +65,7 @@ public class SendEmail {
                         multipart.addBodyPart(attachmentFile);
 
                     } catch (IOException e) {
-                        return null;
+                        return false;
                     }
                     message.setContent(multipart);
                     message.setSentDate(new Date());
@@ -73,7 +73,7 @@ public class SendEmail {
                     Transport.send(message);
 
                 } catch (MessagingException exception) {
-                    return null;
+                    return false;
                 }
 
             case "Browser":
@@ -88,9 +88,9 @@ public class SendEmail {
 
                     Transport.send(message);
                 } catch (Exception e) {
-                    return null;
+                    return false;
                 }
         }
-        return null;
+        return true;
     }
 }
