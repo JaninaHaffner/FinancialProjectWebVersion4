@@ -4,7 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class LogOutServletTest {
+class UserRegistrationServletTest {
 
     @BeforeEach
     void setUp() {
@@ -99,6 +99,6 @@ class LogOutServletTest {
     }
 
     @Test
-    void testDoGet() {
+    void testDoPost() {
     }
 }

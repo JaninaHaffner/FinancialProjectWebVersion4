@@ -1,10 +1,10 @@
-package scheduler;
+package email;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class JobCreatorTest {
+class SendEmailTest {
 
     @BeforeEach
     void setUp() {
@@ -15,18 +15,6 @@ class JobCreatorTest {
     }
 
     @Test
-    void execute() {
-    }
-
-    @Test
-    void jobCreator() {
-    }
-
-    @Test
-    void testJobCreator() {
-    }
-
-    @Test
-    void jobScheduler() {
+    void sendMail() {
     }
 }

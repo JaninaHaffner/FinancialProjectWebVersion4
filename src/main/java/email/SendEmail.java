@@ -1,7 +1,6 @@
 package email;
 
 import dao.ApplicationDao;
-import org.quartz.Job;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;

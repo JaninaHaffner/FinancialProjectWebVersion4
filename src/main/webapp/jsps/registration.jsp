@@ -96,7 +96,7 @@
           <textarea id="symbols"></textarea>
          </div>
         
-     </div>
+
         <div class="button">
             <input type="submit" value="Register">
 

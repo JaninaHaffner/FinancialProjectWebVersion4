@@ -3,7 +3,6 @@ package email;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 
-
 /* Sets username and password for authentication */
 public class Authentication extends Authenticator {
 

@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
+/* This servlet deletes the user from the database to unsubscribe them. */
 @WebServlet(name = "UnsubscribeServlet", value = "/UnsubscribeServlet")
 public class UnsubscribeServlet extends HttpServlet {
 

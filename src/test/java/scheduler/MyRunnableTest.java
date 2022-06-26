@@ -4,7 +4,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class JobCreatorTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class MyRunnableTest {
 
     @BeforeEach
     void setUp() {
@@ -15,18 +17,6 @@ class JobCreatorTest {
     }
 
     @Test
-    void execute() {
-    }
-
-    @Test
-    void jobCreator() {
-    }
-
-    @Test
-    void testJobCreator() {
-    }
-
-    @Test
-    void jobScheduler() {
+    void run() {
     }
 }

@@ -2,38 +2,28 @@ package scheduler;
 
 import email.ScreenShot;
 import email.SendEmail;
-import org.apache.log4j.Logger;
 import org.quartz.*;
-import org.quartz.JobBuilder;
-import org.quartz.JobDetail;
-import org.quartz.Scheduler;
-import org.quartz.SchedulerException;
-import org.quartz.SchedulerFactory;
-import org.quartz.SimpleScheduleBuilder;
-import org.quartz.Trigger;
-import org.quartz.TriggerBuilder;
-import org.quartz.impl.StdSchedulerFactory;
 
 import javax.mail.MessagingException;
 import java.io.IOException;
 
-/* JobCreator class is used to create a schedule to send user emails
+import static java.lang.Thread.sleep;
+
+/* JobCreator class is used to get all the relevant information to
+ * create a schedule to send user emails
  * to give user updates as per their specification on registration.
  * Use a switch case to set the frequency of the jobs and another
  * switch case to change the body of the email being sent to the user
  * to display appropriate information.
- * Set the job details, the triggers as per the frequency specified by the user
- * Start the jobs. */
+ * Set the job details and the triggers as per the frequency specified by the user
+ * Returns all the relevant information for the scheduler.
+ * JobScheduler is used to schedule the jobs for each user as per their requirements.
+ * Calls the sendEmail class to send the mail.
+ * Using a recursive method to keep running the jobs.*/
 
 public class JobCreator {
 
-    //private final Logger logger = Logger.getLogger(JobCreator.class);
-
-    public void execute(JobExecutionContext jobExecutionContext) {
-
-    }
-
-    public String jobCreator(String username, String updates, String preference, String exchange, String symbols, String email) {
+    public String jobCreator(String username, String updates, String preference, String exchange, String symbols, String email) throws SchedulerConfigException {
         int frequency = 0;
         String emailBody = "";
         String subject = "";
@@ -62,8 +52,9 @@ public class JobCreator {
             }
         } catch (IOException exception) {
             return null;
+
         }
-        return preference + "," + email + "," +  subject + "," +  emailBody + "," +  frequency;
+        return preference + "," + email + "," + subject + "," + emailBody + "," + frequency;
     }
 
     public boolean jobScheduler(String preference, String email, String subject, String emailBody, int frequency) {
@@ -85,7 +76,7 @@ public class JobCreator {
                         jobSubject = subject;
                         jobEmailBody = emailBody;
                         jobFrequency = frequency;
-                        wait(60 * 60 * 24 * 1000);
+                        sleep(60 * 60 * 24 * 1000);
                         jobScheduler(jobPref, jobEmail, jobSubject, jobEmailBody, jobFrequency);
                     }
                 case 7:
@@ -96,7 +87,7 @@ public class JobCreator {
                         jobSubject = subject;
                         jobEmailBody = emailBody;
                         jobFrequency = frequency;
-                        wait(60 * 60 * 24 * 7 * 1000);
+                        sleep(60 * 60 * 24 * 7 * 1000);
                         jobScheduler(jobPref, jobEmail, jobSubject, jobEmailBody, jobFrequency);
                     }
                 case 30:
@@ -107,7 +98,7 @@ public class JobCreator {
                         jobSubject = subject;
                         jobEmailBody = emailBody;
                         jobFrequency = frequency;
-                        wait(60L * 60 * 24 * 30 * 1000);
+                        sleep(60L * 60 * 24 * 30 * 1000);
                         jobScheduler(jobPref, jobEmail, jobSubject, jobEmailBody, jobFrequency);
                     }
             }
@@ -115,25 +106,6 @@ public class JobCreator {
             return false;
         }
         return true;
-    }
-}
-
-/*
-
-            JobDetail jobDetail = JobBuilder.newJob(new SendEmail().sendMail(email, subject, preference, emailBody)).withIdentity(username).build();
-
-            Trigger trigger = TriggerBuilder.newTrigger().withSchedule(SimpleScheduleBuilder.simpleSchedule().withIntervalInHours(frequency).repeatForever()).build();
-
-            SchedulerFactory schedulerFactory = new StdSchedulerFactory();
-            Scheduler scheduler = schedulerFactory.getScheduler();
-            scheduler.start();
-            scheduler.scheduleJob(jobDetail, trigger);
-        } catch (IOException | SchedulerException | MessagingException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    public void scheduler(){
 
     }
 }
-*/
