@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style2.css">
+    <script src="data.js"></script>
     <title>Profile</title>
 </head>
 <body onload="javascript:hideForm()">
@@ -96,10 +97,8 @@
                           <label for="symbols">Symbols</label>
                         </div>
                         <div class="col-75">
-                          <select name="symbols" id="symbols" multiple>
-
-                          </select>
-                          <p>Hold the ctrl button to select your symbols</p>
+                          <textarea id="symbols"></textarea>
+                         
                         </div>
                       </div>
                       <br>
@@ -127,71 +126,27 @@
 
         dropdown.add(defaultOption);
         dropdown.selectedIndex = 0;
-
-        const url = 'https://eodhistoricaldata.com/api/exchanges-list/?api_token=62a3b3fbe45951.51740298&fmt=json';
-
-        const request = new XMLHttpRequest();
-        request.open('GET', url, true);
-
-        request.onload = function(){
-            if(request.status === 200){
-                const data = JSON.parse(request.responseText);
-                let option;
-                for(let i = 0; i < data.length; i++){
-                    option = document.createElement('option');
-                    option.text = data[i].Name;
-                    option.value = data[i].Code;
-                    dropdown.add(option);
-
-                }
-            } else {
-
-            }
+        
+        const mydata = data;
+        let option;
+        for(let i = 0; i < mydata.length; i++){
+          option = document.createElement('option');
+          option.text = mydata[i].stockExchange;
+          option.value = mydata[i].stockExchange;
+          dropdown.add(option);
         }
 
-        request.onerror = function(){
-            console.log('An error occurred fetching JSON from ' + url);
-        };
-
-        request.send();
-
-
-
-        function getStockExchange(){
+      function getStockExchange(){
             let list1 = document.getElementById('stockExchange');
             let list2 = document.getElementById('symbols');
-            let exchangeCode = list1.options[list1.selectedIndex].value;
+            let exchange = list1.selectedIndex;
 
-            const url = `https://eodhistoricaldata.com/api/exchange-symbol-list/\${exchangeCode}?fmt=json&api_token=62a3b3fbe45951.51740298`;
+            const mydata = data;
+            let symbols = '';
+            symbols = mydata[exchange].symbols;
+            textarea.value = symbols;
 
-            const request = new XMLHttpRequest();
-            request.open('GET', url, true);
-
-            request.onload = function(){
-            if(request.status === 200){
-                const data = JSON.parse(request.responseText);
-                let option;
-                for(let i = 0; i < data.length; i++){
-                  option = document.createElement('option');
-                  option.text = data[i].Code;
-                  option.value = data[i].Code;
-                  list2.add(option);
-                }
-               
-            } else {
-
-            }
         }
-        
-
-        request.onerror = function(){
-            console.log('An error occured fetching JSON from ' + url);
-        };
-
-        request.send();
-        
-        } 
-       
 
         function hideForm(){
             document.getElementById("form").style.display = "none";
