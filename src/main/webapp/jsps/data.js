@@ -1,5 +1,5 @@
 const data = [{
-	stockExchange: "Currencies Trading(Forex)",
+	stockExchange: "Currencies Trading (Forex)",
 	symbols: "EUR/USD;GBP/USD;USD/JPY;USD/CHF;AUD/USD"
 },
 {
