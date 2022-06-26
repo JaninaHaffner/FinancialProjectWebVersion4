@@ -43,11 +43,11 @@ public class JobCreator {
             switch (preference) {
                 case "Email":
                     new ScreenShot().TakeScreenShot(exchange, symbols);
-                    subject = "Financial Curation " + updates + " update email for " + username;
+                    subject = "Financial Curation " + updates + " update email for " + username + ".";
 
                 case "Browser":
                     subject = "Financial Curation " + updates + " update.";
-                    emailBody = "Please log in to your account to view your financial information.";
+                    emailBody = "Please log in to your account to view your financial information. " + username;
 
             }
         } catch (IOException exception) {

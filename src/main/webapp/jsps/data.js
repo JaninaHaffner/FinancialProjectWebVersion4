@@ -8,8 +8,8 @@ const data = [{
 },
 
 {
-	stockExchange: "Cypto",
-	symbols: "BTC;ETH;XRP;BCH;LTC;"
+	stockExchange: "Crypto",
+	symbols: "BTC;ETH;XRP;BCH;LTC;DOGE"
 },
 {
 	stockExchange: "Futures",

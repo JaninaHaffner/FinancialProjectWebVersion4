@@ -40,6 +40,7 @@ public class UserRegistrationServlet extends HttpServlet {
         String updates = request.getParameter("updates");
         String stockExchange = request.getParameter("stockExchange");
         String symbols = request.getParameter("symbols");
+        System.out.println(symbols);
 
         User user = new User(username, password, email, fullname, preferences, updates, stockExchange, symbols);
 
@@ -65,16 +66,16 @@ public class UserRegistrationServlet extends HttpServlet {
             } else {
                 errorMessage = "Success, you are registered!";
                 session.setAttribute("errorMessage", errorMessage);
-
-                try {
-                   Runnable myRunnable = new MyRunnable(username, updates, preferences, stockExchange, symbols, email);
-                    new Thread(myRunnable).start();
-                } catch (SchedulerConfigException e) {
-                    throw new RuntimeException(e);
-                }
             }
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher(destpage);
         dispatcher.forward(request, response);
+
+        try {
+            Runnable myRunnable = new MyRunnable(username, updates, preferences, stockExchange, symbols, email);
+            new Thread(myRunnable).start();
+        } catch (SchedulerConfigException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

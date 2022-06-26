@@ -93,7 +93,7 @@
       </div>
       <div class="input-box">
         <span class="details">Symbols</span>
-          <textarea id="symbols"></textarea>
+          <label for="symbols"></label><textarea name="symbols" id="symbols"></textarea>
          </div>
         
 

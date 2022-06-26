@@ -12,7 +12,6 @@ public class MyRunnable implements Runnable {
 
         String createJob = new JobCreator().jobCreator(username, updates, preference, exchange, symbols, email);
         String[] jobInfo;
-        System.out.println(createJob);
         jobInfo = createJob.split(",");
         String jobPref = jobInfo[0];
         String jobEmail = jobInfo[1];
