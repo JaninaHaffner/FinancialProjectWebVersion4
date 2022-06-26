@@ -162,7 +162,7 @@
             let list2 = document.getElementById('symbols');
             let exchangeCode = list1.options[list1.selectedIndex].value;
 
-            const url = `https://eodhistoricaldata.com/api/exchange-symbol-list/${exchangeCode}?fmt=json&api_token=62a3b3fbe45951.51740298`;
+            const url = `https://eodhistoricaldata.com/api/exchange-symbol-list/\${exchangeCode}?fmt=json&api_token=62a3b3fbe45951.51740298`;
 
             const request = new XMLHttpRequest();
             request.open('GET', url, true);
