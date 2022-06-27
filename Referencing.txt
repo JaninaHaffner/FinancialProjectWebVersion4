@@ -29,3 +29,6 @@ https://stackoverflow.com/questions/24452332/how-to-create-an-image-from-an-inpu
 https://docs.oracle.com/cd/A97336_01/buslog.102/a83726/basics4.htm
 https://apiflash.com/dashboard/query_builder
 https://www.javacodegeeks.com/2012/07/quartz-2-scheduler-example.html
+https://www.freecodecamp.org/news/json-stringify-example-how-to-parse-a-json-object-with-javascript/
+https://www.w3schools.com/jsref/prop_select_selectedindex.asp#:~:text=The%20selectedIndex%20property%20sets%20or,all%20options%20(if%20any).
+https://services.stockdio.com/#!i_Visualization_QuoteBoard
