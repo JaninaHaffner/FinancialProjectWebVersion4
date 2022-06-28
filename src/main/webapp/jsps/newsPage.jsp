@@ -22,7 +22,7 @@
     <a href="${pageContext.request.contextPath}/jsps/homepage.jsp">Home</a>
     <a href="${pageContext.request.contextPath}/jsps/newsPage.jsp">News</a>
     <a href="${pageContext.request.contextPath}/jsps/markets.jsp">Markets</a>
-    <a href="${pageContext.request.contextPath}/jsps/exchange.jsp">Exchanges</a>
+    <a href="${pageContext.request.contextPath}/jsps/profile.jsp">Profile</a>
     <a href="${pageContext.request.contextPath}/Logout" class="right">Logout</a>
 </div>
 <script>
