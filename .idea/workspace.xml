@@ -10,12 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UserRegistrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/scheduler/JobCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/scheduler/JobCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/scheduler/MyRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/scheduler/MyRunnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/registration.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/registration.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,18 +80,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/janin/IdeaProjects/FinancialProjectWebVersion4&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
+    "last_opened_file_path": "C:/Users/janin/IdeaProjects/FinancialProjectWebVersion4",
+    "spring.configuration.checksum": "58bdba3e1623250bd6e7275cb0804323"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\janin\IdeaProjects\FinancialProjectWebVersion4\src\main\webapp" />
@@ -238,7 +235,8 @@
       <workItem from="1654953744597" duration="20946000" />
       <workItem from="1655050060384" duration="18531000" />
       <workItem from="1655535162983" duration="71738000" />
-      <workItem from="1656002196213" duration="57695000" />
+      <workItem from="1656002196213" duration="60015000" />
+      <workItem from="1656352136747" duration="1354000" />
     </task>
     <task id="LOCAL-00001" summary="version 4&#10;working - need to go to logged in page">
       <created>1653833946685</created>
@@ -478,7 +476,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656264811961</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="version 4&#10;Changed registration servlet">
+      <created>1656269416879</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1656269416879</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +534,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="version 4&#10;new item on landing page" />
     <MESSAGE value="version 4&#10;new item on landing page top" />
     <MESSAGE value="version 4&#10;added exchange.jsp, newsPage.jsp and markets.jsp&#10;linked LogOutServlet" />
     <MESSAGE value="version 4&#10;added links on home page to exchange.jsp, newsPage.jsp and markets.jsp" />
@@ -554,6 +558,7 @@
     <MESSAGE value="version 4&#10;Draft on scheduling emails." />
     <MESSAGE value="version 4&#10;Job scheduling added" />
     <MESSAGE value="version 4&#10;Created all test classes for project java classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;Created all test classes for project java classes" />
+    <MESSAGE value="version 4&#10;Changed registration servlet" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;Changed registration servlet" />
   </component>
 </project>
