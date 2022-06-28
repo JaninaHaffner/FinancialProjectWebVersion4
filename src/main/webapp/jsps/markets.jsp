@@ -19,10 +19,10 @@
     <h1>The Financial Curation</h1>
 </div>
 <div class="navbar">
-    <a href="homepage.jsp">Home</a>
-    <a href="newsPage.jsp">News</a>
-    <a href="markets.jsp">Markets</a>
-    <a href="exchange.jsp">Exchanges</a>
+    <a href="${pageContext.request.contextPath}/jsps/homepage.jsp">Home</a>
+    <a href="${pageContext.request.contextPath}/jsps/newsPage.jsp">News</a>
+    <a href="${pageContext.request.contextPath}/jsps/markets.jsp">Markets</a>
+    <a href="${pageContext.request.contextPath}/jsps/profile.jsp">Profile</a>
     <a href="${pageContext.request.contextPath}/Logout" class="right">Logout</a>
 </div>
 <script>
