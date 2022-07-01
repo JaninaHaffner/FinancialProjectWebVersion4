@@ -26,22 +26,10 @@
     <a href="${pageContext.request.contextPath}/Logout" class="right">Logout</a>
 </div>
 <script>
-    if (typeof(stockdio_events) == "undefined") {
-        stockdio_events = true;
-        const stockdio_eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-        const stockdio_eventer = window[stockdio_eventMethod];
-        const stockdio_messageEvent = stockdio_eventMethod === "attachEvent" ? "onmessage" : "message";
-        stockdio_eventer(stockdio_messageEvent, function (e) {
-            if (typeof(e.data) != "undefined" && typeof(e.data.method) != "undefined") {
-                eval(e.data.method);
-            }
-        },false);
-    }
+   let firstSymbol = ${symbols}.split(";")[0];
 </script>
-<iframe id='st_c835484be17d4fcb92e69d5870e638a4' width='100%' height='100%'
-        src='https://api.stockdio.com/visualization/financial/charts/v1/EconomicNews?app-key=7F5CA262046A4B63B327718307695CF1&imageWidth=200&palette=Financial-Light&onload=st_c835484be17d4fcb92e69d5870e638a4'>
 
-</iframe>
+<iframe id='st_084ee0a9a27d4bd9b9aefd01bbf95b1a' frameBorder='0' scrolling='no' width='100%' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/News?app-key=3F3765F6FF284467B14A9241127AF282&stockExchange=${stockExchange}&symbol=${firstSymbol}&includeDescription=false&imageWidth=40&imageHeight=40&palette=Financial-Light&title=News&onload=st_084ee0a9a27d4bd9b9aefd01bbf95b1a'></iframe>
 
 <div class="footer">
     <p>Copyright 2022 The Finance Curation. All rights reserved</p>
