@@ -10,8 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ApplicationDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/exchange.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/exchange.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/newsPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/newsPage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +94,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers": "true",
     "last_opened_file_path": "C:/Users/janin/IdeaProjects/FinancialProjectWebVersion4",
+    "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "58bdba3e1623250bd6e7275cb0804323"
   }
 }]]></component>
@@ -236,7 +241,7 @@
       <workItem from="1655050060384" duration="18531000" />
       <workItem from="1655535162983" duration="71738000" />
       <workItem from="1656002196213" duration="60015000" />
-      <workItem from="1656352136747" duration="1354000" />
+      <workItem from="1656352136747" duration="4287000" />
     </task>
     <task id="LOCAL-00001" summary="version 4&#10;working - need to go to logged in page">
       <created>1653833946685</created>
@@ -483,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656269416879</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="version 4&#10;Java docs added">
+      <created>1656434704107</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1656434704107</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,7 +546,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="version 4&#10;new item on landing page top" />
     <MESSAGE value="version 4&#10;added exchange.jsp, newsPage.jsp and markets.jsp&#10;linked LogOutServlet" />
     <MESSAGE value="version 4&#10;added links on home page to exchange.jsp, newsPage.jsp and markets.jsp" />
     <MESSAGE value="version 4&#10;check that user does not all ready exist." />
@@ -559,6 +570,7 @@
     <MESSAGE value="version 4&#10;Job scheduling added" />
     <MESSAGE value="version 4&#10;Created all test classes for project java classes" />
     <MESSAGE value="version 4&#10;Changed registration servlet" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;Changed registration servlet" />
+    <MESSAGE value="version 4&#10;Java docs added" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;Java docs added" />
   </component>
 </project>

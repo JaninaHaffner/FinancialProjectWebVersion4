@@ -35,6 +35,7 @@ public class LoginServlet extends HttpServlet {
 		String symbols;
 		String destPage;
 		String errorMessage;
+		String firstSymbol;
 		ApplicationDao dao = new ApplicationDao();
 		boolean isValidUser;
 		String userinfo;
@@ -63,6 +64,7 @@ public class LoginServlet extends HttpServlet {
 			updates = items[3];
 			stockExchange = items[4];
 			symbols = items[5];
+			firstSymbol = items[6];
 
 			subject = "The Financial Curation Report for " + fullname;
 
@@ -75,6 +77,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("stockExchange", stockExchange);
 			session.setAttribute("symbols", symbols);
 			session.setAttribute("subject", subject);
+			session.setAttribute("firstSymbol", firstSymbol);
 
 			if(Objects.equals(preference, "Browser")){
 				resp.addCookie(usernameCookie);

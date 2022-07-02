@@ -33,7 +33,6 @@
     ·
     <a href="https://github.com/JaninaHaffner/FinancialProjectWebVersion4/issues">Request Feature</a>
   </p>
-</div>
 
 
 
@@ -213,7 +212,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/JaninaHaffner/FinancialProjectWebVersion4/tree/B1](https://github.com/github_username/repo_name)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -222,7 +221,7 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
+* [https://services.stockdio.com]()
 * []()
 * []()
 

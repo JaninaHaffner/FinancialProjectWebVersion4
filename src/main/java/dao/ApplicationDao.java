@@ -15,6 +15,8 @@ public class ApplicationDao {
 	String updates = "";
 	String stockExchange = "";
 	String symbols = "";
+	String[] symbolsArr;
+	String firstSymbol;
 	LocalDate todayDate = LocalDate.now();
 	int rows;
 	ResultSet userInfo;
@@ -140,12 +142,15 @@ public class ApplicationDao {
 				symbols = userInfo.getString(6);
 
 			}
+			symbolsArr = symbols.split(";");
+			firstSymbol = symbolsArr[0];
+
 			statement.close();
 			connection.close();
 		} catch (SQLException e) {
 			return null;
 		}
-		return fullname + "," + email + "," + preference + "," + updates + "," + stockExchange + "," + symbols;
+		return fullname + "," + email + "," + preference + "," + updates + "," + stockExchange + "," + symbols + "," + firstSymbol;
 	}
 	
 	/* Connect to database

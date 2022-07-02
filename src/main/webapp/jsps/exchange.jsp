@@ -39,7 +39,7 @@
     }
 </script>
 <iframe id='st_c66d06603b3c45a793a42aeb2f573fb5' width='600' height='100%'
-        src='https://api.stockdio.com/visualization/financial/charts/v1/QuoteBoard?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=CRYPTO&symbols=BTC;ETH;XRP;BCH;LTC;&includeVolume=true&palette=Financial-Light&title=Watch%20List&onload=st_c66d06603b3c45a793a42aeb2f573fb5'>
+        src='https://api.stockdio.com/visualization/financial/charts/v1/QuoteBoard?app-key=7F5CA262046A4B63B327718307695CF1&stockExchange=${stockExchange}&symbols=${symbols};&includeVolume=true&palette=Financial-Light&title=Watch%20List&onload=st_c66d06603b3c45a793a42aeb2f573fb5'>
 
 </iframe>
 

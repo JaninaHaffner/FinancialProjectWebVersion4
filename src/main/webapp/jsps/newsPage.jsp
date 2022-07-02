@@ -25,11 +25,8 @@
     <a href="${pageContext.request.contextPath}/jsps/profile.jsp">Profile</a>
     <a href="${pageContext.request.contextPath}/Logout" class="right">Logout</a>
 </div>
-<script>
-   let firstSymbol = ${symbols}.split(";")[0];
-</script>
 
-<iframe id='st_084ee0a9a27d4bd9b9aefd01bbf95b1a' frameBorder='0' scrolling='no' width='100%' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/News?app-key=3F3765F6FF284467B14A9241127AF282&stockExchange=${stockExchange}&symbol=${firstSymbol}&includeDescription=false&imageWidth=40&imageHeight=40&palette=Financial-Light&title=News&onload=st_084ee0a9a27d4bd9b9aefd01bbf95b1a'></iframe>
+<iframe id='st_084ee0a9a27d4bd9b9aefd01bbf95b1a' width='100%' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/News?app-key=3F3765F6FF284467B14A9241127AF282&stockExchange=${stockExchange}&symbol=${firstSymbol}&includeDescription=false&imageWidth=40&imageHeight=40&palette=Financial-Light&title=News&onload=st_084ee0a9a27d4bd9b9aefd01bbf95b1a'></iframe>
 
 <div class="footer">
     <p>Copyright 2022 The Finance Curation. All rights reserved</p>
