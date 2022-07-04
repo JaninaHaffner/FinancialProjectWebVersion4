@@ -82,8 +82,6 @@ stock exchange information and financial news based on the preferences. The user
 to change their preferences. 
 
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -97,6 +95,9 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 * [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics)
 * [JavaScript](https://www.javascript.com/)
 * [CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/What_is_CSS)
+* [My SQL](https://dev.mysql.com/downloads/connector/j/8.2.html)
+* [Javax Mail](https://docs.oracle.com/javaee/7/api/javax/mail/package-summary.html)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -109,28 +110,19 @@ This is an example of how you may give instructions on setting up your project l
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+1. Use Intellij to run the project 
   ```sh
-  npm install npm@latest -g
-  ```
+   https://www.jetbrains.com/idea/download/#section=windows
+   ```
 
 ### Installation
+1. Clone the repo
+   ```sh
+   git clone https://github.com/JaninaHaffner/FinancialProjectWebVersion4.git
+   ```
+2.Open project in Intellij
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+3. Run the project
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -159,22 +151,6 @@ The markets page
 The profile page for the user to update their information
 ![profile](https://user-images.githubusercontent.com/86411094/176186780-5a10dbe4-59e4-4400-93f7-eee6dc582e35.JPG)
 
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -209,10 +185,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 ## Contact
+Janina Haffner [Github](https://github.com/JaninaHaffner)
+Moipati Thoobe [Github](https://github.com/MoipatiThoobe)
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/JaninaHaffner/FinancialProjectWebVersion4/tree/B1](https://github.com/github_username/repo_name)
+Project Link: [Link to the project](https://github.com/JaninaHaffner/FinancialProjectWebVersion4/tree/B1)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -221,7 +197,7 @@ Project Link: [https://github.com/JaninaHaffner/FinancialProjectWebVersion4/tree
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [https://services.stockdio.com]()
+* [Stockdio](https://www.stockdio.com/)
 * []()
 * []()
 
