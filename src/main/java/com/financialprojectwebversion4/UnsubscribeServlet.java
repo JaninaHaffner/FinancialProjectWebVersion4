@@ -14,7 +14,7 @@ import java.io.IOException;
 /* This servlet deletes the user from the database to unsubscribe them. */
 @WebServlet(name = "UnsubscribeServlet", value = "/UnsubscribeServlet")
 public class UnsubscribeServlet extends HttpServlet {
-
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String username;
@@ -25,7 +25,7 @@ public class UnsubscribeServlet extends HttpServlet {
         HttpSession session = request.getSession();
 
         username = (String) session.getAttribute("username");
-
+        System.out.println(username);
         deletedCompleted = dao.unSubscribe(username);
 
         if (deletedCompleted != 0) {
@@ -35,7 +35,7 @@ public class UnsubscribeServlet extends HttpServlet {
         } else {
             destpage = "/jsps/login.jsp";
             errorMessage = "An error occurred, please log in and try again to unsubscribe.";
-            session.setAttribute("errorMessage", errorMessage);
+            session.setAttribute("loginMessage", errorMessage);
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher(destpage);
         dispatcher.forward(request, response);

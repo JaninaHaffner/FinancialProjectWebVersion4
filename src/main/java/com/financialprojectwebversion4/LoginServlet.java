@@ -48,12 +48,12 @@ public class LoginServlet extends HttpServlet {
 		password = req.getParameter("password");
 
 		isValidUser = dao.validateUser(username, password);
-		destPage = "src/main/webapp/jsps/login.jsp";
+		destPage = "/jsps/login.jsp";
 
-		if(isValidUser) {
+		if (isValidUser) {
 
 			usernameCookie = new Cookie("username", username);
-			usernameCookie.setMaxAge(365*24*60*60);
+			usernameCookie.setMaxAge(365 * 24 * 60 * 60);
 
 			userinfo = dao.userPreferences(username);
 			items = userinfo.split(",");
@@ -79,7 +79,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("subject", subject);
 			session.setAttribute("firstSymbol", firstSymbol);
 
-			if(Objects.equals(preference, "Browser")){
+			if (Objects.equals(preference, "Browser")) {
 				resp.addCookie(usernameCookie);
 				destPage = "/jsps/homepage.jsp";
 
@@ -88,11 +88,12 @@ public class LoginServlet extends HttpServlet {
 			}
 		} else {
 
-			errorMessage = "Invalid credentials, please login again!";
-			req.setAttribute("errorMessage", errorMessage);
+			errorMessage = "Invalid credentials, please login again or register.";
+			req.setAttribute("loginMessage", errorMessage);
+
 		}
+
 		dispatcher = req.getRequestDispatcher(destPage);
 		dispatcher.forward(req, resp);
 	}
-
 }

@@ -40,7 +40,6 @@ public class UserRegistrationServlet extends HttpServlet {
         String updates = request.getParameter("updates");
         String stockExchange = request.getParameter("stockExchange");
         String symbols = request.getParameter("symbols");
-        System.out.println(symbols);
 
         User user = new User(username, password, email, fullname, preferences, updates, stockExchange, symbols);
 
@@ -53,29 +52,34 @@ public class UserRegistrationServlet extends HttpServlet {
         valid = dao.existingUser(username);
 
         if (valid) {
+
             errorMessage = "This user all ready exist, please log in.";
-            session.setAttribute("errorMessage", errorMessage);
+            session.setAttribute("loginMessage", errorMessage);
             RequestDispatcher dispatcher = request.getRequestDispatcher(destpage);
             dispatcher.forward(request, response);
         } else {
+
             rows = dao.registerUser(user);
             if (rows == 0) {
+
                 destpage = "/jsps/registration.jsp";
                 errorMessage = "Sorry, an error has occurred! Please retry to register.";
-                session.setAttribute("errorMessage", errorMessage);
+                session.setAttribute("registerMessage", errorMessage);
             } else {
+
                 errorMessage = "Success, you are registered!";
-                session.setAttribute("errorMessage", errorMessage);
+                session.setAttribute("loginMessage", errorMessage);
             }
         }
-        RequestDispatcher dispatcher = request.getRequestDispatcher(destpage);
-        dispatcher.forward(request, response);
-
+        Thread newThread;
         try {
-            Runnable myRunnable = new MyRunnable(username, updates, preferences, stockExchange, symbols, email);
-            new Thread(myRunnable).start();
+            newThread = new Thread(new MyRunnable(username, updates, preferences, stockExchange, symbols, email));
         } catch (SchedulerConfigException e) {
             throw new RuntimeException(e);
         }
+        newThread.start();
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher(destpage);
+        dispatcher.forward(request, response);
     }
 }

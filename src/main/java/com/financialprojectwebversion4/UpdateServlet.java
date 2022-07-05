@@ -86,7 +86,7 @@ public class UpdateServlet extends HttpServlet {
         if (updateCompleted == 0) {
             destpage = "/jsps/homepage.jsp";
             errorMessage = "Your details were not updated! Please retry.";
-            session.setAttribute("errorMessage", errorMessage);
+            session.setAttribute("profileMessage", errorMessage);
         } else {
             userinfo = dao.userPreferences(username);
             items = userinfo.split(",");
@@ -108,7 +108,7 @@ public class UpdateServlet extends HttpServlet {
 
             destpage = "/jsps/homepage.jsp";
             errorMessage = "Your details were successfully updated.";
-            session.setAttribute("errorMessage", errorMessage);
+            session.setAttribute("profileMessage", errorMessage);
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher(destpage);
         dispatcher.forward(request, response);

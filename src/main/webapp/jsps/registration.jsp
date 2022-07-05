@@ -12,16 +12,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/regStyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/regStyle.css">
+    <script src="${pageContext.request.contextPath}/css/regStyle.css"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="data.js"></script>
     <title>Register</title>
 </head>
 <body>
 <div class="container">
-  <a href="../index.jsp"><i class="fa fa-home"></i></a>
+  <a href="${pageContext.request.contextPath}/index.jsp"><i class="fa fa-home"></i></a>
 
     <div class="title">Registration</div>
+    <br>
+    <div>${registerMessage}
+    </div>
     <form action="<%= request.getContextPath() %>/UserRegistrationServlet" method="post">
 
         <div class="user-details">
@@ -101,7 +105,7 @@
             <input type="submit" value="Register">
 
         </div>
-        <p>Already have an account <a href="../jsps/login.jsp">Login now</a></p>
+        <p>Already have an account <a href="${pageContext.request.contextPath}/jsps/login.jsp">Login now</a></p>
     </form>
 </div>
   <script>
@@ -130,7 +134,7 @@
             let exchange = list1.selectedIndex-1;
 
             const mydata = data;
-            let symbols = '';
+            let symbols;
             symbols = mydata[exchange].symbols;
             textarea.value = symbols;
 

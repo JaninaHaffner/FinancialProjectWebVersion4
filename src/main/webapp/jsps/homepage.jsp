@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style2.css"/>
+    <script src="${pageContext.request.contextPath}/css/style2.css"></script>
     <title>Homepage</title>
 </head>
 <body>
@@ -21,8 +22,6 @@
     <a href="${pageContext.request.contextPath}/UnsubscribeServlet" class="right">Unsubscribe</a>
 </div>
 
-<br>${errorMessage}
-<br>
 <div class="row">
     <div class="side">
         <script>

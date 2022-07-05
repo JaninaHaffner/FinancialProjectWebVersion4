@@ -9,18 +9,24 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <link rel="stylesheet" href="../css/logStyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/logStyle.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <script src="${pageContext.request.contextPath}/css/logStyle.css"></script>
 
-    <br>${errorMessage}
-    <br><br>
+<%--    <br>${errorMessage}
+    <br><br>--%>
 
     <title>Login</title>
 </head>
 <body>
+
 <div class="container">
-    <a href="../index.jsp"><i class="fa fa-home"></i></a>
+    <a href="${pageContext.request.contextPath}/index.jsp"><i class="fa fa-home"></i></a>
     <div class="title">Login</div>
+    <br>
+    <div>
+    ${loginMessage}
+    </div>
     <form action="${pageContext.request.contextPath}/LoginServlet" method="post">
         <div class="user-details">
             <div class="input-box">
@@ -41,7 +47,7 @@
             <input type="submit" value="Login">
         </div>
         <div class="link">
-            <p>Don't have an account <a href="registration.jsp">Register now</a></p>
+            <p>Don't have an account <a href="${pageContext.request.contextPath}/jsps/registration.jsp">Register now</a></p>
         </div>
     </form>
 </div>
