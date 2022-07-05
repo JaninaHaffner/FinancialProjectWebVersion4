@@ -36,7 +36,7 @@
                  },false);
               }
            </script>
-           <iframe id='st_d51489f83c2947cb847dc3186c5df69d' width='100%' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/EconomicNews?app-key=3F3765F6FF284467B14A9241127AF282&includeDescription=false&imageWidth=40&imageHeight=40&palette=Financial-Light&onload=st_d51489f83c2947cb847dc3186c5df69d'></iframe>
+           <iframe id='st_1c3353c1c8ec45c1a6d89089c4feff51' width='100%' height='100%' src='https://api.stockdio.com/visualization/financial/charts/v1/EconomicNews?app-key=7F5CA262046A4B63B327718307695CF1&language=English&countryUsage=mixed&includeDescription=false&imageWidth=40&imageHeight=40&maxItems=14&palette=Financial-Light&onload=st_1c3353c1c8ec45c1a6d89089c4feff51'></iframe>
            </div>
            <div class="main">
               <h3>Popular Stocks</h3>

@@ -28,7 +28,7 @@
         <div class="side">
             <div class="card">
                 <h1>User Profile</h1>
-                <img src="../images/usericon.png" alt="" style="width:100%">
+                <img src="${pageContext.request.contextPath}/images/usericon.png" alt="" style="width:100%">
                 <h3>Username: ${username}</h3>
                 <h3>Password: ${password}</h3>
                 <h3>Email Address: ${email}</h3>
@@ -100,7 +100,7 @@
                           <label for="symbols">Symbols</label>
                         </div>
                         <div class="col-75">
-                          <textarea id="symbols"></textarea>
+                          <textarea name="symbols" id="symbols"></textarea>
                          
                         </div>
                       </div>

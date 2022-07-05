@@ -78,6 +78,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("symbols", symbols);
 			session.setAttribute("subject", subject);
 			session.setAttribute("firstSymbol", firstSymbol);
+			System.out.println(firstSymbol);
 
 			if (Objects.equals(preference, "Browser")) {
 				resp.addCookie(usernameCookie);
