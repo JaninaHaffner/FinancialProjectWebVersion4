@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style2.css">
     <script src="${pageContext.request.contextPath}/css/style2.css"></script>
-    <script src="data.js"></script>
+    <script src="${pageContext.request.contextPath}/jsps/data.js"></script>
     <title>Profile</title>
 </head>
 <body onload="hideForm()">
