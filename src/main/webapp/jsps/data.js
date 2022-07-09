@@ -1,9 +1,9 @@
 const data = [{
-	stockExchange: "Currencies Trading (Forex)",
+	stockExchange: "Forex",
 	symbols: "EUR/USD;GBP/USD;USD/JPY;USD/CHF;AUD/USD"
 },
 {
-	stockExchange: "Commodities Trading",
+	stockExchange: "Commodities",
 	symbols: "GC;SI;CO;CL;CR"
 },
 
