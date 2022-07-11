@@ -135,7 +135,7 @@
         for(let i = 0; i < mydata.length; i++){
           option = document.createElement('option');
           option.text = mydata[i].stockExchange;
-          option.value = mydata[i].stockExchange;
+          option.value = mydata[i].code;
           dropdown.add(option);
         }
 
