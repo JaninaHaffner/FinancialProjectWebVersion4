@@ -21,6 +21,8 @@
     <a href="${pageContext.request.contextPath}/Logout" class="right">Logout</a>
     <a href="${pageContext.request.contextPath}/UnsubscribeServlet" class="right">Unsubscribe</a>
 </div>
+<br>
+${profileMessage}
 
 <div class="row">
     <div class="side">

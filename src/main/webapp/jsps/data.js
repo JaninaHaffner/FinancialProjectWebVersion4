@@ -1,5 +1,5 @@
 const data = [{
-	stockExchange: "Currencies Trading (Forex)",
+	stockExchange: "FOREX",
 	code : "FOREX",
 	symbols: "EUR/USD;GBP/USD;USD/JPY;USD/CHF;AUD/USD"
 },
@@ -56,7 +56,7 @@ const data = [{
 },
 {
 	stockExchange: "China (Shenzhen)",
-	code: "SZSE"
+	code: "SZSE",
 	symbols: "200725;000100;000709;200625;002024"
 },
 {

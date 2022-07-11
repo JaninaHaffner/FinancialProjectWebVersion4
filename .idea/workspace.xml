@@ -11,10 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a42901e7-0c65-44b5-84ef-79e9b8217fbd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UnsubscribeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UnsubscribeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/financialprojectwebversion4/UpdateServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsps/homepage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsps/homepage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,28 +198,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UnsubscribeServletTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="FinancialProjectWebVersion4" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.financialprojectwebversion4.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.financialprojectwebversion4" />
-      <option name="MAIN_CLASS_NAME" value="com.financialprojectwebversion4.UnsubscribeServletTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="data.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/main/webapp/jsps/data.js" working-dir="$PROJECT_DIR$/src/main/webapp/jsps">
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.data.js" />
         <item itemvalue="JUnit.SendEmailTest" />
         <item itemvalue="JUnit.ScreenShotTest" />
         <item itemvalue="JUnit.AuthenticationTest" />
         <item itemvalue="JUnit.ApplicationDaoTest" />
-        <item itemvalue="JUnit.UnsubscribeServletTest" />
       </list>
     </recent_temporary>
   </component>
@@ -240,7 +227,7 @@
       <workItem from="1655050060384" duration="18531000" />
       <workItem from="1655535162983" duration="71738000" />
       <workItem from="1656002196213" duration="60015000" />
-      <workItem from="1656352136747" duration="30956000" />
+      <workItem from="1656352136747" duration="35820000" />
     </task>
     <task id="LOCAL-00001" summary="version 4&#10;working - need to go to logged in page">
       <created>1653833946685</created>
@@ -508,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657037738743</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="version 4&#10;update and unsubscribe is now working.">
+      <created>1657046420450</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1657046420450</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -559,7 +553,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="version 4&#10;check that user does not all ready exist." />
     <MESSAGE value="version 4&#10;added unit tests" />
     <MESSAGE value="version 4&#10;added parameters to get attributes from sql" />
     <MESSAGE value="version 4&#10;added EmailServlet.java" />
@@ -584,6 +577,7 @@
     <MESSAGE value="version 4&#10;Java docs added" />
     <MESSAGE value="version 4&#10;added firstSymbol to dao and LoginServlet for news page" />
     <MESSAGE value="version 4&#10;changed scheduling class" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;changed scheduling class" />
+    <MESSAGE value="version 4&#10;update and unsubscribe is now working." />
+    <option name="LAST_COMMIT_MESSAGE" value="version 4&#10;update and unsubscribe is now working." />
   </component>
 </project>

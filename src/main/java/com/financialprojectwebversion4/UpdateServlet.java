@@ -42,6 +42,7 @@ public class UpdateServlet extends HttpServlet {
         String updates;
         String stockExchange;
         String symbols;
+        String firstSymbol;
         String fullnameCurrent;
         String emailCurrent;
         String preferenceCurrent;
@@ -97,6 +98,7 @@ public class UpdateServlet extends HttpServlet {
             updates = items[3];
             stockExchange = items[4];
             symbols = items[5];
+            firstSymbol = items[6];
 
             session.setAttribute("username", username);
             session.setAttribute("fullname", fullname);
@@ -105,6 +107,7 @@ public class UpdateServlet extends HttpServlet {
             session.setAttribute("updates", updates);
             session.setAttribute("stockExchange", stockExchange);
             session.setAttribute("symbols", symbols);
+            session.setAttribute("firstSymbol", firstSymbol);
 
             destpage = "/jsps/homepage.jsp";
             errorMessage = "Your details were successfully updated.";
